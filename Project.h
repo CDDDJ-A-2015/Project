@@ -2,7 +2,7 @@
  * File:   Project.h
  * Author: dm940
  *
- * Created on 21 March 2015, 3:37 PM
+ * Created on 3 May 2015, 3:23 PM
  */
 
 #ifndef _PROJECT_H
@@ -10,7 +10,7 @@
 
 #include "ui_Project.h"
 
-class Project : public QMainWindow {
+class Project : public QWidget {
     Q_OBJECT
 public:
     Project();

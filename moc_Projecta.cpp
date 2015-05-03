@@ -1,14 +1,14 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'Project.h'
+** Meta object code from reading C++ file 'Projecta.h'
 **
 ** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.6)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "Project.h"
+#include "Projecta.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'Project.h' doesn't include <QObject>."
+#error "The header file 'Projecta.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
 #error "This file was generated using the moc from 4.8.6. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -49,7 +49,7 @@ const QMetaObjectExtraData Project::staticMetaObjectExtraData = {
 };
 
 const QMetaObject Project::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_Project,
+    { &QMainWindow::staticMetaObject, qt_meta_stringdata_Project,
       qt_meta_data_Project, &staticMetaObjectExtraData }
 };
 
@@ -67,12 +67,12 @@ void *Project::qt_metacast(const char *_clname)
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_Project))
         return static_cast<void*>(const_cast< Project*>(this));
-    return QWidget::qt_metacast(_clname);
+    return QMainWindow::qt_metacast(_clname);
 }
 
 int Project::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     return _id;

@@ -6,6 +6,9 @@
  */
 
 #include "Home.h"
+#include "UserProfile.h"
+#include "Project.h"
+#include "Login.h"
 using namespace std;
 
 Home::Home() {
@@ -14,6 +17,10 @@ Home::Home() {
     connect(widget.bUsers, SIGNAL(clicked()),this, SLOT(clickbUsers()));
     connect(widget.tGlobals, SIGNAL(doubleClicked(QModelIndex)),this, SLOT(dClickGTable(QModelIndex)));
     bGlob = false;
+    
+    Login *vLogin = new Login;
+    vLogin->exec();
+    
 }
 
 Home::~Home() {
@@ -55,10 +62,26 @@ void Home::clickbUsers() {
     widget.tGlobals->headerItem()->setText(3, "Location");
     widget.tGlobals->headerItem()->setText(4, "Email");
     widget.tGlobals->clear();
+    
+    widget.tGlobals->model()->insertRows(0,100);
+    for (int i=0;i<100;i++) {
+        widget.tGlobals->topLevelItem(i)->setText(0,QString::number(i));
+        widget.tGlobals->topLevelItem(i)->setText(1,"a");
+        widget.tGlobals->topLevelItem(i)->setText(2,"b");
+        widget.tGlobals->topLevelItem(i)->setText(3,"c");
+        widget.tGlobals->topLevelItem(i)->setText(4,"d");
+    }
 }
 
 void Home::dClickGTable(QModelIndex index) {
-    QString a;
-    
-    widget.bProjects->setText(index.sibling(index.row(),0).data().toString());
+    if (bGlob == false) {
+        Project *vProject = new Project;
+        vProject->show();
+    }
+    else {
+        UserProfile *vProfile = new UserProfile;
+        vProfile->setID(index.sibling(index.row(),0).data().toInt());
+        vProfile->show();
+    }
+
 }

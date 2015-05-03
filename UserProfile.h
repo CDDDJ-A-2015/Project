@@ -15,8 +15,10 @@ class UserProfile : public QWidget {
 public:
     UserProfile();
     virtual ~UserProfile();
+    void setID(int tmp);
 private:
     Ui::UserProfile widget;
+    int id;
 };
 
 #endif	/* _USERPROFILE_H */

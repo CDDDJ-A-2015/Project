@@ -1,124 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Project</class>
- <widget class="QMainWindow" name="Project">
-  <property name="enabled">
-   <bool>true</bool>
-  </property>
+ <widget class="QWidget" name="Project">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>842</width>
-    <height>565</height>
+    <width>814</width>
+    <height>635</height>
    </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>0</width>
-    <height>0</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Project</string>
   </property>
-  <property name="tabShape">
-   <enum>QTabWidget::Rounded</enum>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="projName">
-      <property name="font">
-       <font>
-        <pointsize>32</pointsize>
-        <underline>true</underline>
-       </font>
-      </property>
-      <property name="text">
-       <string>Trees of Life</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="projDesc">
-      <property name="text">
-       <string>The trees of life project shows the assimilation of trees into the life of others.  After such the trees will then destroy those who it has assimilated with, to become the new trees</string>
-      </property>
-      <property name="scaledContents">
-       <bool>false</bool>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QProgressBar" name="projProgress">
-      <property name="value">
-       <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTableWidget" name="projTaskList">
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-      <column>
-       <property name="text">
-        <string>Task</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Progress</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Due Date</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>GoTo</string>
-       </property>
-      </column>
-     </widget>
-    </item>
-    <item>
-     <widget class="QListWidget" name="listWidget">
-      <item>
-       <property name="text">
-        <string>COMMENTS</string>
-       </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="projName">
        <property name="font">
         <font>
-         <weight>75</weight>
-         <bold>true</bold>
+         <pointsize>32</pointsize>
+         <underline>true</underline>
         </font>
        </property>
-       <property name="textAlignment">
-        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+       <property name="text">
+        <string>Trees of Life</string>
        </property>
-      </item>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="projDesc">
+       <property name="text">
+        <string>The trees of life project shows the assimilation of trees into the life of others.  After such the trees will then destroy those who it has assimilated with, to become the new trees</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="projProgress">
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="projTaskList">
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+       <column>
+        <property name="text">
+         <string>Task</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Progress</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Due Date</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>GoTo</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <item>
+        <property name="text">
+         <string>COMMENTS</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

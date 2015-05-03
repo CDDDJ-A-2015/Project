@@ -13,3 +13,8 @@ UserProfile::UserProfile() {
 
 UserProfile::~UserProfile() {
 }
+
+void UserProfile::setID(int tmp) {
+    id = tmp;
+    widget.uName->setText(QString::number(id));
+}

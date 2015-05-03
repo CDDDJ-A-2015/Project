@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>Home.h</itemPath>
+      <itemPath>Login.h</itemPath>
       <itemPath>Project.h</itemPath>
       <itemPath>UserProfile.h</itemPath>
     </logicalFolder>
@@ -12,6 +13,7 @@
                    displayName="Resource Files"
                    projectFiles="true">
       <itemPath>Home.ui</itemPath>
+      <itemPath>Login.ui</itemPath>
       <itemPath>Project.ui</itemPath>
       <itemPath>UserProfile.ui</itemPath>
     </logicalFolder>
@@ -19,6 +21,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Home.cpp</itemPath>
+      <itemPath>Login.cpp</itemPath>
       <itemPath>Project.cpp</itemPath>
       <itemPath>UserProfile.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -53,6 +56,12 @@
       <item path="Home.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Home.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Login.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Login.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Login.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Project.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -98,6 +107,12 @@
       <item path="Home.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Home.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Login.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Login.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Login.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Project.cpp" ex="false" tool="1" flavor2="0">
       </item>
