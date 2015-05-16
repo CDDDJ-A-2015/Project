@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>EditProject.h</itemPath>
+      <itemPath>EditTask.h</itemPath>
       <itemPath>EditUser.h</itemPath>
       <itemPath>Home.h</itemPath>
       <itemPath>Login.h</itemPath>
@@ -20,6 +21,7 @@
                    displayName="Resource Files"
                    projectFiles="true">
       <itemPath>EditProject.ui</itemPath>
+      <itemPath>EditTask.ui</itemPath>
       <itemPath>EditUser.ui</itemPath>
       <itemPath>Home.ui</itemPath>
       <itemPath>Login.ui</itemPath>
@@ -34,6 +36,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>EditProject.cpp</itemPath>
+      <itemPath>EditTask.cpp</itemPath>
       <itemPath>EditUser.cpp</itemPath>
       <itemPath>Home.cpp</itemPath>
       <itemPath>Login.cpp</itemPath>
@@ -75,6 +78,12 @@
       <item path="EditProject.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="EditProject.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditTask.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EditTask.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditTask.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="EditUser.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -164,6 +173,12 @@
       <item path="EditProject.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="EditProject.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditTask.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EditTask.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditTask.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="EditUser.cpp" ex="false" tool="1" flavor2="0">
       </item>

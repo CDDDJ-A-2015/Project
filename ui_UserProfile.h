@@ -41,6 +41,9 @@ public:
     QHBoxLayout *horizontalLayout_6;
     QListWidget *listWidget;
     QTableWidget *tableWidget;
+    QHBoxLayout *horizontalLayout;
+    QLabel *lDispID;
+    QLabel *lID;
 
     void setupUi(QWidget *UserProfile)
     {
@@ -131,6 +134,27 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_6);
 
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        lDispID = new QLabel(UserProfile);
+        lDispID->setObjectName(QString::fromUtf8("lDispID"));
+        lDispID->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout->addWidget(lDispID);
+
+        lID = new QLabel(UserProfile);
+        lID->setObjectName(QString::fromUtf8("lID"));
+        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
+        lID->setSizePolicy(sizePolicy);
+
+        horizontalLayout->addWidget(lID);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
 
         retranslateUi(UserProfile);
 
@@ -159,6 +183,8 @@ public:
         ___qtablewidgetitem1->setText(QApplication::translate("UserProfile", "Role", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
         ___qtablewidgetitem2->setText(QApplication::translate("UserProfile", "Completed", 0, QApplication::UnicodeUTF8));
+        lDispID->setText(QApplication::translate("UserProfile", "ID Number:", 0, QApplication::UnicodeUTF8));
+        lID->setText(QApplication::translate("UserProfile", "2312213", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

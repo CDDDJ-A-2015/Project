@@ -18,10 +18,11 @@ UserProfile::~UserProfile() {
 
 void UserProfile::setID(int tmp) {
     id = tmp;
-    widget.uName->setText(QString::number(id));
+    widget.lID->setText(QString::number(id));
 }
 
 void UserProfile::clickEditUser() {
-    EditUser *a = new EditUser;
-    a->exec();
+    EditUser *vEditUser = new EditUser;
+	vEditUser->setID(id);
+    vEditUser->exec();
 }

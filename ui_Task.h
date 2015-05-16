@@ -48,6 +48,7 @@ public:
     QListWidget *listComments;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *bEditTask;
+    QPushButton *bAddComment;
     QPushButton *bTeamMembers;
     QPushButton *bStatusChange;
 
@@ -173,6 +174,11 @@ public:
 
         horizontalLayout_4->addWidget(bEditTask);
 
+        bAddComment = new QPushButton(Task);
+        bAddComment->setObjectName(QString::fromUtf8("bAddComment"));
+
+        horizontalLayout_4->addWidget(bAddComment);
+
         bTeamMembers = new QPushButton(Task);
         bTeamMembers->setObjectName(QString::fromUtf8("bTeamMembers"));
 
@@ -223,6 +229,7 @@ public:
         listComments->setSortingEnabled(__sortingEnabled);
 
         bEditTask->setText(QApplication::translate("Task", "Edit Task", 0, QApplication::UnicodeUTF8));
+        bAddComment->setText(QApplication::translate("Task", "Add Comment", 0, QApplication::UnicodeUTF8));
         bTeamMembers->setText(QApplication::translate("Task", "Team Members", 0, QApplication::UnicodeUTF8));
         bStatusChange->setText(QApplication::translate("Task", "Complete Task", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

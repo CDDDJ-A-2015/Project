@@ -111,11 +111,22 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <item>
-             <widget class="QLabel" name="label">
-              <property name="text">
-               <string>ID Number</string>
-              </property>
-             </widget>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QLabel" name="lDispID">
+                <property name="text">
+                 <string>ID Number:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lID">
+                <property name="text">
+                 <string>421421</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
             <item>
              <widget class="QLabel" name="label_2">
@@ -127,7 +138,7 @@
            </layout>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="bYourProfile">
             <property name="text">
              <string>Your Profile</string>
             </property>
@@ -211,7 +222,7 @@
           </item>
           <item>
            <property name="text">
-            <string/>
+            <string>3525</string>
            </property>
            <property name="text">
             <string>New Item</string>
@@ -395,7 +406,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="bAddProject">
             <property name="text">
              <string>Add Project</string>
             </property>

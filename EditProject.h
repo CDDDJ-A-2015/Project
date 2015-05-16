@@ -15,8 +15,16 @@ class EditProject : public QWidget {
 public:
 	EditProject();
 	virtual ~EditProject();
+	void setID(int);
+
+public slots:
+	void clickSave();
+	void clickCancel();
+	
 private:
 	Ui::EditProject widget;
+	int id;
+	bool save;
 };
 
 #endif	/* _EDITPROJECT_H */

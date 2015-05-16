@@ -41,9 +41,11 @@ public:
     QLabel *uName;
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_4;
-    QLabel *label;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *lDispID;
+    QLabel *lID;
     QLabel *label_2;
-    QPushButton *pushButton;
+    QPushButton *bYourProfile;
     QWidget *tab_2;
     QHBoxLayout *horizontalLayout_2;
     QTreeWidget *tMyProjects;
@@ -55,7 +57,7 @@ public:
     QPushButton *bSearch;
     QTreeWidget *tGlobals;
     QHBoxLayout *horizontalLayout_4;
-    QPushButton *pushButton_3;
+    QPushButton *bAddProject;
     QPushButton *pushButton_2;
 
     void setupUi(QMainWindow *Home)
@@ -121,10 +123,20 @@ public:
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        label = new QLabel(tab);
-        label->setObjectName(QString::fromUtf8("label"));
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        lDispID = new QLabel(tab);
+        lDispID->setObjectName(QString::fromUtf8("lDispID"));
 
-        verticalLayout_4->addWidget(label);
+        horizontalLayout_5->addWidget(lDispID);
+
+        lID = new QLabel(tab);
+        lID->setObjectName(QString::fromUtf8("lID"));
+
+        horizontalLayout_5->addWidget(lID);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_5);
 
         label_2 = new QLabel(tab);
         label_2->setObjectName(QString::fromUtf8("label_2"));
@@ -134,10 +146,10 @@ public:
 
         horizontalLayout_3->addLayout(verticalLayout_4);
 
-        pushButton = new QPushButton(tab);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        bYourProfile = new QPushButton(tab);
+        bYourProfile->setObjectName(QString::fromUtf8("bYourProfile"));
 
-        horizontalLayout_3->addWidget(pushButton);
+        horizontalLayout_3->addWidget(bYourProfile);
 
 
         gridLayout->addLayout(horizontalLayout_3, 1, 1, 1, 1);
@@ -210,10 +222,10 @@ public:
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        pushButton_3 = new QPushButton(proj);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        bAddProject = new QPushButton(proj);
+        bAddProject->setObjectName(QString::fromUtf8("bAddProject"));
 
-        horizontalLayout_4->addWidget(pushButton_3);
+        horizontalLayout_4->addWidget(bAddProject);
 
         pushButton_2 = new QPushButton(proj);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
@@ -256,9 +268,10 @@ public:
         lNotificationList->setSortingEnabled(__sortingEnabled);
 
         uName->setText(QApplication::translate("Home", "Home", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("Home", "ID Number", 0, QApplication::UnicodeUTF8));
+        lDispID->setText(QApplication::translate("Home", "ID Number:", 0, QApplication::UnicodeUTF8));
+        lID->setText(QApplication::translate("Home", "421421", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("Home", "Stuff", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("Home", "Your Profile", 0, QApplication::UnicodeUTF8));
+        bYourProfile->setText(QApplication::translate("Home", "Your Profile", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Home", "Tasks", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem = tMyProjects->headerItem();
         ___qtreewidgetitem->setText(5, QApplication::translate("Home", "Due Date", 0, QApplication::UnicodeUTF8));
@@ -275,6 +288,7 @@ public:
         ___qtreewidgetitem1->setText(0, QApplication::translate("Home", "2414", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem2 = tMyProjects->topLevelItem(1);
         ___qtreewidgetitem2->setText(1, QApplication::translate("Home", "New Item", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem2->setText(0, QApplication::translate("Home", "3525", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem3 = tMyProjects->topLevelItem(2);
         ___qtreewidgetitem3->setText(1, QApplication::translate("Home", "21", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem3->setText(0, QApplication::translate("Home", "2134", 0, QApplication::UnicodeUTF8));
@@ -303,7 +317,7 @@ public:
         ___qtreewidgetitem7->setText(0, QApplication::translate("Home", "2134", 0, QApplication::UnicodeUTF8));
         tGlobals->setSortingEnabled(__sortingEnabled2);
 
-        pushButton_3->setText(QApplication::translate("Home", "Add Project", 0, QApplication::UnicodeUTF8));
+        bAddProject->setText(QApplication::translate("Home", "Add Project", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("Home", "?????", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(proj), QApplication::translate("Home", "Globals", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

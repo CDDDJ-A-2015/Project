@@ -6,6 +6,7 @@
  */
 
 #include "EditUser.h"
+#include "StringDialog.h"
 
 EditUser::EditUser() {
     widget.setupUi(this);
@@ -17,11 +18,20 @@ EditUser::~EditUser() {
 }
 
 void EditUser::clickbAddExp() {
-    QListWidgetItem *newItem = new QListWidgetItem(widget.listExpertise);
-    newItem->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsUserCheckable|Qt::ItemIsEnabled);
-    newItem->setText("NewItem");
+	StringDialog vSD;
+	vSD.exec();
+	if(vSD.result() == QDialog::Accepted) {
+		QListWidgetItem *newItem = new QListWidgetItem(widget.listExpertise);
+		newItem->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsUserCheckable|Qt::ItemIsEnabled);
+		newItem->setText(vSD.getText());
+	}
 }
 
 void EditUser::clickbDelExp() {
     qDeleteAll(widget.listExpertise->selectedItems());
+}
+
+void EditUser::setID(int tmp) {
+	id = tmp;
+	widget.lID->setText(QString::number(id));
 }

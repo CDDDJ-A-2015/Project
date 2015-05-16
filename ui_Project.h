@@ -145,6 +145,7 @@ public:
 
         lProjectID = new QLabel(Project);
         lProjectID->setObjectName(QString::fromUtf8("lProjectID"));
+        lProjectID->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_2->addWidget(lProjectID);
 

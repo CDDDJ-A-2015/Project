@@ -211,6 +211,13 @@ David King</string>
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="bAddComment">
+       <property name="text">
+        <string>Add Comment</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="bTeamMembers">
        <property name="text">
         <string>Team Members</string>

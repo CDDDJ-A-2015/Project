@@ -15,6 +15,7 @@ class EditUser : public QDialog {
 public:
     EditUser();
     virtual ~EditUser();
+	void setID(int);
     
 public slots:
     void clickbAddExp();
@@ -22,6 +23,7 @@ public slots:
     
 private:
     Ui::EditUser widget;
+	int id;
 };
 
 #endif	/* _EDITUSER_H */

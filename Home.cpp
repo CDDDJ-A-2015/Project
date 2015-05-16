@@ -10,6 +10,7 @@
 #include "Project.h"
 #include "Login.h"
 #include "Search.h"
+#include "EditProject.h"
 
 using namespace std;
 
@@ -19,7 +20,10 @@ Home::Home() {
     connect(widget.bProjects, SIGNAL(clicked()),this, SLOT(clickbProjects()));
     connect(widget.bUsers, SIGNAL(clicked()),this, SLOT(clickbUsers()));
     connect(widget.tGlobals, SIGNAL(doubleClicked(QModelIndex)),this, SLOT(dClickGTable(QModelIndex)));
+	connect(widget.tMyProjects, SIGNAL(doubleClicked(QModelIndex)),this, SLOT(dClickMyProjects(QModelIndex)));
 	connect(widget.bSearch, SIGNAL(clicked()),this,SLOT(clickbSearch()));
+	connect(widget.bYourProfile, SIGNAL(clicked()),this, SLOT(clickbYourProfile()));
+	connect(widget.bAddProject, SIGNAL(clicked()),this, SLOT(clickbAddProject()));
     bGlob = false;
     
     //int data = 22;
@@ -82,6 +86,7 @@ void Home::clickbUsers() {
 void Home::dClickGTable(QModelIndex index) {
     if (bGlob == false) {
         Project *vProject = new Project;
+		vProject->setID(index.sibling(index.row(),0).data().toInt());
         vProject->show();
     }
     else {
@@ -97,4 +102,22 @@ void Home::clickbSearch() {
 	vSearch->setType(bGlob);
 	vSearch->show();
 	//system("/home/undergrad/d/dm940/318/CSCI318/a.out");
+}
+
+void Home::dClickMyProjects(QModelIndex index) {
+	Project *vProject = new Project;
+	vProject->setID(index.sibling(index.row(),0).data().toInt());
+    vProject->show();
+}
+
+void Home::clickbYourProfile() {
+	UserProfile *vProfile = new UserProfile;
+    vProfile->setID(widget.lID->text().toInt());
+    vProfile->show();
+}
+
+void Home::clickbAddProject() {
+	EditProject *vEditProject = new EditProject();
+	vEditProject->show();
+	
 }

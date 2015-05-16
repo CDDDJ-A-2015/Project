@@ -16,8 +16,14 @@ public:
 	Task();
 	virtual ~Task();
 	void setID(int);
+	
+public slots:
+	void addComment();
+	void editTask();
+	
 private:
 	Ui::Task widget;
+	int id;
 };
 
 #endif	/* _TASK_H */

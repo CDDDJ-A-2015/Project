@@ -15,7 +15,7 @@ class UserProfile : public QWidget {
 public:
     UserProfile();
     virtual ~UserProfile();
-    void setID(int tmp);
+    void setID(int);
     
 public slots:
     void clickEditUser();

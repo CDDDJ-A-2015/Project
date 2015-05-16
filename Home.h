@@ -37,6 +37,9 @@ private slots:
     void clickbUsers();
     void dClickGTable(QModelIndex);
 	void clickbSearch();
+	void dClickMyProjects(QModelIndex);
+	void clickbYourProfile();
+	void clickbAddProject();
 	
 private:
     Ui::Home widget;

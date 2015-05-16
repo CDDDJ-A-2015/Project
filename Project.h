@@ -15,6 +15,7 @@ class Project : public QWidget {
 public:
     Project();
     virtual ~Project();
+	void setID(int);
 	
 public slots:
 	void editProject();
@@ -26,6 +27,7 @@ private:
     void createProjects();
     QWidget *newTab;
     void showTasks();
+	int id;
 };
 
 #endif	/* _PROJECT_H */

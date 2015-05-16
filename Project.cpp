@@ -25,7 +25,9 @@ Project::~Project() {
 
 void Project::editProject() {
 	EditProject *vEditProject = new EditProject;
+	vEditProject->setID(id);
 	vEditProject->show();
+	close();
 }
 
 void Project::addComment() {
@@ -40,6 +42,11 @@ void Project::viewTask(QModelIndex index) {
 	Task *vTask = new Task;
 	vTask->setID(index.sibling(index.row(),0).data().toInt());
 	vTask->show();
+}
+
+void Project::setID(int tmp) {
+	id = tmp;
+	widget.lProjectID->setText("Project ID: " + QString::number(id));
 }
 
 void Project::createProjects() {
