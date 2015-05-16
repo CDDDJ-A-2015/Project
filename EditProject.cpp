@@ -7,11 +7,13 @@
 
 #include "EditProject.h"
 #include "Project.h"
+#include "Coco1.h"
 
 EditProject::EditProject() {
 	widget.setupUi(this);
 	connect(widget.buttonBox,SIGNAL(accepted()),this,SLOT(clickSave()));
 	connect(widget.buttonBox,SIGNAL(rejected()),this,SLOT(clickCancel()));
+	connect(widget.bC1,SIGNAL(clicked()),this,SLOT(clickbC1()));
 	id = -1;
 	save = false;
 }
@@ -52,4 +54,12 @@ void EditProject::setID(int tmp) {
 	widget.leProjName->setReadOnly(true);
 	widget.leProjName->setText("BLAH");
 	widget.bChooseManager->hide();
+}
+
+void EditProject::clickbC1() {
+	Coco1 vC1;
+	vC1.exec();
+	if (vC1.result() == QDialog::Accepted) {
+		widget.lC1->setText(QString::number(vC1.calc()) + " person/months");
+	}
 }

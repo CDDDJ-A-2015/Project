@@ -25,4 +25,10 @@ void UserProfile::clickEditUser() {
     EditUser *vEditUser = new EditUser;
 	vEditUser->setID(id);
     vEditUser->exec();
+	if (vEditUser->result() == QDialog::Accepted) {
+		widget.listWidget->clear();
+		for (int i=0;i<vEditUser->widget.listExpertise->count();i++) {
+			widget.listWidget->addItem(vEditUser->widget.listExpertise->item(i)->text());
+		}
+	}
 }

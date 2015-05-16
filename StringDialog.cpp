@@ -17,3 +17,7 @@ StringDialog::~StringDialog() {
 QString StringDialog::getText() {
 	return widget.lineEdit->text();
 }
+
+void StringDialog::setText(QString tmp) {
+	widget.label->setText(tmp);
+}

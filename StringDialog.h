@@ -16,6 +16,7 @@ public:
 	StringDialog();
 	virtual ~StringDialog();
 	QString getText();
+	void setText(QString);
 private:
 	Ui::StringDialog widget;
 };

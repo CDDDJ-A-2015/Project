@@ -20,6 +20,7 @@ public:
 public slots:
 	void clickSave();
 	void clickCancel();
+	void clickbC1();
 	
 private:
 	Ui::EditProject widget;

@@ -16,13 +16,13 @@ public:
     EditUser();
     virtual ~EditUser();
 	void setID(int);
-    
+    Ui::EditUser widget;
 public slots:
     void clickbAddExp();
     void clickbDelExp();
     
 private:
-    Ui::EditUser widget;
+    
 	int id;
 };
 

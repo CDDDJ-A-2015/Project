@@ -36,6 +36,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QLabel *lDescription;
     QLabel *lAssigned;
+    QHBoxLayout *horizontalLayout_5;
     QLabel *lStatus;
     QProgressBar *progressBar;
     QHBoxLayout *horizontalLayout_2;
@@ -101,6 +102,8 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         lStatus = new QLabel(Task);
         lStatus->setObjectName(QString::fromUtf8("lStatus"));
         QFont font1;
@@ -110,7 +113,10 @@ public:
         lStatus->setFont(font1);
         lStatus->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(lStatus);
+        horizontalLayout_5->addWidget(lStatus);
+
+
+        verticalLayout->addLayout(horizontalLayout_5);
 
         progressBar = new QProgressBar(Task);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));

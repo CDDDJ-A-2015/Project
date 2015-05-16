@@ -19,6 +19,7 @@ EditUser::~EditUser() {
 
 void EditUser::clickbAddExp() {
 	StringDialog vSD;
+	vSD.setText("Expertise:");
 	vSD.exec();
 	if(vSD.result() == QDialog::Accepted) {
 		QListWidgetItem *newItem = new QListWidgetItem(widget.listExpertise);

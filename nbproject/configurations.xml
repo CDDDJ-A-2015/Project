@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Coco1.h</itemPath>
+      <itemPath>Coco2.h</itemPath>
       <itemPath>EditProject.h</itemPath>
       <itemPath>EditTask.h</itemPath>
       <itemPath>EditUser.h</itemPath>
@@ -20,6 +22,8 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>Coco1.ui</itemPath>
+      <itemPath>Coco2.ui</itemPath>
       <itemPath>EditProject.ui</itemPath>
       <itemPath>EditTask.ui</itemPath>
       <itemPath>EditUser.ui</itemPath>
@@ -35,6 +39,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Coco1.cpp</itemPath>
+      <itemPath>Coco2.cpp</itemPath>
       <itemPath>EditProject.cpp</itemPath>
       <itemPath>EditTask.cpp</itemPath>
       <itemPath>EditUser.cpp</itemPath>
@@ -73,6 +79,18 @@
       </qt>
       <compileType>
       </compileType>
+      <item path="Coco1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Coco1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Coco1.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Coco2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Coco2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Coco2.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="EditProject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="EditProject.h" ex="false" tool="3" flavor2="0">
@@ -168,6 +186,18 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Coco1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Coco1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Coco1.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Coco2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Coco2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Coco2.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="EditProject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="EditProject.h" ex="false" tool="3" flavor2="0">
