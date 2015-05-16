@@ -15,6 +15,12 @@ class Project : public QWidget {
 public:
     Project();
     virtual ~Project();
+	
+public slots:
+	void editProject();
+	void addComment();
+	void viewTask(QModelIndex);
+	
 private:
     Ui::Project widget;
     void createProjects();

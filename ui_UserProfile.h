@@ -13,13 +13,13 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
-#include <QtGui/QFormLayout>
-#include <QtGui/QGraphicsView>
+#include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QListWidget>
 #include <QtGui/QPushButton>
 #include <QtGui/QTableWidget>
+#include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,24 +27,30 @@ QT_BEGIN_NAMESPACE
 class Ui_UserProfile
 {
 public:
-    QFormLayout *formLayout;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_3;
     QLabel *uName;
-    QGraphicsView *pUser;
-    QLabel *uDesc;
+    QPushButton *bEditUser;
+    QHBoxLayout *horizontalLayout_2;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *uLoc;
+    QLabel *lLocation;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *uEmail;
+    QLabel *lEmail;
+    QHBoxLayout *horizontalLayout_6;
     QListWidget *listWidget;
     QTableWidget *tableWidget;
-    QLabel *uLoc;
-    QLabel *uEmail;
-    QPushButton *bEditUser;
 
     void setupUi(QWidget *UserProfile)
     {
         if (UserProfile->objectName().isEmpty())
             UserProfile->setObjectName(QString::fromUtf8("UserProfile"));
-        UserProfile->resize(731, 545);
-        formLayout = new QFormLayout(UserProfile);
-        formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
+        UserProfile->resize(652, 380);
+        verticalLayout = new QVBoxLayout(UserProfile);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         uName = new QLabel(UserProfile);
         uName->setObjectName(QString::fromUtf8("uName"));
         QFont font;
@@ -54,23 +60,60 @@ public:
         font.setWeight(75);
         uName->setFont(font);
 
-        formLayout->setWidget(0, QFormLayout::LabelRole, uName);
+        horizontalLayout_3->addWidget(uName);
 
-        pUser = new QGraphicsView(UserProfile);
-        pUser->setObjectName(QString::fromUtf8("pUser"));
+        bEditUser = new QPushButton(UserProfile);
+        bEditUser->setObjectName(QString::fromUtf8("bEditUser"));
 
-        formLayout->setWidget(3, QFormLayout::LabelRole, pUser);
+        horizontalLayout_3->addWidget(bEditUser);
 
-        uDesc = new QLabel(UserProfile);
-        uDesc->setObjectName(QString::fromUtf8("uDesc"));
 
-        formLayout->setWidget(3, QFormLayout::FieldRole, uDesc);
+        verticalLayout->addLayout(horizontalLayout_3);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        uLoc = new QLabel(UserProfile);
+        uLoc->setObjectName(QString::fromUtf8("uLoc"));
+        uLoc->setMaximumSize(QSize(60, 16777215));
+
+        horizontalLayout_4->addWidget(uLoc);
+
+        lLocation = new QLabel(UserProfile);
+        lLocation->setObjectName(QString::fromUtf8("lLocation"));
+
+        horizontalLayout_4->addWidget(lLocation);
+
+
+        horizontalLayout_2->addLayout(horizontalLayout_4);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        uEmail = new QLabel(UserProfile);
+        uEmail->setObjectName(QString::fromUtf8("uEmail"));
+        uEmail->setMaximumSize(QSize(40, 16777215));
+
+        horizontalLayout_5->addWidget(uEmail);
+
+        lEmail = new QLabel(UserProfile);
+        lEmail->setObjectName(QString::fromUtf8("lEmail"));
+
+        horizontalLayout_5->addWidget(lEmail);
+
+
+        horizontalLayout_2->addLayout(horizontalLayout_5);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         listWidget = new QListWidget(UserProfile);
         new QListWidgetItem(listWidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
 
-        formLayout->setWidget(4, QFormLayout::LabelRole, listWidget);
+        horizontalLayout_6->addWidget(listWidget);
 
         tableWidget = new QTableWidget(UserProfile);
         if (tableWidget->columnCount() < 3)
@@ -83,22 +126,10 @@ public:
         tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
 
-        formLayout->setWidget(4, QFormLayout::FieldRole, tableWidget);
+        horizontalLayout_6->addWidget(tableWidget);
 
-        uLoc = new QLabel(UserProfile);
-        uLoc->setObjectName(QString::fromUtf8("uLoc"));
 
-        formLayout->setWidget(2, QFormLayout::LabelRole, uLoc);
-
-        uEmail = new QLabel(UserProfile);
-        uEmail->setObjectName(QString::fromUtf8("uEmail"));
-
-        formLayout->setWidget(2, QFormLayout::FieldRole, uEmail);
-
-        bEditUser = new QPushButton(UserProfile);
-        bEditUser->setObjectName(QString::fromUtf8("bEditUser"));
-
-        formLayout->setWidget(0, QFormLayout::FieldRole, bEditUser);
+        verticalLayout->addLayout(horizontalLayout_6);
 
 
         retranslateUi(UserProfile);
@@ -109,8 +140,12 @@ public:
     void retranslateUi(QWidget *UserProfile)
     {
         UserProfile->setWindowTitle(QApplication::translate("UserProfile", "UserProfile", 0, QApplication::UnicodeUTF8));
-        uName->setText(QApplication::translate("UserProfile", "TextLabel", 0, QApplication::UnicodeUTF8));
-        uDesc->setText(QApplication::translate("UserProfile", "Description", 0, QApplication::UnicodeUTF8));
+        uName->setText(QApplication::translate("UserProfile", "Name", 0, QApplication::UnicodeUTF8));
+        bEditUser->setText(QApplication::translate("UserProfile", "Edit User", 0, QApplication::UnicodeUTF8));
+        uLoc->setText(QApplication::translate("UserProfile", "Location: ", 0, QApplication::UnicodeUTF8));
+        lLocation->setText(QApplication::translate("UserProfile", "Sydney", 0, QApplication::UnicodeUTF8));
+        uEmail->setText(QApplication::translate("UserProfile", "Email:", 0, QApplication::UnicodeUTF8));
+        lEmail->setText(QApplication::translate("UserProfile", "jack@oasdasl", 0, QApplication::UnicodeUTF8));
 
         const bool __sortingEnabled = listWidget->isSortingEnabled();
         listWidget->setSortingEnabled(false);
@@ -124,9 +159,6 @@ public:
         ___qtablewidgetitem1->setText(QApplication::translate("UserProfile", "Role", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
         ___qtablewidgetitem2->setText(QApplication::translate("UserProfile", "Completed", 0, QApplication::UnicodeUTF8));
-        uLoc->setText(QApplication::translate("UserProfile", "Location: ", 0, QApplication::UnicodeUTF8));
-        uEmail->setText(QApplication::translate("UserProfile", "Email:", 0, QApplication::UnicodeUTF8));
-        bEditUser->setText(QApplication::translate("UserProfile", "Edit User", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

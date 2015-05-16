@@ -26,11 +26,11 @@ class Ui_Login
 {
 public:
     QFormLayout *formLayout;
-    QLabel *label;
+    QLabel *lUserName;
     QDialogButtonBox *buttonBox;
-    QLineEdit *lineEdit;
-    QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QLineEdit *ePassword;
+    QLabel *lPassword;
+    QLineEdit *eUserName;
 
     void setupUi(QDialog *Login)
     {
@@ -39,10 +39,10 @@ public:
         Login->resize(400, 131);
         formLayout = new QFormLayout(Login);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label = new QLabel(Login);
-        label->setObjectName(QString::fromUtf8("label"));
+        lUserName = new QLabel(Login);
+        lUserName->setObjectName(QString::fromUtf8("lUserName"));
 
-        formLayout->setWidget(0, QFormLayout::LabelRole, label);
+        formLayout->setWidget(0, QFormLayout::LabelRole, lUserName);
 
         buttonBox = new QDialogButtonBox(Login);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
@@ -51,22 +51,24 @@ public:
 
         formLayout->setWidget(4, QFormLayout::SpanningRole, buttonBox);
 
-        lineEdit = new QLineEdit(Login);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setInputMask(QString::fromUtf8(""));
-        lineEdit->setEchoMode(QLineEdit::Password);
+        ePassword = new QLineEdit(Login);
+        ePassword->setObjectName(QString::fromUtf8("ePassword"));
+        ePassword->setInputMask(QString::fromUtf8(""));
+        ePassword->setMaxLength(20);
+        ePassword->setEchoMode(QLineEdit::Password);
 
-        formLayout->setWidget(3, QFormLayout::FieldRole, lineEdit);
+        formLayout->setWidget(3, QFormLayout::FieldRole, ePassword);
 
-        label_2 = new QLabel(Login);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        lPassword = new QLabel(Login);
+        lPassword->setObjectName(QString::fromUtf8("lPassword"));
 
-        formLayout->setWidget(3, QFormLayout::LabelRole, label_2);
+        formLayout->setWidget(3, QFormLayout::LabelRole, lPassword);
 
-        lineEdit_2 = new QLineEdit(Login);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        eUserName = new QLineEdit(Login);
+        eUserName->setObjectName(QString::fromUtf8("eUserName"));
+        eUserName->setMaxLength(16);
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit_2);
+        formLayout->setWidget(0, QFormLayout::FieldRole, eUserName);
 
 
         retranslateUi(Login);
@@ -79,9 +81,9 @@ public:
     void retranslateUi(QDialog *Login)
     {
         Login->setWindowTitle(QApplication::translate("Login", "Login", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("Login", "User Name:", 0, QApplication::UnicodeUTF8));
-        lineEdit->setPlaceholderText(QApplication::translate("Login", "Password", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("Login", "Password:", 0, QApplication::UnicodeUTF8));
+        lUserName->setText(QApplication::translate("Login", "User Name:", 0, QApplication::UnicodeUTF8));
+        ePassword->setPlaceholderText(QApplication::translate("Login", "Password", 0, QApplication::UnicodeUTF8));
+        lPassword->setText(QApplication::translate("Login", "Password:", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

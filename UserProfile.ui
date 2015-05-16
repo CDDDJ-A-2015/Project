@@ -6,90 +6,123 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>731</width>
-    <height>545</height>
+    <width>652</width>
+    <height>380</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>UserProfile</string>
   </property>
-  <layout class="QFormLayout" name="formLayout">
-   <property name="fieldGrowthPolicy">
-    <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-   </property>
-   <item row="0" column="0">
-    <widget class="QLabel" name="uName">
-     <property name="font">
-      <font>
-       <pointsize>32</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-       <underline>true</underline>
-      </font>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QGraphicsView" name="pUser"/>
-   </item>
-   <item row="3" column="1">
-    <widget class="QLabel" name="uDesc">
-     <property name="text">
-      <string>Description</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QListWidget" name="listWidget">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <property name="text">
-       <string>Expertise:</string>
-      </property>
+      <widget class="QLabel" name="uName">
+       <property name="font">
+        <font>
+         <pointsize>32</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </widget>
      </item>
-    </widget>
+     <item>
+      <widget class="QPushButton" name="bEditUser">
+       <property name="text">
+        <string>Edit User</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
-   <item row="4" column="1">
-    <widget class="QTableWidget" name="tableWidget">
-     <column>
-      <property name="text">
-       <string>Project</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Role</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Completed</string>
-      </property>
-     </column>
-    </widget>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="uLoc">
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Location: </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lLocation">
+         <property name="text">
+          <string>Sydney</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="uEmail">
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Email:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lEmail">
+         <property name="text">
+          <string>jack@oasdasl</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="uLoc">
-     <property name="text">
-      <string>Location: </string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLabel" name="uEmail">
-     <property name="text">
-      <string>Email:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="QPushButton" name="bEditUser">
-     <property name="text">
-      <string>Edit User</string>
-     </property>
-    </widget>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <item>
+        <property name="text">
+         <string>Expertise:</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tableWidget">
+       <column>
+        <property name="text">
+         <string>Project</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Role</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Completed</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

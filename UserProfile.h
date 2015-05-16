@@ -16,6 +16,10 @@ public:
     UserProfile();
     virtual ~UserProfile();
     void setID(int tmp);
+    
+public slots:
+    void clickEditUser();
+    
 private:
     Ui::UserProfile widget;
     int id;

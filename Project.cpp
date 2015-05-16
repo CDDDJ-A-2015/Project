@@ -6,19 +6,40 @@
  */
 
 #include "Project.h"
+#include "EditProject.h"
+#include "StringDialog.h"
+#include "Task.h"
 
 Project::Project() {
-    
-    
     widget.setupUi(this);
+	connect(widget.bEditProject,SIGNAL(clicked()),this,SLOT(editProject()));
+	connect(widget.bAddComment,SIGNAL(clicked()),this,SLOT(addComment()));
+	connect(widget.tProjTaskList, SIGNAL(doubleClicked(QModelIndex)),this, SLOT(viewTask(QModelIndex)));
     showTasks();
     createProjects();
-    
-    
 }
 
 Project::~Project() {
     delete[] newTab;
+}
+
+void Project::editProject() {
+	EditProject *vEditProject = new EditProject;
+	vEditProject->show();
+}
+
+void Project::addComment() {
+	StringDialog *vAddComment = new StringDialog;
+	vAddComment->exec();
+	if (vAddComment->result() == QDialog::Accepted) {
+		widget.listComments->addItem(vAddComment->getText());
+	}
+}
+
+void Project::viewTask(QModelIndex index) {
+	Task *vTask = new Task;
+	vTask->setID(index.sibling(index.row(),0).data().toInt());
+	vTask->show();
 }
 
 void Project::createProjects() {

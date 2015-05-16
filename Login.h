@@ -9,14 +9,21 @@
 #define	_LOGIN_H
 
 #include "ui_Login.h"
+#include "Packets.h"
+extern int sockfd;
 
 class Login : public QDialog {
     Q_OBJECT
 public:
     Login();
     virtual ~Login();
+    
+public slots:
+    void verify();
+    
 private:
     Ui::Login widget;
+    Login_Packet L;
 };
 
 #endif	/* _LOGIN_H */

@@ -10,6 +10,22 @@
 
 #include "ui_Home.h"
 
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/time.h>
+#include <netdb.h> 
+#include <vector>
+#include <cstring>
+
+extern int sockfd;
+
 class Home : public QMainWindow {
     Q_OBJECT
 public:
@@ -20,10 +36,13 @@ private slots:
     void clickbProjects();
     void clickbUsers();
     void dClickGTable(QModelIndex);
+	void clickbSearch();
+	
 private:
     Ui::Home widget;
     bool bGlob;
 };
+
 
 
 #endif	/* _HOME_H */

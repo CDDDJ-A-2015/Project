@@ -6,9 +6,11 @@
  */
 
 #include "UserProfile.h"
+#include "EditUser.h"
 
 UserProfile::UserProfile() {
     widget.setupUi(this);
+    connect(widget.bEditUser, SIGNAL(clicked()),this, SLOT(clickEditUser()));
 }
 
 UserProfile::~UserProfile() {
@@ -17,4 +19,9 @@ UserProfile::~UserProfile() {
 void UserProfile::setID(int tmp) {
     id = tmp;
     widget.uName->setText(QString::number(id));
+}
+
+void UserProfile::clickEditUser() {
+    EditUser *a = new EditUser;
+    a->exec();
 }

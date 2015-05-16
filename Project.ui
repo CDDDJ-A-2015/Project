@@ -17,17 +17,35 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="projName">
-       <property name="font">
-        <font>
-         <pointsize>32</pointsize>
-         <underline>true</underline>
-        </font>
-       </property>
-       <property name="text">
-        <string>Trees of Life</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="projName">
+         <property name="font">
+          <font>
+           <pointsize>32</pointsize>
+           <underline>true</underline>
+          </font>
+         </property>
+         <property name="text">
+          <string>Trees of Life</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lManager">
+         <property name="text">
+          <string>MANAGER:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bTeamMembers">
+         <property name="text">
+          <string>Team Members</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <widget class="QLabel" name="projDesc">
@@ -50,18 +68,32 @@
       </widget>
      </item>
      <item>
-      <widget class="QTableWidget" name="projTaskList">
-       <property name="wordWrap">
+      <widget class="QTreeWidget" name="tProjTaskList">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="alternatingRowColors">
         <bool>true</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
        </property>
        <column>
         <property name="text">
-         <string>Task</string>
+         <string>ID</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Progress</string>
+         <string>Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Status</string>
         </property>
        </column>
        <column>
@@ -69,15 +101,24 @@
          <string>Due Date</string>
         </property>
        </column>
-       <column>
+       <item>
         <property name="text">
-         <string>GoTo</string>
+         <string>21312</string>
         </property>
-       </column>
+        <property name="text">
+         <string>asdsa</string>
+        </property>
+        <property name="text">
+         <string>In Progress</string>
+        </property>
+        <property name="text">
+         <string>21 04 2012</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>
-      <widget class="QListWidget" name="listWidget">
+      <widget class="QListWidget" name="listComments">
        <item>
         <property name="text">
          <string>COMMENTS</string>
@@ -92,6 +133,49 @@
          <set>AlignHCenter|AlignVCenter|AlignCenter</set>
         </property>
        </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="bViewGraphics">
+       <property name="text">
+        <string>View Project Graphically</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="bAddComment">
+       <property name="text">
+        <string>Add Comment</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="bEditProject">
+       <property name="text">
+        <string>Edit Project</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lProjectID">
+       <property name="text">
+        <string>ID</string>
+       </property>
       </widget>
      </item>
     </layout>

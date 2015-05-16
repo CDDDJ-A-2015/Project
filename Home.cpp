@@ -9,21 +9,27 @@
 #include "UserProfile.h"
 #include "Project.h"
 #include "Login.h"
+#include "Search.h"
+
 using namespace std;
+
 
 Home::Home() {
     widget.setupUi(this);
     connect(widget.bProjects, SIGNAL(clicked()),this, SLOT(clickbProjects()));
     connect(widget.bUsers, SIGNAL(clicked()),this, SLOT(clickbUsers()));
     connect(widget.tGlobals, SIGNAL(doubleClicked(QModelIndex)),this, SLOT(dClickGTable(QModelIndex)));
+	connect(widget.bSearch, SIGNAL(clicked()),this,SLOT(clickbSearch()));
     bGlob = false;
     
-    Login *vLogin = new Login;
-    vLogin->exec();
-    
+    //int data = 22;
+    //read(sockfd,&data,sizeof(int));
+    //cout << data << endl;
+    widget.uName->setText("Name");
 }
 
 Home::~Home() {
+    
 }
 
 void Home::clickbProjects() {
@@ -84,4 +90,11 @@ void Home::dClickGTable(QModelIndex index) {
         vProfile->show();
     }
 
+}
+
+void Home::clickbSearch() {
+	Search *vSearch = new Search;
+	vSearch->setType(bGlob);
+	vSearch->show();
+	//system("/home/undergrad/d/dm940/318/CSCI318/a.out");
 }

@@ -4,27 +4,46 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>EditProject.h</itemPath>
+      <itemPath>EditUser.h</itemPath>
       <itemPath>Home.h</itemPath>
       <itemPath>Login.h</itemPath>
+      <itemPath>Packets.h</itemPath>
       <itemPath>Project.h</itemPath>
+      <itemPath>Search.h</itemPath>
+      <itemPath>StringDialog.h</itemPath>
+      <itemPath>Task.h</itemPath>
       <itemPath>UserProfile.h</itemPath>
+      <itemPath>searchResults.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>EditProject.ui</itemPath>
+      <itemPath>EditUser.ui</itemPath>
       <itemPath>Home.ui</itemPath>
       <itemPath>Login.ui</itemPath>
       <itemPath>Project.ui</itemPath>
+      <itemPath>Search.ui</itemPath>
+      <itemPath>StringDialog.ui</itemPath>
+      <itemPath>Task.ui</itemPath>
       <itemPath>UserProfile.ui</itemPath>
+      <itemPath>searchResults.ui</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>EditProject.cpp</itemPath>
+      <itemPath>EditUser.cpp</itemPath>
       <itemPath>Home.cpp</itemPath>
       <itemPath>Login.cpp</itemPath>
       <itemPath>Project.cpp</itemPath>
+      <itemPath>Search.cpp</itemPath>
+      <itemPath>StringDialog.cpp</itemPath>
+      <itemPath>Task.cpp</itemPath>
       <itemPath>UserProfile.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>searchResults.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -51,6 +70,18 @@
       </qt>
       <compileType>
       </compileType>
+      <item path="EditProject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EditProject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditProject.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditUser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EditUser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditUser.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Home.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Home.h" ex="false" tool="3" flavor2="0">
@@ -63,11 +94,31 @@
       </item>
       <item path="Login.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Packets.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Project.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Project.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Project.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Search.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringDialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringDialog.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringDialog.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Task.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Task.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Task.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="UserProfile.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -76,6 +127,12 @@
       <item path="UserProfile.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="searchResults.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="searchResults.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="searchResults.ui" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="4">
@@ -102,6 +159,18 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="EditProject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EditProject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditProject.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditUser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EditUser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditUser.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Home.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Home.h" ex="false" tool="3" flavor2="0">
@@ -114,11 +183,31 @@
       </item>
       <item path="Login.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Packets.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Project.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Project.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Project.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Search.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringDialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringDialog.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringDialog.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Task.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Task.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Task.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="UserProfile.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -127,6 +216,12 @@
       <item path="UserProfile.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="searchResults.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="searchResults.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="searchResults.ui" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
