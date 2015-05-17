@@ -15,6 +15,7 @@ class Coco2 : public QDialog {
 public:
 	Coco2();
 	virtual ~Coco2();
+	int calc();
 private:
 	Ui::Coco2 widget;
 };

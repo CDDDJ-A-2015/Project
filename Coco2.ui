@@ -38,7 +38,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-380</y>
         <width>898</width>
         <height>825</height>
        </rect>
@@ -83,7 +83,7 @@
                <string>Very Small</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup</string>
+               <string notr="true">bgSz</string>
               </attribute>
              </widget>
             </item>
@@ -99,7 +99,7 @@
                <string>Small</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup</string>
+               <string notr="true">bgSz</string>
               </attribute>
              </widget>
             </item>
@@ -118,7 +118,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup</string>
+               <string notr="true">bgSz</string>
               </attribute>
              </widget>
             </item>
@@ -134,7 +134,7 @@
                <string>Large</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup</string>
+               <string notr="true">bgSz</string>
               </attribute>
              </widget>
             </item>
@@ -150,7 +150,7 @@
                <string>Very Large</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup</string>
+               <string notr="true">bgSz</string>
               </attribute>
              </widget>
             </item>
@@ -207,7 +207,7 @@
                <string>No experience</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_2</string>
+               <string notr="true">bgP</string>
               </attribute>
              </widget>
             </item>
@@ -217,7 +217,7 @@
                <string>Low Experience</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_2</string>
+               <string notr="true">bgP</string>
               </attribute>
              </widget>
             </item>
@@ -230,7 +230,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_2</string>
+               <string notr="true">bgP</string>
               </attribute>
              </widget>
             </item>
@@ -240,7 +240,7 @@
                <string>Above Average</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_2</string>
+               <string notr="true">bgP</string>
               </attribute>
              </widget>
             </item>
@@ -250,7 +250,7 @@
                <string>Highly Experienced</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_2</string>
+               <string notr="true">bgP</string>
               </attribute>
              </widget>
             </item>
@@ -260,7 +260,7 @@
                <string>Experts</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_2</string>
+               <string notr="true">bgP</string>
               </attribute>
              </widget>
             </item>
@@ -296,7 +296,7 @@
                <string>No flexibility</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_3</string>
+               <string notr="true">bgF</string>
               </attribute>
              </widget>
             </item>
@@ -306,7 +306,7 @@
                <string>Little flexibility</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_3</string>
+               <string notr="true">bgF</string>
               </attribute>
              </widget>
             </item>
@@ -319,7 +319,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_3</string>
+               <string notr="true">bgF</string>
               </attribute>
              </widget>
             </item>
@@ -329,7 +329,7 @@
                <string>Good flexibility</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_3</string>
+               <string notr="true">bgF</string>
               </attribute>
              </widget>
             </item>
@@ -339,7 +339,7 @@
                <string>High flexibility</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_3</string>
+               <string notr="true">bgF</string>
               </attribute>
              </widget>
             </item>
@@ -349,7 +349,7 @@
                <string>No restraints</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_3</string>
+               <string notr="true">bgF</string>
               </attribute>
              </widget>
             </item>
@@ -385,7 +385,7 @@
                <string>Undefined</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_6</string>
+               <string notr="true">bgR</string>
               </attribute>
              </widget>
             </item>
@@ -395,7 +395,7 @@
                <string>Uncomprehensible</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_6</string>
+               <string notr="true">bgR</string>
               </attribute>
              </widget>
             </item>
@@ -408,7 +408,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_6</string>
+               <string notr="true">bgR</string>
               </attribute>
              </widget>
             </item>
@@ -418,7 +418,7 @@
                <string>Defined</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_6</string>
+               <string notr="true">bgR</string>
               </attribute>
              </widget>
             </item>
@@ -428,7 +428,7 @@
                <string>Well defined</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_6</string>
+               <string notr="true">bgR</string>
               </attribute>
              </widget>
             </item>
@@ -438,7 +438,7 @@
                <string>Set in stone</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_6</string>
+               <string notr="true">bgR</string>
               </attribute>
              </widget>
             </item>
@@ -474,7 +474,7 @@
                <string>No common language</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_5</string>
+               <string notr="true">bgT</string>
               </attribute>
              </widget>
             </item>
@@ -484,7 +484,7 @@
                <string>Speak to eachother</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_5</string>
+               <string notr="true">bgT</string>
               </attribute>
              </widget>
             </item>
@@ -497,7 +497,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_5</string>
+               <string notr="true">bgT</string>
               </attribute>
              </widget>
             </item>
@@ -507,7 +507,7 @@
                <string>Married</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_5</string>
+               <string notr="true">bgT</string>
               </attribute>
              </widget>
             </item>
@@ -517,7 +517,7 @@
                <string>Friendly</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_5</string>
+               <string notr="true">bgT</string>
               </attribute>
              </widget>
             </item>
@@ -527,7 +527,7 @@
                <string>They are one</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_5</string>
+               <string notr="true">bgT</string>
               </attribute>
              </widget>
             </item>
@@ -563,7 +563,7 @@
                <string>No structure</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_4</string>
+               <string notr="true">bgS</string>
               </attribute>
              </widget>
             </item>
@@ -573,7 +573,7 @@
                <string>Little Structure</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_4</string>
+               <string notr="true">bgS</string>
               </attribute>
              </widget>
             </item>
@@ -586,7 +586,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_4</string>
+               <string notr="true">bgS</string>
               </attribute>
              </widget>
             </item>
@@ -596,7 +596,7 @@
                <string>Above Average</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_4</string>
+               <string notr="true">bgS</string>
               </attribute>
              </widget>
             </item>
@@ -606,7 +606,7 @@
                <string>Well Structured</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_4</string>
+               <string notr="true">bgS</string>
               </attribute>
              </widget>
             </item>
@@ -616,7 +616,7 @@
                <string>Cannot be better</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_4</string>
+               <string notr="true">bgS</string>
               </attribute>
              </widget>
             </item>
@@ -661,7 +661,7 @@
                <string>Not Required</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_10</string>
+               <string notr="true">bgRC</string>
               </attribute>
              </widget>
             </item>
@@ -671,7 +671,7 @@
                <string>Very low</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_10</string>
+               <string notr="true">bgRC</string>
               </attribute>
              </widget>
             </item>
@@ -681,7 +681,7 @@
                <string>Low</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_10</string>
+               <string notr="true">bgRC</string>
               </attribute>
              </widget>
             </item>
@@ -694,7 +694,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_10</string>
+               <string notr="true">bgRC</string>
               </attribute>
              </widget>
             </item>
@@ -704,7 +704,7 @@
                <string>High</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_10</string>
+               <string notr="true">bgRC</string>
               </attribute>
              </widget>
             </item>
@@ -714,7 +714,7 @@
                <string>Very High</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_10</string>
+               <string notr="true">bgRC</string>
               </attribute>
              </widget>
             </item>
@@ -724,7 +724,7 @@
                <string>Impossible</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_10</string>
+               <string notr="true">bgRC</string>
               </attribute>
              </widget>
             </item>
@@ -760,7 +760,7 @@
                <string>Not very</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_12</string>
+               <string notr="true">bgRU</string>
               </attribute>
              </widget>
             </item>
@@ -770,7 +770,7 @@
                <string>Little</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_12</string>
+               <string notr="true">bgRU</string>
               </attribute>
              </widget>
             </item>
@@ -783,7 +783,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_12</string>
+               <string notr="true">bgRU</string>
               </attribute>
              </widget>
             </item>
@@ -793,7 +793,7 @@
                <string>Medium</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_12</string>
+               <string notr="true">bgRU</string>
               </attribute>
              </widget>
             </item>
@@ -803,7 +803,7 @@
                <string>High</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_12</string>
+               <string notr="true">bgRU</string>
               </attribute>
              </widget>
             </item>
@@ -839,7 +839,7 @@
                <string>Mac</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_13</string>
+               <string notr="true">bgPD</string>
               </attribute>
              </widget>
             </item>
@@ -849,7 +849,7 @@
                <string>WinMac</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_13</string>
+               <string notr="true">bgPD</string>
               </attribute>
              </widget>
             </item>
@@ -862,7 +862,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_13</string>
+               <string notr="true">bgPD</string>
               </attribute>
              </widget>
             </item>
@@ -872,7 +872,7 @@
                <string>Winux</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_13</string>
+               <string notr="true">bgPD</string>
               </attribute>
              </widget>
             </item>
@@ -882,7 +882,7 @@
                <string>Linux</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_13</string>
+               <string notr="true">bgPD</string>
               </attribute>
              </widget>
             </item>
@@ -918,7 +918,7 @@
                <string>No</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_11</string>
+               <string notr="true">bgPE</string>
               </attribute>
              </widget>
             </item>
@@ -928,7 +928,7 @@
                <string>Not really</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_11</string>
+               <string notr="true">bgPE</string>
               </attribute>
              </widget>
             </item>
@@ -938,7 +938,7 @@
                <string>Some</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_11</string>
+               <string notr="true">bgPE</string>
               </attribute>
              </widget>
             </item>
@@ -951,7 +951,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_11</string>
+               <string notr="true">bgPE</string>
               </attribute>
              </widget>
             </item>
@@ -961,7 +961,7 @@
                <string>Above Avg.</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_11</string>
+               <string notr="true">bgPE</string>
               </attribute>
              </widget>
             </item>
@@ -971,7 +971,7 @@
                <string>Good</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_11</string>
+               <string notr="true">bgPE</string>
               </attribute>
              </widget>
             </item>
@@ -981,7 +981,7 @@
                <string>Excellent</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_11</string>
+               <string notr="true">bgPE</string>
               </attribute>
              </widget>
             </item>
@@ -1017,7 +1017,7 @@
                <string>No</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_7</string>
+               <string notr="true">bgPR</string>
               </attribute>
              </widget>
             </item>
@@ -1027,7 +1027,7 @@
                <string>Not Really</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_7</string>
+               <string notr="true">bgPR</string>
               </attribute>
              </widget>
             </item>
@@ -1037,7 +1037,7 @@
                <string>Some Exp</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_7</string>
+               <string notr="true">bgPR</string>
               </attribute>
              </widget>
             </item>
@@ -1050,7 +1050,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_7</string>
+               <string notr="true">bgPR</string>
               </attribute>
              </widget>
             </item>
@@ -1060,7 +1060,7 @@
                <string>Above Avg.</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_7</string>
+               <string notr="true">bgPR</string>
               </attribute>
              </widget>
             </item>
@@ -1070,7 +1070,7 @@
                <string>Experience</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_7</string>
+               <string notr="true">bgPR</string>
               </attribute>
              </widget>
             </item>
@@ -1080,7 +1080,7 @@
                <string>Experts</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_7</string>
+               <string notr="true">bgPR</string>
               </attribute>
              </widget>
             </item>
@@ -1116,7 +1116,7 @@
                <string>None</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_8</string>
+               <string notr="true">bgFC</string>
               </attribute>
              </widget>
             </item>
@@ -1126,7 +1126,7 @@
                <string>Cheaply</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_8</string>
+               <string notr="true">bgFC</string>
               </attribute>
              </widget>
             </item>
@@ -1136,7 +1136,7 @@
                <string>Some</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_8</string>
+               <string notr="true">bgFC</string>
               </attribute>
              </widget>
             </item>
@@ -1149,7 +1149,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_8</string>
+               <string notr="true">bgFC</string>
               </attribute>
              </widget>
             </item>
@@ -1159,7 +1159,7 @@
                <string>Good Facilities</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_8</string>
+               <string notr="true">bgFC</string>
               </attribute>
              </widget>
             </item>
@@ -1169,7 +1169,7 @@
                <string>Extremely well</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_8</string>
+               <string notr="true">bgFC</string>
               </attribute>
              </widget>
             </item>
@@ -1179,7 +1179,7 @@
                <string>Top of the line</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_8</string>
+               <string notr="true">bgFC</string>
               </attribute>
              </widget>
             </item>
@@ -1200,7 +1200,7 @@
                <string>A lot</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_9</string>
+               <string notr="true">bgSC</string>
               </attribute>
              </widget>
             </item>
@@ -1213,7 +1213,7 @@
                <bool>true</bool>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_9</string>
+               <string notr="true">bgSC</string>
               </attribute>
              </widget>
             </item>
@@ -1223,7 +1223,7 @@
                <string>No</string>
               </property>
               <attribute name="buttonGroup">
-               <string notr="true">buttonGroup_9</string>
+               <string notr="true">bgSC</string>
               </attribute>
              </widget>
             </item>
@@ -1233,17 +1233,6 @@
         </widget>
        </item>
       </layout>
-      <zorder>horizontalLayoutWidget_3</zorder>
-      <zorder>label_4</zorder>
-      <zorder>label_5</zorder>
-      <zorder>horizontalLayoutWidget_4</zorder>
-      <zorder>horizontalLayoutWidget_5</zorder>
-      <zorder>buttonBox</zorder>
-      <zorder>horizontalLayoutWidget_2</zorder>
-      <zorder>horizontalLayoutWidget</zorder>
-      <zorder>label</zorder>
-      <zorder>label_2</zorder>
-      <zorder>label_3</zorder>
       <zorder>groupBox</zorder>
       <zorder>groupBox_2</zorder>
       <zorder>groupBox_3</zorder>
@@ -1298,18 +1287,18 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup_4"/>
-  <buttongroup name="buttonGroup_5"/>
-  <buttongroup name="buttonGroup_6"/>
-  <buttongroup name="buttonGroup_7"/>
-  <buttongroup name="buttonGroup_8"/>
-  <buttongroup name="buttonGroup_9"/>
-  <buttongroup name="buttonGroup_10"/>
-  <buttongroup name="buttonGroup_11"/>
-  <buttongroup name="buttonGroup_12"/>
-  <buttongroup name="buttonGroup_13"/>
+  <buttongroup name="bgPD"/>
+  <buttongroup name="bgP"/>
+  <buttongroup name="bgF"/>
+  <buttongroup name="bgS"/>
+  <buttongroup name="bgT"/>
+  <buttongroup name="bgR"/>
+  <buttongroup name="bgPR"/>
+  <buttongroup name="bgFC"/>
+  <buttongroup name="bgSz"/>
+  <buttongroup name="bgSC"/>
+  <buttongroup name="bgRC"/>
+  <buttongroup name="bgPE"/>
+  <buttongroup name="bgRU"/>
  </buttongroups>
 </ui>

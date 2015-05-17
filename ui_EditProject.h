@@ -40,7 +40,7 @@ public:
     QPushButton *bC2;
     QLabel *lC2;
     QPushButton *bFP;
-    QLabel *lC3;
+    QLabel *lFP;
     QPlainTextEdit *plainTextEdit;
     QHBoxLayout *horizontalLayout_3;
     QLabel *lDispID;
@@ -107,10 +107,10 @@ public:
 
         horizontalLayout_2->addWidget(bFP);
 
-        lC3 = new QLabel(EditProject);
-        lC3->setObjectName(QString::fromUtf8("lC3"));
+        lFP = new QLabel(EditProject);
+        lFP->setObjectName(QString::fromUtf8("lFP"));
 
-        horizontalLayout_2->addWidget(lC3);
+        horizontalLayout_2->addWidget(lFP);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
@@ -169,7 +169,7 @@ public:
         bC2->setText(QApplication::translate("EditProject", "COCOMO II", 0, QApplication::UnicodeUTF8));
         lC2->setText(QApplication::translate("EditProject", "Not Completed", 0, QApplication::UnicodeUTF8));
         bFP->setText(QApplication::translate("EditProject", "Function Points", 0, QApplication::UnicodeUTF8));
-        lC3->setText(QApplication::translate("EditProject", "Not Completed", 0, QApplication::UnicodeUTF8));
+        lFP->setText(QApplication::translate("EditProject", "Not Completed", 0, QApplication::UnicodeUTF8));
         plainTextEdit->setPlainText(QApplication::translate("EditProject", "Description:\n"
 "", 0, QApplication::UnicodeUTF8));
         lDispID->setText(QApplication::translate("EditProject", "ID Number:", 0, QApplication::UnicodeUTF8));

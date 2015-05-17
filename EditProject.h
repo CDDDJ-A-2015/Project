@@ -21,6 +21,8 @@ public slots:
 	void clickSave();
 	void clickCancel();
 	void clickbC1();
+	void clickbC2();
+	void clickbFP();
 	
 private:
 	Ui::EditProject widget;

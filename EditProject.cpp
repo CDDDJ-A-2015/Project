@@ -8,12 +8,16 @@
 #include "EditProject.h"
 #include "Project.h"
 #include "Coco1.h"
+#include "Coco2.h"
+#include "FuncPoints.h"
 
 EditProject::EditProject() {
 	widget.setupUi(this);
 	connect(widget.buttonBox,SIGNAL(accepted()),this,SLOT(clickSave()));
 	connect(widget.buttonBox,SIGNAL(rejected()),this,SLOT(clickCancel()));
 	connect(widget.bC1,SIGNAL(clicked()),this,SLOT(clickbC1()));
+	connect(widget.bC2,SIGNAL(clicked()),this,SLOT(clickbC2()));
+	connect(widget.bFP,SIGNAL(clicked()),this,SLOT(clickbFP()));
 	id = -1;
 	save = false;
 }
@@ -61,5 +65,21 @@ void EditProject::clickbC1() {
 	vC1.exec();
 	if (vC1.result() == QDialog::Accepted) {
 		widget.lC1->setText(QString::number(vC1.calc()) + " person/months");
+	}
+}
+
+void EditProject::clickbC2() {
+	Coco2 vC2;
+	vC2.exec();
+	if (vC2.result() == QDialog::Accepted) {
+		widget.lC2->setText(QString::number(vC2.calc()) + " person/months");
+	}
+}
+
+void EditProject::clickbFP() {
+	FuncPoints vFP;
+	vFP.exec();
+	if (vFP.result() == QDialog::Accepted) {
+		widget.lFP->setText(QString::number(vFP.calc()) + " person/months");
 	}
 }

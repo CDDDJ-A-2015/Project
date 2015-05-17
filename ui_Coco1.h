@@ -19,6 +19,7 @@
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QRadioButton>
+#include <QtGui/QSpacerItem>
 #include <QtGui/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -35,10 +36,12 @@ public:
     QRadioButton *rM;
     QRadioButton *rL;
     QRadioButton *rVL;
+    QSpacerItem *horizontalSpacer;
     QLabel *lDispType;
+    QVBoxLayout *verticalLayout_2;
     QRadioButton *rOrganic;
-    QRadioButton *rEmb;
     QRadioButton *rSemi;
+    QRadioButton *rEmb;
     QDialogButtonBox *buttonBox;
     QButtonGroup *bgSize;
     QButtonGroup *bgType;
@@ -47,7 +50,7 @@ public:
     {
         if (Coco1->objectName().isEmpty())
             Coco1->setObjectName(QString::fromUtf8("Coco1"));
-        Coco1->resize(621, 245);
+        Coco1->resize(621, 247);
         verticalLayout = new QVBoxLayout(Coco1);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         lName = new QLabel(Coco1);
@@ -94,6 +97,7 @@ public:
         rM->setObjectName(QString::fromUtf8("rM"));
         sizePolicy.setHeightForWidth(rM->sizePolicy().hasHeightForWidth());
         rM->setSizePolicy(sizePolicy);
+        rM->setChecked(true);
 
         horizontalLayout->addWidget(rM);
 
@@ -116,11 +120,18 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
+        horizontalSpacer = new QSpacerItem(40, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        verticalLayout->addItem(horizontalSpacer);
+
         lDispType = new QLabel(Coco1);
         lDispType->setObjectName(QString::fromUtf8("lDispType"));
 
         verticalLayout->addWidget(lDispType);
 
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(40, -1, -1, -1);
         rOrganic = new QRadioButton(Coco1);
         bgType = new QButtonGroup(Coco1);
         bgType->setObjectName(QString::fromUtf8("bgType"));
@@ -133,7 +144,17 @@ public:
         rOrganic->setSizePolicy(sizePolicy1);
         rOrganic->setMaximumSize(QSize(16777215, 16));
 
-        verticalLayout->addWidget(rOrganic);
+        verticalLayout_2->addWidget(rOrganic);
+
+        rSemi = new QRadioButton(Coco1);
+        bgType->addButton(rSemi);
+        rSemi->setObjectName(QString::fromUtf8("rSemi"));
+        sizePolicy1.setHeightForWidth(rSemi->sizePolicy().hasHeightForWidth());
+        rSemi->setSizePolicy(sizePolicy1);
+        rSemi->setMaximumSize(QSize(16777215, 16));
+        rSemi->setChecked(true);
+
+        verticalLayout_2->addWidget(rSemi);
 
         rEmb = new QRadioButton(Coco1);
         bgType->addButton(rEmb);
@@ -142,16 +163,10 @@ public:
         rEmb->setSizePolicy(sizePolicy1);
         rEmb->setMaximumSize(QSize(16777215, 16));
 
-        verticalLayout->addWidget(rEmb);
+        verticalLayout_2->addWidget(rEmb);
 
-        rSemi = new QRadioButton(Coco1);
-        bgType->addButton(rSemi);
-        rSemi->setObjectName(QString::fromUtf8("rSemi"));
-        sizePolicy1.setHeightForWidth(rSemi->sizePolicy().hasHeightForWidth());
-        rSemi->setSizePolicy(sizePolicy1);
-        rSemi->setMaximumSize(QSize(16777215, 16));
 
-        verticalLayout->addWidget(rSemi);
+        verticalLayout->addLayout(verticalLayout_2);
 
         buttonBox = new QDialogButtonBox(Coco1);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
@@ -180,8 +195,8 @@ public:
         rVL->setText(QApplication::translate("Coco1", "Very Large", 0, QApplication::UnicodeUTF8));
         lDispType->setText(QApplication::translate("Coco1", "How would you describe the project:", 0, QApplication::UnicodeUTF8));
         rOrganic->setText(QApplication::translate("Coco1", "Flexible System, easy to change", 0, QApplication::UnicodeUTF8));
-        rEmb->setText(QApplication::translate("Coco1", "Very Tight Constraints", 0, QApplication::UnicodeUTF8));
         rSemi->setText(QApplication::translate("Coco1", "In between", 0, QApplication::UnicodeUTF8));
+        rEmb->setText(QApplication::translate("Coco1", "Very Tight Constraints", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

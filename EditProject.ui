@@ -90,7 +90,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="lC3">
+        <widget class="QLabel" name="lFP">
          <property name="text">
           <string>Not Completed</string>
          </property>
