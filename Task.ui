@@ -337,21 +337,22 @@ David King</string>
     </layout>
    </item>
    <item>
-    <widget class="QListWidget" name="listComments">
-     <item>
+    <widget class="QTreeWidget" name="tComments">
+     <column>
       <property name="text">
-       <string>COMMENTS</string>
+       <string>Date/Time</string>
       </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
       </property>
-      <property name="textAlignment">
-       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+     </column>
+     <column>
+      <property name="text">
+       <string>Comment</string>
       </property>
-     </item>
+     </column>
     </widget>
    </item>
    <item>

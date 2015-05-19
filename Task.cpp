@@ -8,6 +8,7 @@
 #include "Task.h"
 #include "StringDialog.h"
 #include "EditTask.h"
+#include <ctime>
 
 Task::Task() {
 	widget.setupUi(this);
@@ -74,7 +75,20 @@ void Task::addComment() {
 	StringDialog *vAddComment = new StringDialog;
 	vAddComment->exec();
 	if (vAddComment->result() == QDialog::Accepted) {
-		widget.listComments->addItem(vAddComment->getText());
+		QTreeWidgetItem *tmp = new QTreeWidgetItem();
+		
+		time_t rawtime;
+		struct tm * timeinfo;
+		char buffer[80];
+		time (&rawtime);
+		timeinfo = localtime(&rawtime);
+		strftime(buffer,80,"%d-%m-%Y %R",timeinfo);
+		std::string str(buffer);
+		
+		tmp->setText(0,QString::fromStdString(str));
+		tmp->setText(1,"MEEEEEEE");
+		tmp->setText(2,vAddComment->getText());
+		widget.tComments->addTopLevelItem(tmp);
 	}
 }
 
