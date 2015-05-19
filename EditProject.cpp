@@ -80,6 +80,6 @@ void EditProject::clickbFP() {
 	FuncPoints vFP;
 	vFP.exec();
 	if (vFP.result() == QDialog::Accepted) {
-		widget.lFP->setText(QString::number(vFP.calc()) + " person/months");
+		widget.lFP->setText(QString::number(vFP.calc()) + " Function Points");
 	}
 }

@@ -1,0 +1,320 @@
+#ifndef __CSCI311_Project__Client_Side__
+#define __CSCI311_Project__Client_Side__
+
+#include <stdio.h>
+#include <vector>
+
+/*  ~~~~~~~~~~~~  */
+/*  GLOBAL LISTS  */
+/*  ~~~~~~~~~~~~  */
+
+/*  PROJECT  */
+struct Project_List{
+   /* int ID;
+    char Name[50];
+    int Manager_ID;
+    char Description[256];
+    int Progress;
+    char End_Date[11];
+    
+    
+    char Manager_FName[50]; //Managers info
+    char Manager_LName[50];
+    */
+    int ID;
+    char Name[50];
+    int Manager_ID;//Get rid of??
+    int Team_ID;//Get rid of??
+    char Description[256];//Get rid of
+    int Progress;
+    char Start_Date[11];//Get rid of
+    char End_Date[11];
+    char Last_Updated[256];//Get rid of
+    bool active;
+    
+    char Manager_FName[50]; //Managers info
+    char Manager_LName[50]; //Managers info
+
+};
+
+//CHANGE ALL NAMES TO SINGULAR 50 CHARS
+
+/*  USER  */
+struct User_List{
+    int user_id;
+    char f_name[50];
+    char l_name[50];
+    char dob[11]; //Get rid of
+    char location[50];
+    char email[50];
+    bool Admin;
+};
+
+
+
+/*  Roles  */
+struct Role{
+    int ID;
+    char Name[50];
+    char Description[256];
+    bool Default_Role;
+};
+
+
+
+/*  ~~~~~~~~~~~~  */
+/*  USER STRUCTS  */
+/*  ~~~~~~~~~~~~  */
+
+struct Notification;
+struct User_Task;
+struct Expertise;
+struct User_Project;
+struct User_Role;
+/*
+struct Home_Screen_User{
+    /*
+     
+     fname
+     lname
+     id
+     tasks
+     notifications
+     projects
+     global user && projects
+     
+     
+};
+
+struct User_Profile_Screen{
+    /*
+    
+     fname
+     lname
+     id
+     location
+     email
+     expertises
+     
+    //can edit bool
+ 
+     roles, project id, active - USER ROLE
+     
+     
+     
+     
+ 
+};
+ */
+struct User{
+    int user_id;
+    char f_name[50];
+    char l_name[50];
+    char dob[11]; //Get rid of
+    char location[50]; //Get rid of
+    char email[50]; //Get rid of
+    char password[20]; //Get rid of
+    bool active; //Get rid of
+    bool admin;
+    
+    /*  Standard Users  */
+    std::vector<Notification>Notifications;
+    std::vector<Expertise>Expertises;
+    std::vector<User_Role>Previous_Roles;
+    std::vector<int>Previous_Projects;
+    
+    /*  Team Members  */
+    std::vector<int>Current_Projects;
+    std::vector<User_Task>Assigned_Tasks;
+    
+    /*  Managers  */
+    std::vector<int>Managed_Projects;
+};
+
+struct Notification{
+    char Message[256];
+    bool read;//Get rid of
+};
+
+//Myprojects
+struct User_Project{
+    int ID;
+    char Name[50];
+    char Description[256];//Get rid of
+    int Progress;
+    char Start_Date[11];//Get rid of
+    char End_Date[11];
+    char Last_Updated[256];//get rid of
+    bool active;
+    
+    //Put in USER ROLE
+    
+    char Manager_FName[50];
+    char Manager_LName[50];
+};
+
+struct User_Task{
+    int Project_ID;//change to Project Name
+    int Task_ID;
+    char Name[50];
+    char Description[256]; //Get rid of
+    int Progress;//Get rid of
+    int Priority;
+    //Add Status/Pending
+    char Date_Created[11];//get rid of
+    char Date_Due[11];
+};
+
+struct Expertise{
+    char Name[50];
+};
+
+
+struct User_Role{
+    char Name[50];
+    //Project Name
+    //Active
+};
+
+/*  ~~~~~~~~~~~~~~~  */
+/*  PROJECT STRUCTS  */
+/*  ~~~~~~~~~~~~~~~  */
+
+struct Project_Task;
+struct Project_Comment;
+struct Task_Comment;
+struct Team_Member;
+struct Task_Assignment;
+
+struct Project_{
+    int ID;
+    char Name[50];
+    int Manager_ID;
+    int Team_ID;//Don't Need it
+    char Description[256];
+    int Progress;
+    char Start_Date[11];
+    char End_Date[11];
+    char Last_Updated[256];
+    bool active;
+    
+    //can edit bool
+    
+    char Manager_FName[50]; //Managers info
+    char Manager_LName[50]; //Managers info
+    
+    
+    std::vector<Project_Task>Tasks;//change to task list
+    std::vector<Project_Comment>Project_Comments;
+    std::vector<Team_Member>Team;//Get rid of
+    
+};
+
+/*
+ 
+ struct task list
+ {
+    id
+ name
+ status
+ due date
+ 
+ 
+ 
+ }
+ */
+
+struct Project_Task{
+    int Project_ID;
+    int Task_ID;
+    char Name[50];
+    char Description[256];
+    int Progress;
+    int Pending;//Status
+    int Priority;
+    
+    //can edit boool
+    
+    char Date_Created[11];
+    char Date_Due[11];
+    
+    std::vector<Task_Assignment>Assigned;
+    std::vector<Task_Comment>Task_Comments;
+    std::vector<int>Parent_Task;
+    std::vector<int>Child_Task;
+};
+
+/*
+    struct dependencies{
+ 
+    id
+    name
+    status
+    due date
+ 
+ };
+ 
+    struct parent{
+ 
+    id
+    name
+    status
+    due date
+ };
+ 
+ 
+ */
+
+
+struct Task_Assignment{
+    char F_Name[50];
+    char L_Name[50];
+    int User_ID;//POSSIBLY?
+};
+
+struct Project_Comment{
+    char Comment[256];
+    char Date[11];
+    int User_ID;
+};
+
+struct Task_Comment{
+    char Comment[256];
+    char Date[11];
+    int User_ID;
+};
+
+struct Team_Member{
+    int User_ID;
+    char F_Name[50];
+    char L_Name[50];
+};
+
+/*
+ 
+ COCOMO 1 & 2 ints
+ FUNCTION POINTS ints
+ 
+ 
+ CHANGE DATES TO WEEK DUE
+ WEEK START
+ 
+    PRIORITIES:
+ 
+    1 - 
+    2 - 
+    3 -
+    4 - 
+    5 -
+ 
+ 
+ 
+    JAKES STUFF
+    
+ 
+ 
+ 
+ */
+
+
+#endif /* defined(__CSCI311_Project__Client_Side__) */

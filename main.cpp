@@ -9,54 +9,52 @@
 #include "Project.h"
 #include "Home.h"
 #include "Login.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/time.h>
+#include <netdb.h> 
+#include <vector>
+#include <cstring>
 
 #include "Packets.h"
+
+void error(const char *msg)
+{
+    perror(msg);
+    exit(0);
+}
+
 int sockfd;
-    
-    
-    int portno = 32001;
-    long n;
+
+int main(int argc, char *argv[]) {
+    int portno, n;
     struct sockaddr_in serv_addr;
     struct hostent *server;
 
-int main(int argc, char *argv[]) {
-    // initialize resources, if needed
-    // Q_INIT_RESOURCE(resfile);
-
-    
-    //if (argc < 3) {
-    //    std::cout << "usage: ./Client hostname port" << std::endl;
-    //   exit(0);
-    //}
-/*
-    //portno = atoi(argv[2]);
+    portno = 32002;
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (sockfd < 0) {
-        //std::cout << "ALL\n";
-        //exit(0);
-    }
-        //error("ERROR opening socket");
-
-    server = gethostbyname("localhost");
-    
+    if (sockfd < 0) 
+        error("ERROR opening socket");
+    server = gethostbyname("10.24.70.77");
     if (server == NULL) {
         fprintf(stderr,"ERROR, no such host\n");
         exit(0);
     }
-    
-    memset((char *) &serv_addr, 0, sizeof(serv_addr));
-    
-    serv_addr.sin_family = server->h_addrtype;
-    
-    memcpy((char *) &serv_addr.sin_addr.s_addr, server->h_addr_list[0], server->h_length);
+    bzero((char *) &serv_addr, sizeof(serv_addr));
+    serv_addr.sin_family = AF_INET;
+    bcopy((char *)server->h_addr, 
+         (char *)&serv_addr.sin_addr.s_addr,
+         server->h_length);
     serv_addr.sin_port = htons(portno);
-    if(connect(sockfd,(struct sockaddr *) &serv_addr,sizeof(serv_addr))< 0){
-        std::cout << "ALLO\n";
-        //exit(0);
-        //error("ERROR connecting");
-    }
-    */
+    if (connect(sockfd,(struct sockaddr *) &serv_addr,sizeof(serv_addr)) < 0) 
+        error("ERROR connecting");
+	
     
     QApplication app(argc, argv);
 

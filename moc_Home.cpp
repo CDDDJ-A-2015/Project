@@ -22,7 +22,7 @@ static const uint qt_meta_data_Home[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -37,6 +37,7 @@ static const uint qt_meta_data_Home[] = {
       78,    5,    5,    5, 0x08,
      108,    5,    5,    5, 0x08,
      128,    5,    5,    5, 0x08,
+     147,    5,    5,    5, 0x08,
 
        0        // eod
 };
@@ -46,6 +47,7 @@ static const char qt_meta_stringdata_Home[] = {
     "dClickGTable(QModelIndex)\0clickbSearch()\0"
     "dClickMyProjects(QModelIndex)\0"
     "clickbYourProfile()\0clickbAddProject()\0"
+    "dClickMyTasks(QModelIndex)\0"
 };
 
 void Home::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -61,6 +63,7 @@ void Home::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         case 4: _t->dClickMyProjects((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
         case 5: _t->clickbYourProfile(); break;
         case 6: _t->clickbAddProject(); break;
+        case 7: _t->dClickMyTasks((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -98,9 +101,9 @@ int Home::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

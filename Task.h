@@ -9,6 +9,7 @@
 #define	_TASK_H
 
 #include "ui_Task.h"
+#include "Client_Side.h"
 
 class Task : public QWidget {
 	Q_OBJECT
@@ -23,7 +24,7 @@ public slots:
 	
 private:
 	Ui::Task widget;
-	int id;
+	Project_Task me;
 };
 
 #endif	/* _TASK_H */

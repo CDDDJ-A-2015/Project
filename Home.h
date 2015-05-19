@@ -23,6 +23,7 @@
 #include <netdb.h> 
 #include <vector>
 #include <cstring>
+#include "Client_Side.h"
 
 extern int sockfd;
 
@@ -40,10 +41,14 @@ private slots:
 	void dClickMyProjects(QModelIndex);
 	void clickbYourProfile();
 	void clickbAddProject();
+	void dClickMyTasks(QModelIndex);
 	
 private:
     Ui::Home widget;
     bool bGlob;
+	User Me;
+	void getProjectList();
+	std::vector<Project_List> Global_Project_List;
 };
 
 

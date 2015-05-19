@@ -23,7 +23,7 @@ public slots:
     
 private:
     Ui::Login widget;
-    Login_Packet L;
+	bool login(Login_Packet);
 };
 
 #endif	/* _LOGIN_H */

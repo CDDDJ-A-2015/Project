@@ -13,6 +13,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QFrame>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
@@ -30,13 +31,30 @@ class Ui_Task
 public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *lDispPriority;
     QLabel *lPriority;
     QLabel *lName;
+    QVBoxLayout *verticalLayout_4;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *lDispTaskID;
     QLabel *lID;
+    QHBoxLayout *horizontalLayout_7;
+    QLabel *lDispProjID;
+    QLabel *lPID;
     QHBoxLayout *horizontalLayout_3;
     QLabel *lDescription;
     QLabel *lAssigned;
+    QHBoxLayout *horizontalLayout_9;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *lDispCreated;
+    QLabel *lCreated;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *lDispDue;
+    QLabel *lDue;
+    QFrame *fStatus;
     QHBoxLayout *horizontalLayout_5;
+    QLabel *lDispStatus;
     QLabel *lStatus;
     QProgressBar *progressBar;
     QHBoxLayout *horizontalLayout_2;
@@ -62,10 +80,25 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        lDispPriority = new QLabel(Task);
+        lDispPriority->setObjectName(QString::fromUtf8("lDispPriority"));
+        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lDispPriority->sizePolicy().hasHeightForWidth());
+        lDispPriority->setSizePolicy(sizePolicy);
+
+        horizontalLayout_8->addWidget(lDispPriority);
+
         lPriority = new QLabel(Task);
         lPriority->setObjectName(QString::fromUtf8("lPriority"));
 
-        horizontalLayout->addWidget(lPriority);
+        horizontalLayout_8->addWidget(lPriority);
+
+
+        horizontalLayout->addLayout(horizontalLayout_8);
 
         lName = new QLabel(Task);
         lName->setObjectName(QString::fromUtf8("lName"));
@@ -76,11 +109,48 @@ public:
 
         horizontalLayout->addWidget(lName);
 
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setSpacing(0);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(7);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        lDispTaskID = new QLabel(Task);
+        lDispTaskID->setObjectName(QString::fromUtf8("lDispTaskID"));
+        lDispTaskID->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_6->addWidget(lDispTaskID);
+
         lID = new QLabel(Task);
         lID->setObjectName(QString::fromUtf8("lID"));
-        lID->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        sizePolicy.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
+        lID->setSizePolicy(sizePolicy);
 
-        horizontalLayout->addWidget(lID);
+        horizontalLayout_6->addWidget(lID);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_6);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        lDispProjID = new QLabel(Task);
+        lDispProjID->setObjectName(QString::fromUtf8("lDispProjID"));
+        lDispProjID->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_7->addWidget(lDispProjID);
+
+        lPID = new QLabel(Task);
+        lPID->setObjectName(QString::fromUtf8("lPID"));
+        sizePolicy.setHeightForWidth(lPID->sizePolicy().hasHeightForWidth());
+        lPID->setSizePolicy(sizePolicy);
+
+        horizontalLayout_7->addWidget(lPID);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_7);
+
+
+        horizontalLayout->addLayout(verticalLayout_4);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -102,21 +172,79 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
+        lDispCreated = new QLabel(Task);
+        lDispCreated->setObjectName(QString::fromUtf8("lDispCreated"));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(lDispCreated->sizePolicy().hasHeightForWidth());
+        lDispCreated->setSizePolicy(sizePolicy1);
+        lDispCreated->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_11->addWidget(lDispCreated);
+
+        lCreated = new QLabel(Task);
+        lCreated->setObjectName(QString::fromUtf8("lCreated"));
+
+        horizontalLayout_11->addWidget(lCreated);
+
+
+        horizontalLayout_9->addLayout(horizontalLayout_11);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
+        lDispDue = new QLabel(Task);
+        lDispDue->setObjectName(QString::fromUtf8("lDispDue"));
+        lDispDue->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_10->addWidget(lDispDue);
+
+        lDue = new QLabel(Task);
+        lDue->setObjectName(QString::fromUtf8("lDue"));
+
+        horizontalLayout_10->addWidget(lDue);
+
+
+        horizontalLayout_9->addLayout(horizontalLayout_10);
+
+
+        verticalLayout->addLayout(horizontalLayout_9);
+
+        fStatus = new QFrame(Task);
+        fStatus->setObjectName(QString::fromUtf8("fStatus"));
+        fStatus->setFrameShape(QFrame::StyledPanel);
+        fStatus->setFrameShadow(QFrame::Raised);
+        horizontalLayout_5 = new QHBoxLayout(fStatus);
+#ifndef Q_OS_MAC
+        horizontalLayout_5->setSpacing(6);
+#endif
+        horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
-        lStatus = new QLabel(Task);
-        lStatus->setObjectName(QString::fromUtf8("lStatus"));
+        lDispStatus = new QLabel(fStatus);
+        lDispStatus->setObjectName(QString::fromUtf8("lDispStatus"));
         QFont font1;
         font1.setPointSize(20);
         font1.setBold(false);
         font1.setWeight(50);
-        lStatus->setFont(font1);
-        lStatus->setAlignment(Qt::AlignCenter);
+        lDispStatus->setFont(font1);
+        lDispStatus->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_5->addWidget(lDispStatus);
+
+        lStatus = new QLabel(fStatus);
+        lStatus->setObjectName(QString::fromUtf8("lStatus"));
+        QFont font2;
+        font2.setPointSize(20);
+        lStatus->setFont(font2);
 
         horizontalLayout_5->addWidget(lStatus);
 
 
-        verticalLayout->addLayout(horizontalLayout_5);
+        verticalLayout->addWidget(fStatus);
 
         progressBar = new QProgressBar(Task);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
@@ -163,12 +291,12 @@ public:
         verticalLayout->addLayout(horizontalLayout_2);
 
         listComments = new QListWidget(Task);
-        QFont font2;
-        font2.setBold(true);
-        font2.setWeight(75);
+        QFont font3;
+        font3.setBold(true);
+        font3.setWeight(75);
         QListWidgetItem *__qlistwidgetitem = new QListWidgetItem(listComments);
         __qlistwidgetitem->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
-        __qlistwidgetitem->setFont(font2);
+        __qlistwidgetitem->setFont(font3);
         listComments->setObjectName(QString::fromUtf8("listComments"));
 
         verticalLayout->addWidget(listComments);
@@ -207,14 +335,23 @@ public:
     void retranslateUi(QWidget *Task)
     {
         Task->setWindowTitle(QApplication::translate("Task", "Task", 0, QApplication::UnicodeUTF8));
-        lPriority->setText(QApplication::translate("Task", "Priority", 0, QApplication::UnicodeUTF8));
+        lDispPriority->setText(QApplication::translate("Task", "Priority:", 0, QApplication::UnicodeUTF8));
+        lPriority->setText(QApplication::translate("Task", "Trivial", 0, QApplication::UnicodeUTF8));
         lName->setText(QApplication::translate("Task", "Name", 0, QApplication::UnicodeUTF8));
-        lID->setText(QApplication::translate("Task", "ID:", 0, QApplication::UnicodeUTF8));
+        lDispTaskID->setText(QApplication::translate("Task", "Task ID:", 0, QApplication::UnicodeUTF8));
+        lID->setText(QApplication::translate("Task", "24324", 0, QApplication::UnicodeUTF8));
+        lDispProjID->setText(QApplication::translate("Task", "Project ID:", 0, QApplication::UnicodeUTF8));
+        lPID->setText(QApplication::translate("Task", "2413", 0, QApplication::UnicodeUTF8));
         lDescription->setText(QApplication::translate("Task", "Description:", 0, QApplication::UnicodeUTF8));
         lAssigned->setText(QApplication::translate("Task", "Assigned to: \n"
 "Jack Newman\n"
 "David King", 0, QApplication::UnicodeUTF8));
-        lStatus->setText(QApplication::translate("Task", "Status:", 0, QApplication::UnicodeUTF8));
+        lDispCreated->setText(QApplication::translate("Task", "Date Created:", 0, QApplication::UnicodeUTF8));
+        lCreated->setText(QApplication::translate("Task", "TextLabel", 0, QApplication::UnicodeUTF8));
+        lDispDue->setText(QApplication::translate("Task", "Date Due:", 0, QApplication::UnicodeUTF8));
+        lDue->setText(QApplication::translate("Task", "TextLabel", 0, QApplication::UnicodeUTF8));
+        lDispStatus->setText(QApplication::translate("Task", "Status:", 0, QApplication::UnicodeUTF8));
+        lStatus->setText(QApplication::translate("Task", "Pending", 0, QApplication::UnicodeUTF8));
         lDep->setText(QApplication::translate("Task", "Dependencies", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem = tDep->headerItem();
         ___qtreewidgetitem->setText(3, QApplication::translate("Task", "Due Date", 0, QApplication::UnicodeUTF8));
