@@ -156,7 +156,7 @@ struct Role_Packet{
     char Description[256];
     bool Default_Role;
 };
-
+/*
 struct Project_Packet{
     int ID;
     char Name[50];
@@ -172,7 +172,7 @@ struct Project_Packet{
     char Manager_FName[50]; //Managers info
     char Manager_LName[50]; //Managers info
 };
-
+*/
 struct Team_Member_Packet{
     int ID;
     int Project_ID;
@@ -180,7 +180,7 @@ struct Team_Member_Packet{
     char L_Name[50];
     
 };
-
+/*
 struct Task_Packet{
     int Project_ID;
     int Task_ID;
@@ -193,7 +193,7 @@ struct Task_Packet{
     
     char Date_Created[11];
     char Date_Due[11];
-};
+};*/
 
 struct Task_Assignment_Packet{
     int Project_ID;

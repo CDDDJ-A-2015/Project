@@ -9,6 +9,10 @@
 #define	_USERPROFILE_H
 
 #include "ui_UserProfile.h"
+#include "Client_Side.h"
+#include "Packets.h"
+extern int sockfd;
+
 
 class UserProfile : public QWidget {
     Q_OBJECT
@@ -22,7 +26,10 @@ public slots:
     
 private:
     Ui::UserProfile widget;
-    int id;
+	User_Profile_Screen UPS;
+	void getUserInfo();
+	void getExpertises();
+	void getPreviousRoles();
 };
 
 #endif	/* _USERPROFILE_H */

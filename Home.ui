@@ -139,26 +139,6 @@
               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
              </property>
             </column>
-            <item>
-             <property name="text">
-              <string>1231</string>
-             </property>
-             <property name="text">
-              <string>James</string>
-             </property>
-             <property name="text">
-              <string>a</string>
-             </property>
-             <property name="text">
-              <string>a</string>
-             </property>
-             <property name="text">
-              <string>a</string>
-             </property>
-             <property name="text">
-              <string>a</string>
-             </property>
-            </item>
            </widget>
           </item>
           <item>
@@ -282,66 +262,14 @@
             <set>AlignHCenter|AlignVCenter|AlignCenter</set>
            </property>
           </column>
-          <item>
+          <column>
            <property name="text">
-            <string>2414</string>
+            <string>Active</string>
            </property>
-           <property name="text">
-            <string>test</string>
+           <property name="textAlignment">
+            <set>AlignHCenter|AlignVCenter|AlignCenter</set>
            </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3525</string>
-           </property>
-           <property name="text">
-            <string>New Item</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2134</string>
-           </property>
-           <property name="text">
-            <string>21</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </item>
+          </column>
          </widget>
         </item>
        </layout>
@@ -455,46 +383,6 @@
             <set>AlignHCenter|AlignVCenter|AlignCenter</set>
            </property>
           </column>
-          <item>
-           <property name="text">
-            <string>2414</string>
-           </property>
-           <property name="text">
-            <string>test</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2134</string>
-           </property>
-           <property name="text">
-            <string>21</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </item>
          </widget>
         </item>
         <item>

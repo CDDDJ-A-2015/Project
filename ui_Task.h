@@ -17,7 +17,6 @@
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
-#include <QtGui/QListWidget>
 #include <QtGui/QProgressBar>
 #include <QtGui/QPushButton>
 #include <QtGui/QTreeWidget>
@@ -64,7 +63,7 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLabel *lParent;
     QTreeWidget *tParent;
-    QListWidget *listComments;
+    QTreeWidget *tComments;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *bEditTask;
     QPushButton *bAddComment;
@@ -290,16 +289,10 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        listComments = new QListWidget(Task);
-        QFont font3;
-        font3.setBold(true);
-        font3.setWeight(75);
-        QListWidgetItem *__qlistwidgetitem = new QListWidgetItem(listComments);
-        __qlistwidgetitem->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
-        __qlistwidgetitem->setFont(font3);
-        listComments->setObjectName(QString::fromUtf8("listComments"));
+        tComments = new QTreeWidget(Task);
+        tComments->setObjectName(QString::fromUtf8("tComments"));
 
-        verticalLayout->addWidget(listComments);
+        verticalLayout->addWidget(tComments);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
@@ -364,13 +357,10 @@ public:
         ___qtreewidgetitem1->setText(2, QApplication::translate("Task", "Status", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem1->setText(1, QApplication::translate("Task", "Name", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem1->setText(0, QApplication::translate("Task", "ID", 0, QApplication::UnicodeUTF8));
-
-        const bool __sortingEnabled = listComments->isSortingEnabled();
-        listComments->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem = listComments->item(0);
-        ___qlistwidgetitem->setText(QApplication::translate("Task", "COMMENTS", 0, QApplication::UnicodeUTF8));
-        listComments->setSortingEnabled(__sortingEnabled);
-
+        QTreeWidgetItem *___qtreewidgetitem2 = tComments->headerItem();
+        ___qtreewidgetitem2->setText(2, QApplication::translate("Task", "Comment", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem2->setText(1, QApplication::translate("Task", "Name", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem2->setText(0, QApplication::translate("Task", "Date/Time", 0, QApplication::UnicodeUTF8));
         bEditTask->setText(QApplication::translate("Task", "Edit Task", 0, QApplication::UnicodeUTF8));
         bAddComment->setText(QApplication::translate("Task", "Add Comment", 0, QApplication::UnicodeUTF8));
         bTeamMembers->setText(QApplication::translate("Task", "Team Members", 0, QApplication::UnicodeUTF8));

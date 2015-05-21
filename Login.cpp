@@ -9,8 +9,10 @@
 #include "Home.h"
 #include <cstring>
 #include <string>
-
+#include <iostream>
 using namespace std;
+
+int UID;
 
 Login::Login() {
     widget.setupUi(this);
@@ -24,7 +26,6 @@ Login::~Login() {
     
 }
 
-#include <iostream>
 void Login::verify() {
     /*
     Type_Packet t;
@@ -45,6 +46,7 @@ void Login::verify() {
 	//check if matches
 	//if (pWord[0] != '\0' && uName[0] != '\0') {
 	if (login(L)) {
+		UID = widget.eUserName->text().toInt();
 		accept();
 		Home *vHome = new Home;
 		vHome->show();

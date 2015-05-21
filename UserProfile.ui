@@ -17,7 +17,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QLabel" name="uName">
+      <widget class="QLabel" name="lName">
        <property name="font">
         <font>
          <pointsize>32</pointsize>
@@ -45,7 +45,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QLabel" name="uLoc">
+        <widget class="QLabel" name="lDispLocation">
          <property name="maximumSize">
           <size>
            <width>60</width>
@@ -69,7 +69,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
-        <widget class="QLabel" name="uEmail">
+        <widget class="QLabel" name="lDispEmail">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -104,7 +104,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QTableWidget" name="tableWidget">
+      <widget class="QTreeWidget" name="tPrevRoles">
        <column>
         <property name="text">
          <string>Project</string>

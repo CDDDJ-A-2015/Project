@@ -25,6 +25,7 @@ public slots:
 private:
 	Ui::Task widget;
 	Project_Task me;
+	void getTask();
 };
 
 #endif	/* _TASK_H */

@@ -21,6 +21,7 @@ public slots:
 	void editProject();
 	void addComment();
 	void viewTask(QModelIndex);
+	void clickbViewGraphics();
 	
 private:
     Ui::Project widget;
@@ -28,6 +29,7 @@ private:
     QWidget *newTab;
     void showTasks();
 	int id;
+	
 };
 
 #endif	/* _PROJECT_H */

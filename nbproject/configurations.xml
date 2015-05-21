@@ -19,6 +19,8 @@
       <itemPath>StringDialog.h</itemPath>
       <itemPath>Task.h</itemPath>
       <itemPath>UserProfile.h</itemPath>
+      <itemPath>apn.h</itemPath>
+      <itemPath>displayGraphics.h</itemPath>
       <itemPath>searchResults.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -37,6 +39,7 @@
       <itemPath>StringDialog.ui</itemPath>
       <itemPath>Task.ui</itemPath>
       <itemPath>UserProfile.ui</itemPath>
+      <itemPath>displayGraphics.ui</itemPath>
       <itemPath>searchResults.ui</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
@@ -55,6 +58,8 @@
       <itemPath>StringDialog.cpp</itemPath>
       <itemPath>Task.cpp</itemPath>
       <itemPath>UserProfile.cpp</itemPath>
+      <itemPath>apn.cpp</itemPath>
+      <itemPath>displayGraphics.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
       <itemPath>searchResults.cpp</itemPath>
     </logicalFolder>
@@ -68,6 +73,7 @@
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
+      <itemPath>a.txt</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -79,9 +85,16 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <qt>
-        <modules>core gui widgets</modules>
+        <modules>core gui widgets opengl</modules>
       </qt>
       <compileType>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>GL</linkerLibLibItem>
+            <linkerLibLibItem>GLU</linkerLibLibItem>
+            <linkerLibLibItem>GLU</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="Client_Side.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -164,6 +177,16 @@
       <item path="UserProfile.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="UserProfile.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="apn.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="apn.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayGraphics.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="displayGraphics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayGraphics.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -279,6 +302,16 @@
       <item path="UserProfile.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="UserProfile.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="apn.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="apn.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayGraphics.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="displayGraphics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayGraphics.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

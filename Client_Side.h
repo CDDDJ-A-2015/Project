@@ -3,6 +3,18 @@
 
 #include <stdio.h>
 #include <vector>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/time.h>
+#include <netdb.h> 
+#include <vector>
+#include <cstring>
 
 /*  ~~~~~~~~~~~~  */
 /*  GLOBAL LISTS  */
@@ -23,17 +35,16 @@ struct Project_List{
     */
     int ID;
     char Name[50];
-    int Manager_ID;//Get rid of??
-    int Team_ID;//Get rid of??
-    char Description[256];//Get rid of
+   // int Manager_ID;//Get rid of??
+   // int Team_ID;//Get rid of??
+   // char Description[256];//Get rid of
     int Progress;
-    char Start_Date[11];//Get rid of
+   // char Start_Date[11];//Get rid of
     char End_Date[11];
-    char Last_Updated[256];//Get rid of
+   // char Last_Updated[256];//Get rid of
     bool active;
     
-    char Manager_FName[50]; //Managers info
-    char Manager_LName[50]; //Managers info
+    char Manager_Name[50]; //Managers info
 
 };
 
@@ -42,9 +53,10 @@ struct Project_List{
 /*  USER  */
 struct User_List{
     int user_id;
-    char f_name[50];
-    char l_name[50];
-    char dob[11]; //Get rid of
+    char Name[50];
+   // char f_name[50];
+   // char l_name[50];
+  //  char dob[11]; //Get rid of
     char location[50];
     char email[50];
     bool Admin;
@@ -71,41 +83,44 @@ struct User_Task;
 struct Expertise;
 struct User_Project;
 struct User_Role;
-/*
+struct My_Project;
+
+/*  DONE  */
 struct Home_Screen_User{
-    /*
-     
-     fname
-     lname
-     id
-     tasks
-     notifications
-     projects
-     global user && projects
-     
-     
+    int user_id;
+    char Name[50];
+    
+    std::vector<Notification>Notifications;
+    std::vector<My_Project>My_Projects;
+    std::vector<User_Task>Assigned_Tasks;
+};
+
+struct Name_Of_User{
+    char Name[50];
+};
+
+struct Name_Of_Project{
+    char Name[50];
 };
 
 struct User_Profile_Screen{
-    /*
-    
-     fname
-     lname
-     id
-     location
-     email
-     expertises
-     
-    //can edit bool
+    int user_id;
+    char Name[50];
+    char location[50];
+    char email[50];
+    bool canedit;
  
-     roles, project id, active - USER ROLE
-     
-     
-     
-     
- 
+    std::vector<User_Role>Previous_Roles;
+    std::vector<Expertise>Expertises;
 };
- */
+
+struct UPS_Packet{
+    char Name[50];
+    char location[50];
+    char email[50];
+    bool canedit;
+};
+
 struct User{
     int user_id;
     char f_name[50];
@@ -137,32 +152,30 @@ struct Notification{
 };
 
 //Myprojects
-struct User_Project{
+struct My_Project{
     int ID;
     char Name[50];
-    char Description[256];//Get rid of
     int Progress;
-    char Start_Date[11];//Get rid of
     char End_Date[11];
-    char Last_Updated[256];//get rid of
     bool active;
+    char Role[50];
     
     //Put in USER ROLE
     
-    char Manager_FName[50];
-    char Manager_LName[50];
+    char Manager_Name[50];
 };
 
 struct User_Task{
-    int Project_ID;//change to Project Name
+    char Project_Name[50];//change to Project Name
     int Task_ID;
     char Name[50];
-    char Description[256]; //Get rid of
-    int Progress;//Get rid of
+  //  char Description[256]; //Get rid of
+  //  int Progress;//Get rid of
     int Priority;
     //Add Status/Pending
-    char Date_Created[11];//get rid of
+ //   char Date_Created[11];//get rid of
     char Date_Due[11];
+    int Day_Due;
 };
 
 struct Expertise{
@@ -172,8 +185,8 @@ struct Expertise{
 
 struct User_Role{
     char Name[50];
-    //Project Name
-    //Active
+    char Project_Name[50];
+    bool active;
 };
 
 /*  ~~~~~~~~~~~~~~~  */
@@ -185,57 +198,72 @@ struct Project_Comment;
 struct Task_Comment;
 struct Team_Member;
 struct Task_Assignment;
+struct Task_List;
 
-struct Project_{
+struct Specific_Project{
     int ID;
     char Name[50];
     int Manager_ID;
-    int Team_ID;//Don't Need it
     char Description[256];
     int Progress;
-    char Start_Date[11];
     char End_Date[11];
     char Last_Updated[256];
     bool active;
-    
-    //can edit bool
-    
-    char Manager_FName[50]; //Managers info
-    char Manager_LName[50]; //Managers info
+    bool canedit;
+    char Manager_Name[50];
     
     
-    std::vector<Project_Task>Tasks;//change to task list
+    std::vector<Task_List>Tasks;//change to task list
     std::vector<Project_Comment>Project_Comments;
     std::vector<Team_Member>Team;//Get rid of
     
 };
 
-/*
- 
- struct task list
- {
-    id
- name
- status
- due date
- 
- 
- 
- }
- */
+struct Project_Packet{
+    char Name[50];
+    int Manager_ID;
+    char Description[256];
+    int Progress;
+    char End_Date[11];
+    char Last_Updated[256];
+    bool active;
+    bool canedit;
+    char Manager_Name[50];
+};
+
+struct Task_List{
+    int ID;
+    int status;
+    char name[50];
+    char date_due[11];//Day DUE??
+    int priority;
+};
+
+struct Task_Packet{
+    char Name[50];
+    char Description[256];
+    int Progress;
+    int Status;
+    int Priority;
+    char Date_Due[11];
+    bool canedit;
+    int Length;
+    char Last_Updated[11];
+	int Project_ID;
+};
 
 struct Project_Task{
-    int Project_ID;
     int Task_ID;
     char Name[50];
     char Description[256];
     int Progress;
-    int Pending;//Status
+    int Status;
     int Priority;
+    int Length;
+    bool canedit;
+	int Project_ID;
     
-    //can edit boool
-    
-    char Date_Created[11];
+    char Last_Updated[11];
     char Date_Due[11];
     
     std::vector<Task_Assignment>Assigned;
@@ -286,8 +314,8 @@ struct Task_Comment{
 
 struct Team_Member{
     int User_ID;
-    char F_Name[50];
-    char L_Name[50];
+    char Name[50];
+    char Role[50];
 };
 
 /*

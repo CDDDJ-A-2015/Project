@@ -24,8 +24,9 @@
 #include <vector>
 #include <cstring>
 #include "Client_Side.h"
+#include "Packets.h"
 
-extern int sockfd;
+extern int sockfd, UID;
 
 class Home : public QMainWindow {
     Q_OBJECT
@@ -46,9 +47,14 @@ private slots:
 private:
     Ui::Home widget;
     bool bGlob;
-	User Me;
+	Home_Screen_User Me;
+	void getNotification();
+	void getTasks();
 	void getProjectList();
 	std::vector<Project_List> Global_Project_List;
+	std::vector<User_List> Global_User_List;
+	void getUserList();
+	void getUserProjects();
 };
 
 

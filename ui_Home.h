@@ -139,7 +139,6 @@ public:
         __qtreewidgetitem->setTextAlignment(1, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
         __qtreewidgetitem->setTextAlignment(0, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
         tUserTaskList->setHeaderItem(__qtreewidgetitem);
-        new QTreeWidgetItem(tUserTaskList);
         tUserTaskList->setObjectName(QString::fromUtf8("tUserTaskList"));
 
         horizontalLayout_7->addWidget(tUserTaskList);
@@ -177,6 +176,7 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         tMyProjects = new QTreeWidget(tab_2);
         QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem();
+        __qtreewidgetitem1->setTextAlignment(6, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
         __qtreewidgetitem1->setTextAlignment(5, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
         __qtreewidgetitem1->setTextAlignment(4, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
         __qtreewidgetitem1->setTextAlignment(3, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
@@ -184,9 +184,6 @@ public:
         __qtreewidgetitem1->setTextAlignment(1, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
         __qtreewidgetitem1->setTextAlignment(0, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
         tMyProjects->setHeaderItem(__qtreewidgetitem1);
-        new QTreeWidgetItem(tMyProjects);
-        new QTreeWidgetItem(tMyProjects);
-        new QTreeWidgetItem(tMyProjects);
         tMyProjects->setObjectName(QString::fromUtf8("tMyProjects"));
 #ifndef QT_NO_WHATSTHIS
         tMyProjects->setWhatsThis(QString::fromUtf8(""));
@@ -238,8 +235,6 @@ public:
         __qtreewidgetitem2->setTextAlignment(1, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
         __qtreewidgetitem2->setTextAlignment(0, Qt::AlignHCenter|Qt::AlignVCenter|Qt::AlignCenter);
         tGlobals->setHeaderItem(__qtreewidgetitem2);
-        new QTreeWidgetItem(tGlobals);
-        new QTreeWidgetItem(tGlobals);
         tGlobals->setObjectName(QString::fromUtf8("tGlobals"));
 #ifndef QT_NO_WHATSTHIS
         tGlobals->setWhatsThis(QString::fromUtf8(""));
@@ -298,70 +293,34 @@ public:
         ___qtreewidgetitem->setText(1, QApplication::translate("Home", "Project Name", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(0, QApplication::translate("Home", "Task ID", 0, QApplication::UnicodeUTF8));
 
-        const bool __sortingEnabled = tUserTaskList->isSortingEnabled();
-        tUserTaskList->setSortingEnabled(false);
-        QTreeWidgetItem *___qtreewidgetitem1 = tUserTaskList->topLevelItem(0);
-        ___qtreewidgetitem1->setText(5, QApplication::translate("Home", "a", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem1->setText(4, QApplication::translate("Home", "a", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem1->setText(3, QApplication::translate("Home", "a", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem1->setText(2, QApplication::translate("Home", "a", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem1->setText(1, QApplication::translate("Home", "James", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem1->setText(0, QApplication::translate("Home", "1231", 0, QApplication::UnicodeUTF8));
-        tUserTaskList->setSortingEnabled(__sortingEnabled);
-
-
-        const bool __sortingEnabled1 = lNotificationList->isSortingEnabled();
+        const bool __sortingEnabled = lNotificationList->isSortingEnabled();
         lNotificationList->setSortingEnabled(false);
         QListWidgetItem *___qlistwidgetitem = lNotificationList->item(0);
         ___qlistwidgetitem->setText(QApplication::translate("Home", "NOTIFICATIONS", 0, QApplication::UnicodeUTF8));
         QListWidgetItem *___qlistwidgetitem1 = lNotificationList->item(1);
         ___qlistwidgetitem1->setText(QApplication::translate("Home", "New Item", 0, QApplication::UnicodeUTF8));
-        lNotificationList->setSortingEnabled(__sortingEnabled1);
+        lNotificationList->setSortingEnabled(__sortingEnabled);
 
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Home", "Tasks", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem2 = tMyProjects->headerItem();
-        ___qtreewidgetitem2->setText(5, QApplication::translate("Home", "Due Date", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem2->setText(4, QApplication::translate("Home", "Progress", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem2->setText(3, QApplication::translate("Home", "My Role", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem2->setText(2, QApplication::translate("Home", "Manager", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem2->setText(1, QApplication::translate("Home", "Project Name", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem2->setText(0, QApplication::translate("Home", "ID", 0, QApplication::UnicodeUTF8));
-
-        const bool __sortingEnabled2 = tMyProjects->isSortingEnabled();
-        tMyProjects->setSortingEnabled(false);
-        QTreeWidgetItem *___qtreewidgetitem3 = tMyProjects->topLevelItem(0);
-        ___qtreewidgetitem3->setText(1, QApplication::translate("Home", "test", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem3->setText(0, QApplication::translate("Home", "2414", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem4 = tMyProjects->topLevelItem(1);
-        ___qtreewidgetitem4->setText(1, QApplication::translate("Home", "New Item", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem4->setText(0, QApplication::translate("Home", "3525", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem5 = tMyProjects->topLevelItem(2);
-        ___qtreewidgetitem5->setText(1, QApplication::translate("Home", "21", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem5->setText(0, QApplication::translate("Home", "2134", 0, QApplication::UnicodeUTF8));
-        tMyProjects->setSortingEnabled(__sortingEnabled2);
-
+        QTreeWidgetItem *___qtreewidgetitem1 = tMyProjects->headerItem();
+        ___qtreewidgetitem1->setText(6, QApplication::translate("Home", "Active", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem1->setText(5, QApplication::translate("Home", "Due Date", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem1->setText(4, QApplication::translate("Home", "Progress", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem1->setText(3, QApplication::translate("Home", "My Role", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem1->setText(2, QApplication::translate("Home", "Manager", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem1->setText(1, QApplication::translate("Home", "Project Name", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem1->setText(0, QApplication::translate("Home", "ID", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Home", "My Projects", 0, QApplication::UnicodeUTF8));
         bProjects->setText(QApplication::translate("Home", "Projects", 0, QApplication::UnicodeUTF8));
         bUsers->setText(QApplication::translate("Home", "Users", 0, QApplication::UnicodeUTF8));
         bSearch->setText(QApplication::translate("Home", "Search", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem6 = tGlobals->headerItem();
-        ___qtreewidgetitem6->setText(5, QApplication::translate("Home", "Is Active", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem6->setText(4, QApplication::translate("Home", "Due Date", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem6->setText(3, QApplication::translate("Home", "Progress", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem6->setText(2, QApplication::translate("Home", "Manager", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem6->setText(1, QApplication::translate("Home", "Project Name", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem6->setText(0, QApplication::translate("Home", "ID", 0, QApplication::UnicodeUTF8));
-
-        const bool __sortingEnabled3 = tGlobals->isSortingEnabled();
-        tGlobals->setSortingEnabled(false);
-        QTreeWidgetItem *___qtreewidgetitem7 = tGlobals->topLevelItem(0);
-        ___qtreewidgetitem7->setText(1, QApplication::translate("Home", "test", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem7->setText(0, QApplication::translate("Home", "2414", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem8 = tGlobals->topLevelItem(1);
-        ___qtreewidgetitem8->setText(1, QApplication::translate("Home", "21", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem8->setText(0, QApplication::translate("Home", "2134", 0, QApplication::UnicodeUTF8));
-        tGlobals->setSortingEnabled(__sortingEnabled3);
-
+        QTreeWidgetItem *___qtreewidgetitem2 = tGlobals->headerItem();
+        ___qtreewidgetitem2->setText(5, QApplication::translate("Home", "Is Active", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem2->setText(4, QApplication::translate("Home", "Due Date", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem2->setText(3, QApplication::translate("Home", "Progress", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem2->setText(2, QApplication::translate("Home", "Manager", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem2->setText(1, QApplication::translate("Home", "Project Name", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem2->setText(0, QApplication::translate("Home", "ID", 0, QApplication::UnicodeUTF8));
         bAddProject->setText(QApplication::translate("Home", "Add Project", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("Home", "Add User", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(proj), QApplication::translate("Home", "Globals", 0, QApplication::UnicodeUTF8));

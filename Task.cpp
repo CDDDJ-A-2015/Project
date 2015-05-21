@@ -9,6 +9,11 @@
 #include "StringDialog.h"
 #include "EditTask.h"
 #include <ctime>
+#include <iostream>
+#include "Packets.h"
+#include "Client_Side.h"
+using namespace std;
+extern int sockfd;
 
 Task::Task() {
 	widget.setupUi(this);
@@ -22,14 +27,14 @@ Task::~Task() {
 void Task::setID(int tmp) {
 	me.Task_ID = tmp;
 	
-	//READ
+	getTask();//READ
 	
 	widget.lID->setText(QString::number(me.Task_ID));
 	widget.lName->setText(me.Name);
 	widget.lPID->setText(QString::number(me.Project_ID));
 	widget.lDescription->setText(me.Description);
 	widget.lDue->setText(me.Date_Due);
-	widget.lCreated->setText(me.Date_Due);
+	widget.lCreated->hide();
 	switch (me.Priority) {
 		case 0:
 			widget.lPriority->setText("Trivial");
@@ -43,9 +48,12 @@ void Task::setID(int tmp) {
 		case 3:
 			widget.lPriority->setText("Critical");
 			break;
+		default:
+			widget.lPriority->setText("Unknown");
+			break;
 	};
 	
-	switch (me.Pending) {
+	switch (me.Status) {
 		case 0:
 			widget.fStatus->show();
 			widget.lStatus->setText("Pending");
@@ -96,4 +104,66 @@ void Task::editTask() {
 	EditTask *vET = new EditTask();
 	vET->setID(me.Task_ID);
 	vET->exec();
+}
+
+void Task::getTask()
+{
+    Type_Packet T;
+    Request_Packet RP;
+    int n;
+    
+    RP.Request = true;
+    
+    //Send to server that client is about to request something
+    n = write(sockfd,&RP,sizeof(RP));
+    if (n < 0)
+        cout << "ERROR writing to socket" << endl;
+    T.T = 23;
+    
+    //Send to server that client is about to send a login packet
+    
+    T.ID = me.Task_ID;
+    n = write(sockfd,&T,sizeof(T));
+    if (n < 0)
+        cout << "ERROR writing to socket" << endl;
+    
+    //Receive Type of packet about to be sent next
+    n = read(sockfd,&T,sizeof(T));
+    if (n < 0)
+        cout << "ERROR reading to socket" << endl;
+  
+    if(T.T == 23)
+    {
+        
+          Task_Packet PP;
+       
+        do
+        {
+             cout << sizeof(PP) << endl;
+            //Receive User Packet Type
+            n = read(sockfd,&PP,sizeof(PP));
+            
+            
+            if (n < 0)
+                cout << "ERROR reading to socket" << endl;
+            if(PP.Name[0] == '*')
+                break;
+			strcpy(me.Name, PP.Name);
+            strcpy(me.Description, PP.Description);
+            me.Progress = PP.Progress;
+            me.Status = PP.Status;
+            me.Priority = PP.Priority;
+            me.canedit = PP.canedit;
+            me.Length = PP.Length;
+            strcpy(me.Date_Due, PP.Date_Due);
+            strcpy(me.Last_Updated, PP.Last_Updated);
+            me.canedit = PP.canedit;
+            me.Project_ID = PP.Project_ID;
+            
+            
+        }while(PP.Name[0] != '*');
+        
+    }
+    else
+        cout << "ERROR, different type of packet received! Packet was: " << T.T << "." << endl;
 }
