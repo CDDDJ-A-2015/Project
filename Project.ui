@@ -19,7 +19,31 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="projName">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="lDispManager">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Manager: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lManager">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="lName">
          <property name="font">
           <font>
            <pointsize>32</pointsize>
@@ -29,26 +53,25 @@
          <property name="text">
           <string>Trees of Life</string>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="lManager">
-         <property name="text">
-          <string>MANAGER:</string>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bTeamMembers">
+        <widget class="QLabel" name="lProjectID">
          <property name="text">
-          <string>Team Members</string>
+          <string>ID</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="QLabel" name="projDesc">
+      <widget class="QLabel" name="lProjDesc">
        <property name="text">
         <string>The trees of life project shows the assimilation of trees into the life of others.  After such the trees will then destroy those who it has assimilated with, to become the new trees</string>
        </property>
@@ -59,6 +82,79 @@
         <bool>true</bool>
        </property>
       </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="lDispC1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Cocomo I:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lC1">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lDispC2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Cocomo II:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lC2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lDispFP">
+         <property name="text">
+          <string>Function Points:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lFP">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <widget class="QProgressBar" name="projProgress">
@@ -83,7 +179,51 @@
        </property>
        <column>
         <property name="text">
-         <string>ID</string>
+         <string>Task ID</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Task Name</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Status</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Priority</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Due Date</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTreeWidget" name="tComments">
+       <column>
+        <property name="text">
+         <string>Date/Time</string>
         </property>
        </column>
        <column>
@@ -93,59 +233,15 @@
        </column>
        <column>
         <property name="text">
-         <string>Status</string>
+         <string>Comment</string>
         </property>
        </column>
-       <column>
-        <property name="text">
-         <string>Due Date</string>
-        </property>
-       </column>
-       <item>
-        <property name="text">
-         <string>21312</string>
-        </property>
-        <property name="text">
-         <string>asdsa</string>
-        </property>
-        <property name="text">
-         <string>In Progress</string>
-        </property>
-        <property name="text">
-         <string>21 04 2012</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item>
-      <widget class="QListWidget" name="listComments">
-       <item>
-        <property name="text">
-         <string>COMMENTS</string>
-        </property>
-        <property name="font">
-         <font>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
-        </property>
-       </item>
       </widget>
      </item>
     </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QPushButton" name="bViewGraphics">
-       <property name="text">
-        <string>View Project Graphically</string>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QPushButton" name="bAddComment">
        <property name="text">
@@ -154,34 +250,64 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="bEditProject">
+      <widget class="QPushButton" name="bTeamMembers">
        <property name="text">
-        <string>Edit Project</string>
+        <string>Team Members</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
-      <widget class="QLabel" name="label_3">
+      <widget class="QPushButton" name="bAPN">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Activity Precedence Network</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lProjectID">
+      <widget class="QPushButton" name="bGantt">
        <property name="text">
-        <string>ID</string>
+        <string>Gantt Chart</string>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="bPert">
+       <property name="text">
+        <string>Pert Analysis</string>
        </property>
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QWidget" name="wCanEdit" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="bAddTask">
+        <property name="text">
+         <string>Add Task</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="bEditProject">
+        <property name="text">
+         <string>Edit Project</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

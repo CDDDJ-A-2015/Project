@@ -22,7 +22,7 @@ static const uint qt_meta_data_Task[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,12 +32,14 @@ static const uint qt_meta_data_Task[] = {
  // slots: signature, parameters, type, tag, flags
        6,    5,    5,    5, 0x0a,
       19,    5,    5,    5, 0x0a,
+      30,    5,    5,    5, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Task[] = {
     "Task\0\0addComment()\0editTask()\0"
+    "clickbTeamMembers()\0"
 };
 
 void Task::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -48,6 +50,7 @@ void Task::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         switch (_id) {
         case 0: _t->addComment(); break;
         case 1: _t->editTask(); break;
+        case 2: _t->clickbTeamMembers(); break;
         default: ;
         }
     }
@@ -86,9 +89,9 @@ int Task::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

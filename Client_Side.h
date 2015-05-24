@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <vector>
-#include <stdio.h>
+#include <iostream>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
@@ -12,8 +12,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <sys/time.h>
-#include <netdb.h> 
-#include <vector>
+#include <netdb.h>
 #include <cstring>
 
 /*  ~~~~~~~~~~~~  */
@@ -97,6 +96,7 @@ struct Home_Screen_User{
 
 struct Name_Of_User{
     char Name[50];
+    bool ADMIN;
 };
 
 struct Name_Of_Project{
@@ -115,10 +115,34 @@ struct User_Profile_Screen{
 };
 
 struct UPS_Packet{
+    int ID;
     char Name[50];
     char location[50];
     char email[50];
     bool canedit;
+};
+
+
+//ADDED THIS
+struct Save_UPS_Packet{
+    int ID;
+    char Name[50];
+    char location[50];
+    char email[50];
+    unsigned int Expertises_size;
+};
+
+
+//ADDED THIS
+struct createUser_Packet{
+    char name[50];
+    char dob[11];
+    char password[21];
+    char location[50];
+    char email[50];
+    bool admin;
+    
+    unsigned int Expertises_size;
 };
 
 struct User{
@@ -166,14 +190,13 @@ struct My_Project{
 };
 
 struct User_Task{
-    char Project_Name[50];//change to Project Name
+    char Project_Name[50];
     int Task_ID;
     char Name[50];
-  //  char Description[256]; //Get rid of
-  //  int Progress;//Get rid of
+
     int Priority;
-    //Add Status/Pending
- //   char Date_Created[11];//get rid of
+    int status;
+
     char Date_Due[11];
     int Day_Due;
 };
@@ -182,6 +205,28 @@ struct Expertise{
     char Name[50];
 };
 
+struct APN_Dependencies{
+    int parent;
+};
+
+
+struct APN_Packet{
+    char Name[50];
+    int Length;
+    int ID;
+    int Dependency;
+};
+
+struct APN_List{
+    char Name[50];
+    int Length;
+    int ID;
+    std::vector<int> Parents;
+};
+
+struct APN_Data{
+    std::vector<APN_List>List;
+};
 
 struct User_Role{
     char Name[50];
@@ -211,12 +256,29 @@ struct Specific_Project{
     bool active;
     bool canedit;
     char Manager_Name[50];
+    int CCMO1;
+    int CCMO2;
+    int F_Points;
     
     
     std::vector<Task_List>Tasks;//change to task list
     std::vector<Project_Comment>Project_Comments;
     std::vector<Team_Member>Team;//Get rid of
     
+};
+
+struct createProject_Packet{
+    char Name[50];
+    int Manager_ID;
+    char Description[256];
+    char End_Date[11];
+    char Last_Updated[256];
+    char Beg_date[11];
+};
+
+struct save_P_Team{
+    int user_id;
+    int role_id;
 };
 
 struct Project_Packet{
@@ -229,6 +291,9 @@ struct Project_Packet{
     bool active;
     bool canedit;
     char Manager_Name[50];
+    int CCMO1;
+    int CCMO2;
+    int F_Points;
 };
 
 struct Task_List{
@@ -237,6 +302,7 @@ struct Task_List{
     char name[50];
     char date_due[11];//Day DUE??
     int priority;
+    int Progress;
 };
 
 struct Task_Packet{
@@ -249,7 +315,7 @@ struct Task_Packet{
     bool canedit;
     int Length;
     char Last_Updated[11];
-	int Project_ID;
+    int Project_ID;
 };
 
 struct Project_Task{
@@ -261,43 +327,44 @@ struct Project_Task{
     int Priority;
     int Length;
     bool canedit;
-	int Project_ID;
+    int Project_ID;
     
     char Last_Updated[11];
     char Date_Due[11];
     
     std::vector<Task_Assignment>Assigned;
     std::vector<Task_Comment>Task_Comments;
-    std::vector<int>Parent_Task;
-    std::vector<int>Child_Task;
+    std::vector<Task_List>Parent_Task;
+    std::vector<Task_List>Child_Task;
 };
 
-/*
-    struct dependencies{
- 
-    id
-    name
-    status
-    due date
- 
- };
- 
-    struct parent{
- 
-    id
-    name
-    status
-    due date
- };
- 
- 
- */
+struct create_Task_Packet{
+    int Task_ID;
+    char Name[50];
+    char Description[256];
+    int Progress;
+    int Status;
+    int Priority;
+    int Length;
+    int Project_ID;
+    
+    char Last_Updated[11];
+    char Date_Due[11];
+    
+    int NUM_P_Tasks;
+    int NUM_C_Tasks;
+};
 
+
+struct Task_Assignment_Packet{
+    char Name[50];
+    int User_ID;
+    bool canedit;
+};
 
 struct Task_Assignment{
-    char F_Name[50];
-    char L_Name[50];
-    int User_ID;//POSSIBLY?
+    char Name[50];
+    int User_ID;
 };
 
 struct Project_Comment{
@@ -326,19 +393,6 @@ struct Team_Member{
  
  CHANGE DATES TO WEEK DUE
  WEEK START
- 
-    PRIORITIES:
- 
-    1 - 
-    2 - 
-    3 -
-    4 - 
-    5 -
- 
- 
- 
-    JAKES STUFF
-    
  
  
  

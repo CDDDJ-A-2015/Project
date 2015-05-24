@@ -30,7 +30,8 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_3;
     QLabel *lName;
-    QPushButton *bEditUser;
+    QLabel *lDispID;
+    QLabel *lID;
     QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout_4;
     QLabel *lDispLocation;
@@ -41,9 +42,7 @@ public:
     QHBoxLayout *horizontalLayout_6;
     QListWidget *listWidget;
     QTreeWidget *tPrevRoles;
-    QHBoxLayout *horizontalLayout;
-    QLabel *lDispID;
-    QLabel *lID;
+    QPushButton *bEditUser;
 
     void setupUi(QWidget *UserProfile)
     {
@@ -65,10 +64,21 @@ public:
 
         horizontalLayout_3->addWidget(lName);
 
-        bEditUser = new QPushButton(UserProfile);
-        bEditUser->setObjectName(QString::fromUtf8("bEditUser"));
+        lDispID = new QLabel(UserProfile);
+        lDispID->setObjectName(QString::fromUtf8("lDispID"));
+        lDispID->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_3->addWidget(bEditUser);
+        horizontalLayout_3->addWidget(lDispID);
+
+        lID = new QLabel(UserProfile);
+        lID->setObjectName(QString::fromUtf8("lID"));
+        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
+        lID->setSizePolicy(sizePolicy);
+
+        horizontalLayout_3->addWidget(lID);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -126,26 +136,10 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_6);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        lDispID = new QLabel(UserProfile);
-        lDispID->setObjectName(QString::fromUtf8("lDispID"));
-        lDispID->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        bEditUser = new QPushButton(UserProfile);
+        bEditUser->setObjectName(QString::fromUtf8("bEditUser"));
 
-        horizontalLayout->addWidget(lDispID);
-
-        lID = new QLabel(UserProfile);
-        lID->setObjectName(QString::fromUtf8("lID"));
-        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
-        lID->setSizePolicy(sizePolicy);
-
-        horizontalLayout->addWidget(lID);
-
-
-        verticalLayout->addLayout(horizontalLayout);
+        verticalLayout->addWidget(bEditUser);
 
 
         retranslateUi(UserProfile);
@@ -157,7 +151,8 @@ public:
     {
         UserProfile->setWindowTitle(QApplication::translate("UserProfile", "UserProfile", 0, QApplication::UnicodeUTF8));
         lName->setText(QApplication::translate("UserProfile", "Name", 0, QApplication::UnicodeUTF8));
-        bEditUser->setText(QApplication::translate("UserProfile", "Edit User", 0, QApplication::UnicodeUTF8));
+        lDispID->setText(QApplication::translate("UserProfile", "ID Number:", 0, QApplication::UnicodeUTF8));
+        lID->setText(QApplication::translate("UserProfile", "2312213", 0, QApplication::UnicodeUTF8));
         lDispLocation->setText(QApplication::translate("UserProfile", "Location: ", 0, QApplication::UnicodeUTF8));
         lLocation->setText(QApplication::translate("UserProfile", "Sydney", 0, QApplication::UnicodeUTF8));
         lDispEmail->setText(QApplication::translate("UserProfile", "Email:", 0, QApplication::UnicodeUTF8));
@@ -173,8 +168,7 @@ public:
         ___qtreewidgetitem->setText(2, QApplication::translate("UserProfile", "Completed", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(1, QApplication::translate("UserProfile", "Role", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(0, QApplication::translate("UserProfile", "Project", 0, QApplication::UnicodeUTF8));
-        lDispID->setText(QApplication::translate("UserProfile", "ID Number:", 0, QApplication::UnicodeUTF8));
-        lID->setText(QApplication::translate("UserProfile", "2312213", 0, QApplication::UnicodeUTF8));
+        bEditUser->setText(QApplication::translate("UserProfile", "Edit User", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

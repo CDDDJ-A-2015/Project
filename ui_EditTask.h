@@ -48,6 +48,8 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QPushButton *bAddDep;
     QPushButton *bDelDep;
+    QHBoxLayout *horizontalLayout_5;
+    QPushButton *bDeleteTask;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *EditTask)
@@ -162,12 +164,28 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        bDeleteTask = new QPushButton(EditTask);
+        bDeleteTask->setObjectName(QString::fromUtf8("bDeleteTask"));
+        sizePolicy1.setHeightForWidth(bDeleteTask->sizePolicy().hasHeightForWidth());
+        bDeleteTask->setSizePolicy(sizePolicy1);
+
+        horizontalLayout_5->addWidget(bDeleteTask);
+
         buttonBox = new QDialogButtonBox(EditTask);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
+        sizePolicy1.setHeightForWidth(buttonBox->sizePolicy().hasHeightForWidth());
+        buttonBox->setSizePolicy(sizePolicy1);
+        buttonBox->setMinimumSize(QSize(600, 0));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        buttonBox->setCenterButtons(false);
 
-        verticalLayout->addWidget(buttonBox);
+        horizontalLayout_5->addWidget(buttonBox);
+
+
+        verticalLayout->addLayout(horizontalLayout_5);
 
 
         retranslateUi(EditTask);
@@ -209,6 +227,7 @@ public:
         ___qtreewidgetitem->setText(0, QApplication::translate("EditTask", "ID", 0, QApplication::UnicodeUTF8));
         bAddDep->setText(QApplication::translate("EditTask", "Add Dependency", 0, QApplication::UnicodeUTF8));
         bDelDep->setText(QApplication::translate("EditTask", "Delete Dependency", 0, QApplication::UnicodeUTF8));
+        bDeleteTask->setText(QApplication::translate("EditTask", "Delete Task", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

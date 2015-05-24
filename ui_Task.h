@@ -65,9 +65,11 @@ public:
     QTreeWidget *tParent;
     QTreeWidget *tComments;
     QHBoxLayout *horizontalLayout_4;
-    QPushButton *bEditTask;
     QPushButton *bAddComment;
     QPushButton *bTeamMembers;
+    QWidget *wCanEdit;
+    QHBoxLayout *horizontalLayout_12;
+    QPushButton *bEditTask;
     QPushButton *bStatusChange;
 
     void setupUi(QWidget *Task)
@@ -296,11 +298,6 @@ public:
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        bEditTask = new QPushButton(Task);
-        bEditTask->setObjectName(QString::fromUtf8("bEditTask"));
-
-        horizontalLayout_4->addWidget(bEditTask);
-
         bAddComment = new QPushButton(Task);
         bAddComment->setObjectName(QString::fromUtf8("bAddComment"));
 
@@ -314,10 +311,23 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_4);
 
-        bStatusChange = new QPushButton(Task);
+        wCanEdit = new QWidget(Task);
+        wCanEdit->setObjectName(QString::fromUtf8("wCanEdit"));
+        horizontalLayout_12 = new QHBoxLayout(wCanEdit);
+        horizontalLayout_12->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_12->setObjectName(QString::fromUtf8("horizontalLayout_12"));
+        bEditTask = new QPushButton(wCanEdit);
+        bEditTask->setObjectName(QString::fromUtf8("bEditTask"));
+
+        horizontalLayout_12->addWidget(bEditTask);
+
+        bStatusChange = new QPushButton(wCanEdit);
         bStatusChange->setObjectName(QString::fromUtf8("bStatusChange"));
 
-        verticalLayout->addWidget(bStatusChange);
+        horizontalLayout_12->addWidget(bStatusChange);
+
+
+        verticalLayout->addWidget(wCanEdit);
 
 
         retranslateUi(Task);
@@ -361,9 +371,9 @@ public:
         ___qtreewidgetitem2->setText(2, QApplication::translate("Task", "Comment", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem2->setText(1, QApplication::translate("Task", "Name", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem2->setText(0, QApplication::translate("Task", "Date/Time", 0, QApplication::UnicodeUTF8));
-        bEditTask->setText(QApplication::translate("Task", "Edit Task", 0, QApplication::UnicodeUTF8));
         bAddComment->setText(QApplication::translate("Task", "Add Comment", 0, QApplication::UnicodeUTF8));
         bTeamMembers->setText(QApplication::translate("Task", "Team Members", 0, QApplication::UnicodeUTF8));
+        bEditTask->setText(QApplication::translate("Task", "Edit Task", 0, QApplication::UnicodeUTF8));
         bStatusChange->setText(QApplication::translate("Task", "Complete Task", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

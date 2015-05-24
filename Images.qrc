@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="Images">
+    <file>Button-Previous-icon.png</file>
+    <file>Button-Next-icon.png</file>
+  </qresource>
+</RCC>

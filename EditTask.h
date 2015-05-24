@@ -18,7 +18,7 @@ public:
 	void setID(int);
 	
 public slots:
-	
+	void clickbDeleteTask();
 	
 private:
 	Ui::EditTask widget;

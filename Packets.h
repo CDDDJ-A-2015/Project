@@ -194,7 +194,7 @@ struct Task_Packet{
     char Date_Created[11];
     char Date_Due[11];
 };*/
-
+/*
 struct Task_Assignment_Packet{
     int Project_ID;
     int Task_ID;
@@ -207,7 +207,7 @@ struct Task_Assignment_Packet{
     char Date_Created[11];
     char Date_Due[11];
 };
-
+*/
 struct Project_Comment_Packet{
     char Comment[256];
     char Date[11];

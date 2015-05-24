@@ -18,14 +18,16 @@
       <itemPath>Search.h</itemPath>
       <itemPath>StringDialog.h</itemPath>
       <itemPath>Task.h</itemPath>
+      <itemPath>TeamMembers.h</itemPath>
       <itemPath>UserProfile.h</itemPath>
-      <itemPath>apn.h</itemPath>
       <itemPath>displayGraphics.h</itemPath>
       <itemPath>searchResults.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>Button-Next-icon.png</itemPath>
+      <itemPath>Button-Previous-icon.png</itemPath>
       <itemPath>Coco1.ui</itemPath>
       <itemPath>Coco2.ui</itemPath>
       <itemPath>EditProject.ui</itemPath>
@@ -33,11 +35,13 @@
       <itemPath>EditUser.ui</itemPath>
       <itemPath>FuncPoints.ui</itemPath>
       <itemPath>Home.ui</itemPath>
+      <itemPath>Images.qrc</itemPath>
       <itemPath>Login.ui</itemPath>
       <itemPath>Project.ui</itemPath>
       <itemPath>Search.ui</itemPath>
       <itemPath>StringDialog.ui</itemPath>
       <itemPath>Task.ui</itemPath>
+      <itemPath>TeamMembers.ui</itemPath>
       <itemPath>UserProfile.ui</itemPath>
       <itemPath>displayGraphics.ui</itemPath>
       <itemPath>searchResults.ui</itemPath>
@@ -57,8 +61,8 @@
       <itemPath>Search.cpp</itemPath>
       <itemPath>StringDialog.cpp</itemPath>
       <itemPath>Task.cpp</itemPath>
+      <itemPath>TeamMembers.cpp</itemPath>
       <itemPath>UserProfile.cpp</itemPath>
-      <itemPath>apn.cpp</itemPath>
       <itemPath>displayGraphics.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
       <itemPath>searchResults.cpp</itemPath>
@@ -96,6 +100,10 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="Button-Next-icon.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Button-Previous-icon.png" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Client_Side.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Coco1.cpp" ex="false" tool="1" flavor2="0">
@@ -140,6 +148,8 @@
       </item>
       <item path="Home.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Images.qrc" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Login.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Login.h" ex="false" tool="3" flavor2="0">
@@ -172,15 +182,17 @@
       </item>
       <item path="Task.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="TeamMembers.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TeamMembers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TeamMembers.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="UserProfile.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="UserProfile.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="UserProfile.ui" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="apn.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="apn.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="displayGraphics.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -221,6 +233,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Button-Next-icon.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Button-Previous-icon.png" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Client_Side.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Coco1.cpp" ex="false" tool="1" flavor2="0">
@@ -265,6 +281,8 @@
       </item>
       <item path="Home.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Images.qrc" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Login.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Login.h" ex="false" tool="3" flavor2="0">
@@ -297,15 +315,17 @@
       </item>
       <item path="Task.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="TeamMembers.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TeamMembers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TeamMembers.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="UserProfile.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="UserProfile.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="UserProfile.ui" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="apn.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="apn.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="displayGraphics.cpp" ex="false" tool="1" flavor2="0">
       </item>

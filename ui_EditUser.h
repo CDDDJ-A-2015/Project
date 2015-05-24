@@ -29,7 +29,11 @@ class Ui_EditUser
 {
 public:
     QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_3;
     QLabel *lName;
+    QLabel *lDispID;
+    QLabel *lID;
+    QHBoxLayout *horizontalLayout_4;
     QHBoxLayout *horizontalLayout;
     QLineEdit *eLocation;
     QLineEdit *eEmail;
@@ -38,9 +42,6 @@ public:
     QPushButton *bAddExp;
     QPushButton *bDelExp;
     QDialogButtonBox *buttonBox;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *lDispID;
-    QLabel *lID;
 
     void setupUi(QDialog *EditUser)
     {
@@ -49,6 +50,8 @@ public:
         EditUser->resize(642, 374);
         verticalLayout = new QVBoxLayout(EditUser);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         lName = new QLabel(EditUser);
         lName->setObjectName(QString::fromUtf8("lName"));
         QFont font;
@@ -58,7 +61,31 @@ public:
         font.setWeight(75);
         lName->setFont(font);
 
-        verticalLayout->addWidget(lName);
+        horizontalLayout_3->addWidget(lName);
+
+        lDispID = new QLabel(EditUser);
+        lDispID->setObjectName(QString::fromUtf8("lDispID"));
+        lDispID->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_3->addWidget(lDispID);
+
+        lID = new QLabel(EditUser);
+        lID->setObjectName(QString::fromUtf8("lID"));
+        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
+        lID->setSizePolicy(sizePolicy);
+
+        horizontalLayout_3->addWidget(lID);
+
+
+        verticalLayout->addLayout(horizontalLayout_3);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+
+        verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -107,27 +134,6 @@ public:
 
         verticalLayout->addWidget(buttonBox);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        lDispID = new QLabel(EditUser);
-        lDispID->setObjectName(QString::fromUtf8("lDispID"));
-        lDispID->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        horizontalLayout_3->addWidget(lDispID);
-
-        lID = new QLabel(EditUser);
-        lID->setObjectName(QString::fromUtf8("lID"));
-        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
-        lID->setSizePolicy(sizePolicy);
-
-        horizontalLayout_3->addWidget(lID);
-
-
-        verticalLayout->addLayout(horizontalLayout_3);
-
 
         retranslateUi(EditUser);
         QObject::connect(buttonBox, SIGNAL(accepted()), EditUser, SLOT(accept()));
@@ -140,6 +146,8 @@ public:
     {
         EditUser->setWindowTitle(QApplication::translate("EditUser", "EditUser", 0, QApplication::UnicodeUTF8));
         lName->setText(QApplication::translate("EditUser", "TextLabel", 0, QApplication::UnicodeUTF8));
+        lDispID->setText(QApplication::translate("EditUser", "ID Number:", 0, QApplication::UnicodeUTF8));
+        lID->setText(QApplication::translate("EditUser", "2412421", 0, QApplication::UnicodeUTF8));
         eLocation->setText(QApplication::translate("EditUser", "Location", 0, QApplication::UnicodeUTF8));
         eEmail->setText(QApplication::translate("EditUser", "Email", 0, QApplication::UnicodeUTF8));
 
@@ -153,8 +161,6 @@ public:
 
         bAddExp->setText(QApplication::translate("EditUser", "Add Expertise", 0, QApplication::UnicodeUTF8));
         bDelExp->setText(QApplication::translate("EditUser", "Delete Expertise", 0, QApplication::UnicodeUTF8));
-        lDispID->setText(QApplication::translate("EditUser", "ID Number:", 0, QApplication::UnicodeUTF8));
-        lID->setText(QApplication::translate("EditUser", "2412421", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

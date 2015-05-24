@@ -21,11 +21,16 @@ public:
 public slots:
 	void addComment();
 	void editTask();
+	void clickbTeamMembers();
 	
 private:
 	Ui::Task widget;
 	Project_Task me;
 	void getTask();
+	void getTaskComments();
+	void getTaskChildren();
+	void getTaskDependencies();
+	void getTaskAssignments();
 };
 
 #endif	/* _TASK_H */

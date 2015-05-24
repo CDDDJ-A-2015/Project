@@ -55,6 +55,7 @@ private:
 	std::vector<User_List> Global_User_List;
 	void getUserList();
 	void getUserProjects();
+	void getUser();
 };
 
 

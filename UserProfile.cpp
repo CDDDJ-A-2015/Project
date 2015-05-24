@@ -42,6 +42,9 @@ void UserProfile::setID(int tmp) {
 			
 	}
 	
+	if(!UPS.canedit)
+		widget.bEditUser->hide();
+	
 }
 
 void UserProfile::clickEditUser() {

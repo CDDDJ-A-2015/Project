@@ -10,6 +10,7 @@
 #include "Coco1.h"
 #include "Coco2.h"
 #include "FuncPoints.h"
+using namespace std;
 
 EditProject::EditProject() {
 	widget.setupUi(this);
@@ -82,4 +83,47 @@ void EditProject::clickbFP() {
 	if (vFP.result() == QDialog::Accepted) {
 		widget.lFP->setText(QString::number(vFP.calc()) + " Function Points");
 	}
+}
+
+void createProject()
+{
+    Type_Packet T;
+    Request_Packet RP;
+    int n;
+    
+    RP.Request = false;
+    
+    //Send to server that client is about to request something
+    n = write(sockfd,&RP,sizeof(RP));
+    if (n < 0)
+        cout << "ERROR writing to socket" << endl;
+    T.T = 2;
+    
+    //Send to server that client is about to send a login packet
+    int PID = -1;
+    T.ID = PID;
+    n = write(sockfd,&T,sizeof(T));
+    if (n < 0)
+        cout << "ERROR writing to socket" << endl;
+    
+   
+    /*
+        FILL THIS PACKET FOR ME DAVID
+        ITS IN CLIENT_SIDE.h
+     */
+    
+    createProject_Packet P; // <<<<<<
+    
+    n = write(sockfd, &P, sizeof(P));
+    if(n < 0)
+        cout << "Error writing to socket" << endl;
+    
+    
+    int id = 0;
+    
+    n = read(sockfd, &id, sizeof(int));
+    if(n < 0)
+        cout <<"error reading from socket" << endl;
+    
+    
 }

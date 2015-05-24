@@ -358,13 +358,6 @@ David King</string>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
-      <widget class="QPushButton" name="bEditTask">
-       <property name="text">
-        <string>Edit Task</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="bAddComment">
        <property name="text">
         <string>Add Comment</string>
@@ -381,10 +374,26 @@ David King</string>
     </layout>
    </item>
    <item>
-    <widget class="QPushButton" name="bStatusChange">
-     <property name="text">
-      <string>Complete Task</string>
-     </property>
+    <widget class="QWidget" name="wCanEdit" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_12">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="bEditTask">
+        <property name="text">
+         <string>Edit Task</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="bStatusChange">
+        <property name="text">
+         <string>Complete Task</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

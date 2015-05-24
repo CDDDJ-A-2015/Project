@@ -35,7 +35,7 @@ public:
     QWidget *tab;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_6;
-    QLabel *uName;
+    QLabel *lName;
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout_5;
@@ -79,16 +79,16 @@ public:
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
-        uName = new QLabel(tab);
-        uName->setObjectName(QString::fromUtf8("uName"));
+        lName = new QLabel(tab);
+        lName->setObjectName(QString::fromUtf8("lName"));
         QFont font;
         font.setPointSize(32);
         font.setBold(true);
         font.setUnderline(true);
         font.setWeight(75);
-        uName->setFont(font);
+        lName->setFont(font);
 
-        horizontalLayout_6->addWidget(uName);
+        horizontalLayout_6->addWidget(lName);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
@@ -280,7 +280,7 @@ public:
     void retranslateUi(QMainWindow *Home)
     {
         Home->setWindowTitle(QApplication::translate("Home", "Home", 0, QApplication::UnicodeUTF8));
-        uName->setText(QApplication::translate("Home", "Home", 0, QApplication::UnicodeUTF8));
+        lName->setText(QApplication::translate("Home", "Home", 0, QApplication::UnicodeUTF8));
         lDispID->setText(QApplication::translate("Home", "ID Number:", 0, QApplication::UnicodeUTF8));
         lID->setText(QApplication::translate("Home", "421421", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("Home", "Stuff", 0, QApplication::UnicodeUTF8));

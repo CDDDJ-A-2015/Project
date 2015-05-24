@@ -9,6 +9,13 @@
 #define	_PROJECT_H
 
 #include "ui_Project.h"
+#include "EditProject.h"
+#include "StringDialog.h"
+#include "Task.h"
+#include "displayGraphics.h"
+#include "Packets.h"
+#include <iostream>
+extern int sockfd;
 
 class Project : public QWidget {
     Q_OBJECT
@@ -21,14 +28,17 @@ public slots:
 	void editProject();
 	void addComment();
 	void viewTask(QModelIndex);
-	void clickbViewGraphics();
+	void clickbAPN();
+	void clickbPert();
+	void clickbGantt();
+	void clickbAddTask();
 	
 private:
     Ui::Project widget;
-    void createProjects();
-    QWidget *newTab;
-    void showTasks();
-	int id;
+	Specific_Project P;
+	void getProject();
+	void getProjectTasks();
+	void getProjectComments();
 	
 };
 

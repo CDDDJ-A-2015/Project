@@ -14,7 +14,7 @@
 #include "Task.h"
 
 using namespace std;
-
+QString UName;
 
 Home::Home() {
     widget.setupUi(this);
@@ -31,9 +31,11 @@ Home::Home() {
     //int data = 22;
     //read(sockfd,&data,sizeof(int));
     //cout << data << endl;
-	Me.user_id = 1;
-	
+	Me.user_id = UID;
+	getUser();
+	UName = Me.Name;
 	widget.lID->setText(QString::number(Me.user_id));
+	widget.lName->setText(UName);
 
 	getNotification();
 	for (vector<Notification>::iterator it = Me.Notifications.begin();it != Me.Notifications.end();++it) {
@@ -80,7 +82,7 @@ Home::Home() {
 		else
 			widget.tMyProjects->topLevelItem(i)->setText(6,"No");
 	}
-	
+
 }
 
 Home::~Home() {
@@ -438,4 +440,49 @@ void Home::getUserProjects() //MyProjects
         cout << "ERROR, different type of packet received! Packet was: " << T.T << "." << endl;
     
     
+}
+
+void Home::getUser()
+{
+    Type_Packet T;
+    Request_Packet RP;
+    int n;
+    RP.Request = true;
+    
+    //Send to server that client is about to request something
+    n = write(sockfd,&RP,sizeof(RP));
+    if (n < 0)
+        cout << "ERROR writing to socket" << endl;
+    
+    //Send to server that client is about to send The Global Project List
+    T.T = 12;
+    T.ID = UID;
+    n = write(sockfd,&T,sizeof(T));
+    if (n < 0)
+        cout << "ERROR writing to socket" << endl;
+    
+    n = read(sockfd,&T,sizeof(T));
+    if (n < 0)
+        cout << "ERROR reading to socket" << endl;
+    
+    if(T.T == 12)
+    {
+        bool exit = false;
+        do{
+            Name_Of_User U;
+            
+            //Receive Project List Packets
+            n = read(sockfd,&U,sizeof(U));
+            if (n < 0)
+                cout << "ERROR reading to socket" << endl;
+            if(U.Name[0] == '*')
+            {
+                exit = true;
+                break;
+            }
+            strcpy(Me.Name, U.Name);
+        }while(exit == false);
+    }
+    else
+        cout << "ERROR, different type of packet received! Packet was: " << T.T << "." << endl;
 }
