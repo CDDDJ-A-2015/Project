@@ -88,6 +88,7 @@ public:
 	void resizeGL(int w, int  h);
 	void setType(int);
 	void setPID(int);
+	void setPert();
 private:
 	//Ui::displayGraphics widget;
 	APNNode* tasks;
@@ -109,6 +110,7 @@ private:
 	void getAPN_Data();
 	APN_Data List;
 	int PID;
+	int estFinish;
 };
 
 #endif	/* _DISPLAYGRAPHICS_H */

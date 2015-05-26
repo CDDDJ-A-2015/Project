@@ -11,6 +11,7 @@
       <itemPath>EditTask.h</itemPath>
       <itemPath>EditUser.h</itemPath>
       <itemPath>FuncPoints.h</itemPath>
+      <itemPath>GetInt.h</itemPath>
       <itemPath>Home.h</itemPath>
       <itemPath>Login.h</itemPath>
       <itemPath>Packets.h</itemPath>
@@ -34,6 +35,7 @@
       <itemPath>EditTask.ui</itemPath>
       <itemPath>EditUser.ui</itemPath>
       <itemPath>FuncPoints.ui</itemPath>
+      <itemPath>GetInt.ui</itemPath>
       <itemPath>Home.ui</itemPath>
       <itemPath>Images.qrc</itemPath>
       <itemPath>Login.ui</itemPath>
@@ -55,6 +57,7 @@
       <itemPath>EditTask.cpp</itemPath>
       <itemPath>EditUser.cpp</itemPath>
       <itemPath>FuncPoints.cpp</itemPath>
+      <itemPath>GetInt.cpp</itemPath>
       <itemPath>Home.cpp</itemPath>
       <itemPath>Login.cpp</itemPath>
       <itemPath>Project.cpp</itemPath>
@@ -141,6 +144,12 @@
       <item path="FuncPoints.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="FuncPoints.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GetInt.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GetInt.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GetInt.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Home.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -274,6 +283,12 @@
       <item path="FuncPoints.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="FuncPoints.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GetInt.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GetInt.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GetInt.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Home.cpp" ex="false" tool="1" flavor2="0">
       </item>

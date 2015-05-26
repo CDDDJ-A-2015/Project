@@ -153,6 +153,7 @@ void Project::clickbPert() {
 	displayGraphics *a = new displayGraphics(0);
 	a->setType(2);
 	a->setPID(P.ID);
+	a->setPert();
 	a->show();
 }
 

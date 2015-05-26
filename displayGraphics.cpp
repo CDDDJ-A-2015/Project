@@ -6,6 +6,7 @@
  */
 
 #include "displayGraphics.h"
+#include "GetInt.h"
 #include <QtGui/QtGui>
 #include <GL/glu.h>
 #include <GL/gl.h>
@@ -21,6 +22,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
+#include <QMessageBox>
 using namespace std;
 
 
@@ -1063,4 +1065,12 @@ void displayGraphics::setPID(int tmp) {
 			}
 		}
 	}	
+}
+
+void displayGraphics::setPert() {
+	GetInt *a = new GetInt;
+	a->exec();
+	if (a->result() == QDialog::Rejected)
+		this->close();
+	estFinish = a->getInt();
 }
