@@ -14,6 +14,7 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QComboBox>
+#include <QtGui/QDateEdit>
 #include <QtGui/QDialog>
 #include <QtGui/QDialogButtonBox>
 #include <QtGui/QHBoxLayout>
@@ -23,6 +24,7 @@
 #include <QtGui/QPlainTextEdit>
 #include <QtGui/QProgressBar>
 #include <QtGui/QPushButton>
+#include <QtGui/QSpinBox>
 #include <QtGui/QTreeWidget>
 #include <QtGui/QVBoxLayout>
 
@@ -38,10 +40,23 @@ public:
     QLineEdit *eName;
     QLabel *lDispID;
     QLabel *lID;
+    QHBoxLayout *horizontalLayout_4;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *lDispBegDate;
+    QDateEdit *dStartDate;
+    QHBoxLayout *horizontalLayout_7;
+    QLabel *lDispLength;
+    QSpinBox *sLength;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *lDispDueDate;
+    QDateEdit *dDueDate;
     QPlainTextEdit *eDesc;
     QHBoxLayout *horizontalLayout_2;
     QLabel *lDispStatus;
     QComboBox *cStatus;
+    QHBoxLayout *horizontalLayout_9;
+    QLabel *lDispProgress;
+    QSpinBox *sProgress;
     QProgressBar *progressBar;
     QLabel *lDispDep;
     QTreeWidget *tDep;
@@ -106,6 +121,62 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        lDispBegDate = new QLabel(EditTask);
+        lDispBegDate->setObjectName(QString::fromUtf8("lDispBegDate"));
+        sizePolicy.setHeightForWidth(lDispBegDate->sizePolicy().hasHeightForWidth());
+        lDispBegDate->setSizePolicy(sizePolicy);
+
+        horizontalLayout_8->addWidget(lDispBegDate);
+
+        dStartDate = new QDateEdit(EditTask);
+        dStartDate->setObjectName(QString::fromUtf8("dStartDate"));
+
+        horizontalLayout_8->addWidget(dStartDate);
+
+
+        horizontalLayout_4->addLayout(horizontalLayout_8);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        lDispLength = new QLabel(EditTask);
+        lDispLength->setObjectName(QString::fromUtf8("lDispLength"));
+        sizePolicy.setHeightForWidth(lDispLength->sizePolicy().hasHeightForWidth());
+        lDispLength->setSizePolicy(sizePolicy);
+
+        horizontalLayout_7->addWidget(lDispLength);
+
+        sLength = new QSpinBox(EditTask);
+        sLength->setObjectName(QString::fromUtf8("sLength"));
+
+        horizontalLayout_7->addWidget(sLength);
+
+
+        horizontalLayout_4->addLayout(horizontalLayout_7);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        lDispDueDate = new QLabel(EditTask);
+        lDispDueDate->setObjectName(QString::fromUtf8("lDispDueDate"));
+        sizePolicy.setHeightForWidth(lDispDueDate->sizePolicy().hasHeightForWidth());
+        lDispDueDate->setSizePolicy(sizePolicy);
+
+        horizontalLayout_6->addWidget(lDispDueDate);
+
+        dDueDate = new QDateEdit(EditTask);
+        dDueDate->setObjectName(QString::fromUtf8("dDueDate"));
+
+        horizontalLayout_6->addWidget(dDueDate);
+
+
+        horizontalLayout_4->addLayout(horizontalLayout_6);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
+
         eDesc = new QPlainTextEdit(EditTask);
         eDesc->setObjectName(QString::fromUtf8("eDesc"));
 
@@ -118,7 +189,7 @@ public:
         QFont font;
         font.setPointSize(20);
         lDispStatus->setFont(font);
-        lDispStatus->setAlignment(Qt::AlignCenter);
+        lDispStatus->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_2->addWidget(lDispStatus);
 
@@ -126,6 +197,23 @@ public:
         cStatus->setObjectName(QString::fromUtf8("cStatus"));
 
         horizontalLayout_2->addWidget(cStatus);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
+        lDispProgress = new QLabel(EditTask);
+        lDispProgress->setObjectName(QString::fromUtf8("lDispProgress"));
+        lDispProgress->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_9->addWidget(lDispProgress);
+
+        sProgress = new QSpinBox(EditTask);
+        sProgress->setObjectName(QString::fromUtf8("sProgress"));
+        sProgress->setMaximum(100);
+
+        horizontalLayout_9->addWidget(sProgress);
+
+
+        horizontalLayout_2->addLayout(horizontalLayout_9);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
@@ -192,6 +280,9 @@ public:
         QObject::connect(buttonBox, SIGNAL(accepted()), EditTask, SLOT(accept()));
         QObject::connect(buttonBox, SIGNAL(rejected()), EditTask, SLOT(reject()));
 
+        cStatus->setCurrentIndex(1);
+
+
         QMetaObject::connectSlotsByName(EditTask);
     } // setupUi
 
@@ -201,14 +292,18 @@ public:
         lDispPriority->setText(QApplication::translate("EditTask", "Priority:", 0, QApplication::UnicodeUTF8));
         cPriority->clear();
         cPriority->insertItems(0, QStringList()
-         << QApplication::translate("EditTask", "Select", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("EditTask", "Trivial", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("EditTask", "Low", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("EditTask", "High", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("EditTask", "Critical", 0, QApplication::UnicodeUTF8)
         );
         lDispID->setText(QApplication::translate("EditTask", "ID Number:", 0, QApplication::UnicodeUTF8));
-        lID->setText(QApplication::translate("EditTask", "2412421", 0, QApplication::UnicodeUTF8));
+        lID->setText(QApplication::translate("EditTask", "New Task", 0, QApplication::UnicodeUTF8));
+        lDispBegDate->setText(QApplication::translate("EditTask", "Start Date:", 0, QApplication::UnicodeUTF8));
+        dStartDate->setDisplayFormat(QApplication::translate("EditTask", "d/MM/yyyy", 0, QApplication::UnicodeUTF8));
+        lDispLength->setText(QApplication::translate("EditTask", "Length:", 0, QApplication::UnicodeUTF8));
+        lDispDueDate->setText(QApplication::translate("EditTask", "Due Date:", 0, QApplication::UnicodeUTF8));
+        dDueDate->setDisplayFormat(QApplication::translate("EditTask", "d/MM/yyyy", 0, QApplication::UnicodeUTF8));
         eDesc->setPlainText(QApplication::translate("EditTask", "Description:\n"
 "", 0, QApplication::UnicodeUTF8));
         lDispStatus->setText(QApplication::translate("EditTask", "Status:", 0, QApplication::UnicodeUTF8));
@@ -219,6 +314,7 @@ public:
          << QApplication::translate("EditTask", "In Progress", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("EditTask", "Completed", 0, QApplication::UnicodeUTF8)
         );
+        lDispProgress->setText(QApplication::translate("EditTask", "Progress:", 0, QApplication::UnicodeUTF8));
         lDispDep->setText(QApplication::translate("EditTask", "Dependencies:", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem = tDep->headerItem();
         ___qtreewidgetitem->setText(3, QApplication::translate("EditTask", "Due Date", 0, QApplication::UnicodeUTF8));

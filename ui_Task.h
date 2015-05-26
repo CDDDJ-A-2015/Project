@@ -48,6 +48,9 @@ public:
     QHBoxLayout *horizontalLayout_11;
     QLabel *lDispCreated;
     QLabel *lCreated;
+    QHBoxLayout *horizontalLayout_13;
+    QLabel *lDispLength;
+    QLabel *lLength;
     QHBoxLayout *horizontalLayout_10;
     QLabel *lDispDue;
     QLabel *lDue;
@@ -57,12 +60,12 @@ public:
     QLabel *lStatus;
     QProgressBar *progressBar;
     QHBoxLayout *horizontalLayout_2;
-    QVBoxLayout *verticalLayout_2;
-    QLabel *lDep;
-    QTreeWidget *tDep;
     QVBoxLayout *verticalLayout_3;
     QLabel *lParent;
     QTreeWidget *tParent;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *lDep;
+    QTreeWidget *tDep;
     QTreeWidget *tComments;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *bAddComment;
@@ -196,6 +199,22 @@ public:
 
         horizontalLayout_9->addLayout(horizontalLayout_11);
 
+        horizontalLayout_13 = new QHBoxLayout();
+        horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
+        lDispLength = new QLabel(Task);
+        lDispLength->setObjectName(QString::fromUtf8("lDispLength"));
+        lDispLength->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_13->addWidget(lDispLength);
+
+        lLength = new QLabel(Task);
+        lLength->setObjectName(QString::fromUtf8("lLength"));
+
+        horizontalLayout_13->addWidget(lLength);
+
+
+        horizontalLayout_9->addLayout(horizontalLayout_13);
+
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
         lDispDue = new QLabel(Task);
@@ -256,22 +275,6 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        lDep = new QLabel(Task);
-        lDep->setObjectName(QString::fromUtf8("lDep"));
-        lDep->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_2->addWidget(lDep);
-
-        tDep = new QTreeWidget(Task);
-        tDep->setObjectName(QString::fromUtf8("tDep"));
-
-        verticalLayout_2->addWidget(tDep);
-
-
-        horizontalLayout_2->addLayout(verticalLayout_2);
-
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         lParent = new QLabel(Task);
@@ -287,6 +290,22 @@ public:
 
 
         horizontalLayout_2->addLayout(verticalLayout_3);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        lDep = new QLabel(Task);
+        lDep->setObjectName(QString::fromUtf8("lDep"));
+        lDep->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_2->addWidget(lDep);
+
+        tDep = new QTreeWidget(Task);
+        tDep->setObjectName(QString::fromUtf8("tDep"));
+
+        verticalLayout_2->addWidget(tDep);
+
+
+        horizontalLayout_2->addLayout(verticalLayout_2);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
@@ -351,18 +370,20 @@ public:
 "David King", 0, QApplication::UnicodeUTF8));
         lDispCreated->setText(QApplication::translate("Task", "Date Created:", 0, QApplication::UnicodeUTF8));
         lCreated->setText(QApplication::translate("Task", "TextLabel", 0, QApplication::UnicodeUTF8));
+        lDispLength->setText(QApplication::translate("Task", "Length:", 0, QApplication::UnicodeUTF8));
+        lLength->setText(QApplication::translate("Task", "TextLabel", 0, QApplication::UnicodeUTF8));
         lDispDue->setText(QApplication::translate("Task", "Date Due:", 0, QApplication::UnicodeUTF8));
         lDue->setText(QApplication::translate("Task", "TextLabel", 0, QApplication::UnicodeUTF8));
         lDispStatus->setText(QApplication::translate("Task", "Status:", 0, QApplication::UnicodeUTF8));
         lStatus->setText(QApplication::translate("Task", "Pending", 0, QApplication::UnicodeUTF8));
-        lDep->setText(QApplication::translate("Task", "Dependencies", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem = tDep->headerItem();
+        lParent->setText(QApplication::translate("Task", "Parent Of:", 0, QApplication::UnicodeUTF8));
+        QTreeWidgetItem *___qtreewidgetitem = tParent->headerItem();
         ___qtreewidgetitem->setText(3, QApplication::translate("Task", "Due Date", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(2, QApplication::translate("Task", "Status", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(1, QApplication::translate("Task", "Name", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(0, QApplication::translate("Task", "ID", 0, QApplication::UnicodeUTF8));
-        lParent->setText(QApplication::translate("Task", "Parent Of:", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem1 = tParent->headerItem();
+        lDep->setText(QApplication::translate("Task", "Dependencies", 0, QApplication::UnicodeUTF8));
+        QTreeWidgetItem *___qtreewidgetitem1 = tDep->headerItem();
         ___qtreewidgetitem1->setText(3, QApplication::translate("Task", "Due Date", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem1->setText(2, QApplication::translate("Task", "Status", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem1->setText(1, QApplication::translate("Task", "Name", 0, QApplication::UnicodeUTF8));

@@ -20,13 +20,23 @@ public:
 	TeamMembers();
 	virtual ~TeamMembers();
 	void setID(int, int);
+	int getGID();
+	QString getGName();
 public slots:
 	void clickbAssign();
 	void clickbRemove();
+protected:
+	void accept();
 private:
 	Ui::TeamMembers widget;
 	void getUserList();
 	std::vector<User_List> Global_User_List;
+	int type;
+	int id;
+	std::vector<Task_Assignment> tAssigned;
+	void getTaskAssignments();
+	void saveTaskAssignment();
+	void saveProjectTeam();
 };
 
 #endif	/* _TEAMMEMBERS_H */

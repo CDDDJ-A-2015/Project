@@ -27,13 +27,15 @@ public slots:
 	void clickbC1();
 	void clickbC2();
 	void clickbFP();
+	void clickbChooseManager();
 	
 private:
 	Ui::EditProject widget;
 	int id;
 	bool save;
+	Project_Packet P;
+	void getProject();
 	void createProject();
-	createProject_Packet P;
 };
 
 #endif	/* _EDITPROJECT_H */

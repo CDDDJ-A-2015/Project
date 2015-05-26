@@ -15,6 +15,8 @@ Search::Search() {
     widget.setupUi(this);
 	widget.wUsers->hide();
 	connect(widget.bSearch,SIGNAL(clicked()),this,SLOT(searchResult()));
+	connect(widget.bSProjects,SIGNAL(clicked()),this,SLOT(searchProjects()));
+	connect(widget.bSUsers,SIGNAL(clicked()),this,SLOT(searchUsers()));
 }
 
 Search::~Search() {
@@ -39,4 +41,12 @@ void Search::setType(bool oType) {
 			widget.wProjects->hide();
 		}
 	}
+}
+
+void Search::searchProjects() {
+	widget.lWhatSearch->setText("Search Projects");
+}
+
+void Search::searchUsers() {
+	widget.lWhatSearch->setText("Search Users");
 }

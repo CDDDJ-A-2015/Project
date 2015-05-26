@@ -43,11 +43,11 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in serv_addr;
     struct hostent *server;
 	                            
-    portno = 32001;
+    portno = 32002;
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0) 
         error("ERROR opening socket");
-    server = gethostbyname("localhost");
+    server = gethostbyname("10.24.70.77");
     if (server == NULL) {
         fprintf(stderr,"ERROR, no such host\n");
         exit(0);
@@ -87,7 +87,8 @@ int main(int argc, char *argv[]) {
     Login a;
     a.show();
     app.exec();
-    close(sockfd);    
+	User_Logout();
+	close(sockfd);   
     return 0;
 }
 

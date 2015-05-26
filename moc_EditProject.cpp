@@ -22,7 +22,7 @@ static const uint qt_meta_data_EditProject[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -35,6 +35,7 @@ static const uint qt_meta_data_EditProject[] = {
       39,   12,   12,   12, 0x0a,
       50,   12,   12,   12, 0x0a,
       61,   12,   12,   12, 0x0a,
+      72,   12,   12,   12, 0x0a,
 
        0        // eod
 };
@@ -42,6 +43,7 @@ static const uint qt_meta_data_EditProject[] = {
 static const char qt_meta_stringdata_EditProject[] = {
     "EditProject\0\0clickSave()\0clickCancel()\0"
     "clickbC1()\0clickbC2()\0clickbFP()\0"
+    "clickbChooseManager()\0"
 };
 
 void EditProject::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -55,6 +57,7 @@ void EditProject::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 2: _t->clickbC1(); break;
         case 3: _t->clickbC2(); break;
         case 4: _t->clickbFP(); break;
+        case 5: _t->clickbChooseManager(); break;
         default: ;
         }
     }
@@ -93,9 +96,9 @@ int EditProject::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

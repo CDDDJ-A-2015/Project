@@ -12,9 +12,12 @@
 #include "Search.h"
 #include "EditProject.h"
 #include "Task.h"
+#include "EditUser.h"
+
 
 using namespace std;
 QString UName;
+bool meIsAdmin;
 
 Home::Home() {
     widget.setupUi(this);
@@ -25,6 +28,7 @@ Home::Home() {
 	connect(widget.bSearch, SIGNAL(clicked()),this,SLOT(clickbSearch()));
 	connect(widget.bYourProfile, SIGNAL(clicked()),this, SLOT(clickbYourProfile()));
 	connect(widget.bAddProject, SIGNAL(clicked()),this, SLOT(clickbAddProject()));
+	connect(widget.bAddUser, SIGNAL(clicked()),this, SLOT(clickbAddUser()));
 	connect(widget.tUserTaskList, SIGNAL(doubleClicked(QModelIndex)),this, SLOT(dClickMyTasks(QModelIndex)));
     bGlob = false;
     
@@ -201,7 +205,11 @@ void Home::clickbYourProfile() {
 void Home::clickbAddProject() {
 	EditProject *vEditProject = new EditProject();
 	vEditProject->show();
-	
+}
+
+void Home::clickbAddUser() {
+	EditUser *vEditUser = new EditUser;
+	vEditUser->exec();
 }
 
 void Home::getNotification() 
@@ -481,6 +489,11 @@ void Home::getUser()
                 break;
             }
             strcpy(Me.Name, U.Name);
+			meIsAdmin = U.ADMIN;
+			if (!meIsAdmin) {
+				widget.adminPanel->hide();
+				widget.lIsAdmin->hide();
+			}
         }while(exit == false);
     }
     else

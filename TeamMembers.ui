@@ -149,6 +149,11 @@
            <string>Role</string>
           </property>
          </column>
+         <column>
+          <property name="text">
+           <string>RoleID</string>
+          </property>
+         </column>
         </widget>
        </item>
       </layout>

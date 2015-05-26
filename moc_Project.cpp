@@ -22,7 +22,7 @@ static const uint qt_meta_data_Project[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -37,6 +37,7 @@ static const uint qt_meta_data_Project[] = {
       70,    8,    8,    8, 0x0a,
       83,    8,    8,    8, 0x0a,
       97,    8,    8,    8, 0x0a,
+     113,    8,    8,    8, 0x0a,
 
        0        // eod
 };
@@ -45,6 +46,7 @@ static const char qt_meta_stringdata_Project[] = {
     "Project\0\0editProject()\0addComment()\0"
     "viewTask(QModelIndex)\0clickbAPN()\0"
     "clickbPert()\0clickbGantt()\0clickbAddTask()\0"
+    "clickbTeamMembers()\0"
 };
 
 void Project::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -60,6 +62,7 @@ void Project::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 4: _t->clickbPert(); break;
         case 5: _t->clickbGantt(); break;
         case 6: _t->clickbAddTask(); break;
+        case 7: _t->clickbTeamMembers(); break;
         default: ;
         }
     }
@@ -97,9 +100,9 @@ int Project::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

@@ -177,6 +177,27 @@ David King</string>
       </layout>
      </item>
      <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
+       <item>
+        <widget class="QLabel" name="lDispLength">
+         <property name="text">
+          <string>Length:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lLength">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_10">
        <item>
         <widget class="QLabel" name="lDispDue">
@@ -259,11 +280,11 @@ David King</string>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QLabel" name="lDep">
+        <widget class="QLabel" name="lParent">
          <property name="text">
-          <string>Dependencies</string>
+          <string>Parent Of:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -271,7 +292,7 @@ David King</string>
         </widget>
        </item>
        <item>
-        <widget class="QTreeWidget" name="tDep">
+        <widget class="QTreeWidget" name="tParent">
          <column>
           <property name="text">
            <string>ID</string>
@@ -297,11 +318,11 @@ David King</string>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="lParent">
+        <widget class="QLabel" name="lDep">
          <property name="text">
-          <string>Parent Of:</string>
+          <string>Dependencies</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -309,7 +330,7 @@ David King</string>
         </widget>
        </item>
        <item>
-        <widget class="QTreeWidget" name="tParent">
+        <widget class="QTreeWidget" name="tDep">
          <column>
           <property name="text">
            <string>ID</string>

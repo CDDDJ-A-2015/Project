@@ -19,6 +19,8 @@ public:
     
 public slots:
     void searchResult();
+	void searchProjects();
+	void searchUsers();
     
 private:
     Ui::Search widget;

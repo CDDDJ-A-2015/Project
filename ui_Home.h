@@ -41,7 +41,7 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QLabel *lDispID;
     QLabel *lID;
-    QLabel *label_2;
+    QLabel *lIsAdmin;
     QPushButton *bYourProfile;
     QHBoxLayout *horizontalLayout_7;
     QTreeWidget *tUserTaskList;
@@ -59,7 +59,7 @@ public:
     QWidget *adminPanel;
     QHBoxLayout *horizontalLayout_8;
     QPushButton *bAddProject;
-    QPushButton *pushButton_2;
+    QPushButton *bAddUser;
 
     void setupUi(QMainWindow *Home)
     {
@@ -98,21 +98,28 @@ public:
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         lDispID = new QLabel(tab);
         lDispID->setObjectName(QString::fromUtf8("lDispID"));
+        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lDispID->sizePolicy().hasHeightForWidth());
+        lDispID->setSizePolicy(sizePolicy);
 
         horizontalLayout_5->addWidget(lDispID);
 
         lID = new QLabel(tab);
         lID->setObjectName(QString::fromUtf8("lID"));
+        lID->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout_5->addWidget(lID);
 
 
         verticalLayout_4->addLayout(horizontalLayout_5);
 
-        label_2 = new QLabel(tab);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        lIsAdmin = new QLabel(tab);
+        lIsAdmin->setObjectName(QString::fromUtf8("lIsAdmin"));
+        lIsAdmin->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_4->addWidget(label_2);
+        verticalLayout_4->addWidget(lIsAdmin);
 
 
         horizontalLayout_3->addLayout(verticalLayout_4);
@@ -158,11 +165,11 @@ public:
         __qlistwidgetitem1->setBackground(brush1);
         __qlistwidgetitem1->setForeground(brush);
         lNotificationList->setObjectName(QString::fromUtf8("lNotificationList"));
-        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(lNotificationList->sizePolicy().hasHeightForWidth());
-        lNotificationList->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Maximum, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(lNotificationList->sizePolicy().hasHeightForWidth());
+        lNotificationList->setSizePolicy(sizePolicy1);
 
         horizontalLayout_7->addWidget(lNotificationList);
 
@@ -255,10 +262,10 @@ public:
 
         horizontalLayout_8->addWidget(bAddProject);
 
-        pushButton_2 = new QPushButton(adminPanel);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        bAddUser = new QPushButton(adminPanel);
+        bAddUser->setObjectName(QString::fromUtf8("bAddUser"));
 
-        horizontalLayout_8->addWidget(pushButton_2);
+        horizontalLayout_8->addWidget(bAddUser);
 
 
         verticalLayout_2->addWidget(adminPanel);
@@ -283,7 +290,7 @@ public:
         lName->setText(QApplication::translate("Home", "Home", 0, QApplication::UnicodeUTF8));
         lDispID->setText(QApplication::translate("Home", "ID Number:", 0, QApplication::UnicodeUTF8));
         lID->setText(QApplication::translate("Home", "421421", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("Home", "Stuff", 0, QApplication::UnicodeUTF8));
+        lIsAdmin->setText(QApplication::translate("Home", "Admin", 0, QApplication::UnicodeUTF8));
         bYourProfile->setText(QApplication::translate("Home", "Your Profile", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem = tUserTaskList->headerItem();
         ___qtreewidgetitem->setText(5, QApplication::translate("Home", "Due Date", 0, QApplication::UnicodeUTF8));
@@ -322,7 +329,7 @@ public:
         ___qtreewidgetitem2->setText(1, QApplication::translate("Home", "Project Name", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem2->setText(0, QApplication::translate("Home", "ID", 0, QApplication::UnicodeUTF8));
         bAddProject->setText(QApplication::translate("Home", "Add Project", 0, QApplication::UnicodeUTF8));
-        pushButton_2->setText(QApplication::translate("Home", "Add User", 0, QApplication::UnicodeUTF8));
+        bAddUser->setText(QApplication::translate("Home", "Add User", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(proj), QApplication::translate("Home", "Globals", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

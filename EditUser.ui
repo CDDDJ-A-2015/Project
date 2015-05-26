@@ -17,7 +17,13 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QLabel" name="lName">
+      <widget class="QLineEdit" name="eName">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="font">
         <font>
          <pointsize>32</pointsize>
@@ -26,8 +32,8 @@
          <underline>true</underline>
         </font>
        </property>
-       <property name="text">
-        <string>TextLabel</string>
+       <property name="placeholderText">
+        <string>Name</string>
        </property>
       </widget>
      </item>
@@ -50,20 +56,20 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>2412421</string>
+        <string>New User</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_4"/>
-   </item>
-   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLineEdit" name="eLocation">
        <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
         <string>Location</string>
        </property>
       </widget>
@@ -71,6 +77,9 @@
      <item>
       <widget class="QLineEdit" name="eEmail">
        <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
         <string>Email</string>
        </property>
       </widget>
@@ -82,22 +91,6 @@
      <property name="alternatingRowColors">
       <bool>true</bool>
      </property>
-     <item>
-      <property name="text">
-       <string>Expertise:</string>
-      </property>
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>New Item</string>
-      </property>
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
     </widget>
    </item>
    <item>
@@ -117,6 +110,35 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QWidget" name="wNewUser" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="ePassword">
+        <property name="inputMask">
+         <string notr="true"/>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Password</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="cIsAdmin">
+        <property name="text">
+         <string>Is Admin</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">

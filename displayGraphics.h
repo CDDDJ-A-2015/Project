@@ -36,6 +36,11 @@ class APNNode
 		float r;
 		float g;
 		float b;
+		int optimistic;
+		int pessimistic;
+		double expected;
+		double deviation;
+		double comfortZone;
 	public:
 		APNNode();
 		void setID(int);
@@ -69,6 +74,9 @@ class APNNode
 		void setR(float);
 		void setG(float);
 		void setB(float);
+		int calcProjectBuffer(int, APNNode[], int&);
+		int calcFeedingBuffer(int, APNNode[], int&);
+		void lookFeedingBuffer(APNNode[], int&, int, int, int, int&, double&);
 };
 
 class displayGraphics : public QGLWidget {
@@ -79,17 +87,28 @@ public:
 	void paintGL();
 	void resizeGL(int w, int  h);
 	void setType(int);
+	void setPID(int);
 private:
 	//Ui::displayGraphics widget;
 	APNNode* tasks;
 	int numTasks;
 	int highestLevel;
+	int highestSame;
 	int typeGraph;
 	int highestEF;
 	int dayWidth;
 	int count;
+	int ganttImageWidth;
+	int ganttImageHeight;
+	int apnImageWidth;
+	int apnImageHeight;
+	int currentHeight;
+	int currentWidth;
+	int currentX;
+	int currentY;
 	void getAPN_Data();
 	APN_Data List;
+	int PID;
 };
 
 #endif	/* _DISPLAYGRAPHICS_H */

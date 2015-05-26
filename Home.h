@@ -42,6 +42,7 @@ private slots:
 	void dClickMyProjects(QModelIndex);
 	void clickbYourProfile();
 	void clickbAddProject();
+	void clickbAddUser();
 	void dClickMyTasks(QModelIndex);
 	
 private:

@@ -180,6 +180,7 @@ public:
         bAssign->setText(QString());
         lDispAssigned->setText(QApplication::translate("TeamMembers", "Assigned Users", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem1 = tAssigned->headerItem();
+        ___qtreewidgetitem1->setText(3, QApplication::translate("TeamMembers", "RoleID", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem1->setText(2, QApplication::translate("TeamMembers", "Role", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem1->setText(1, QApplication::translate("TeamMembers", "Name", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem1->setText(0, QApplication::translate("TeamMembers", "ID", 0, QApplication::UnicodeUTF8));

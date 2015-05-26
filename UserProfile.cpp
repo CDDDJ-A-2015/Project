@@ -28,11 +28,15 @@ void UserProfile::setID(int tmp) {
 	widget.lLocation->setText(UPS.location);
 	widget.lName->setText(UPS.Name);
 	
+	widget.listWidget->clear();
+	UPS.Expertises.clear();
 	getExpertises();
 	for (unsigned int i=0;i<UPS.Expertises.size();i++) {
 			widget.listWidget->addItem(UPS.Expertises[i].Name);
 	}
 	
+	widget.tPrevRoles->clear();
+	UPS.Previous_Roles.clear();
 	getPreviousRoles();
 	widget.tPrevRoles->model()->insertRows(0,UPS.Previous_Roles.size());
 	for (unsigned int i=0;i!=UPS.Previous_Roles.size();i++) {
@@ -52,10 +56,7 @@ void UserProfile::clickEditUser() {
 	vEditUser->setID(UPS.user_id);
     vEditUser->exec();
 	if (vEditUser->result() == QDialog::Accepted) {
-		widget.listWidget->clear();
-		for (int i=0;i<vEditUser->widget.listExpertise->count();i++) {
-			widget.listWidget->addItem(vEditUser->widget.listExpertise->item(i)->text());
-		}
+		setID(UPS.user_id);
 	}
 }
 

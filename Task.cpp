@@ -37,7 +37,8 @@ void Task::setID(int tmp) {
 	widget.lPID->setText(QString::number(me.Project_ID));
 	widget.lDescription->setText(me.Description);
 	widget.lDue->setText(me.Date_Due);
-	widget.lCreated->hide();
+	widget.lCreated->setText(me.Date_Created);
+	widget.lLength->setText(QString::number(me.Length));
 	switch (me.Priority) {
 		case 0:
 			widget.lPriority->setText("Trivial");
@@ -91,33 +92,11 @@ void Task::setID(int tmp) {
 	}
 	
 	getTaskChildren();
-	widget.tDep->model()->insertRows(0,me.Child_Task.size());
+	widget.tParent->model()->insertRows(0,me.Child_Task.size());
 	for (unsigned int i=0;i<me.Child_Task.size();i++) {
-		widget.tDep->topLevelItem(i)->setText(0,QString::number(me.Child_Task[i].ID));
-		widget.tDep->topLevelItem(i)->setText(1,me.Child_Task[i].name);
+		widget.tParent->topLevelItem(i)->setText(0,QString::number(me.Child_Task[i].ID));
+		widget.tParent->topLevelItem(i)->setText(1,me.Child_Task[i].name);
 		switch (me.Child_Task[i].status) {
-		case 0:
-			widget.tDep->topLevelItem(i)->setText(2,"Pending");
-			break;
-		case 1:
-			widget.tDep->topLevelItem(i)->setText(2,"Not Started");
-			break;
-		case 2:
-			widget.tDep->topLevelItem(i)->setText(2,"In Progress");
-			break;
-		case 3:
-			widget.tDep->topLevelItem(i)->setText(2,"Completed");
-			break;
-		};
-		widget.tDep->topLevelItem(i)->setText(3,me.Child_Task[i].date_due);
-	}
-	
-	getTaskDependencies();
-	widget.tParent->model()->insertRows(0,me.Parent_Task.size());
-	for (unsigned int i=0;i<me.Parent_Task.size();i++) {
-		widget.tParent->topLevelItem(i)->setText(0,QString::number(me.Parent_Task[i].ID));
-		widget.tParent->topLevelItem(i)->setText(1,me.Parent_Task[i].name);
-		switch (me.Parent_Task[i].status) {
 		case 0:
 			widget.tParent->topLevelItem(i)->setText(2,"Pending");
 			break;
@@ -131,7 +110,29 @@ void Task::setID(int tmp) {
 			widget.tParent->topLevelItem(i)->setText(2,"Completed");
 			break;
 		};
-		widget.tParent->topLevelItem(i)->setText(3,me.Parent_Task[i].date_due);
+		widget.tParent->topLevelItem(i)->setText(3,me.Child_Task[i].date_due);
+	}
+	
+	getTaskDependencies();
+	widget.tDep->model()->insertRows(0,me.Parent_Task.size());
+	for (unsigned int i=0;i<me.Parent_Task.size();i++) {
+		widget.tDep->topLevelItem(i)->setText(0,QString::number(me.Parent_Task[i].ID));
+		widget.tDep->topLevelItem(i)->setText(1,me.Parent_Task[i].name);
+		switch (me.Parent_Task[i].status) {
+		case 0:
+			widget.tDep->topLevelItem(i)->setText(2,"Pending");
+			break;
+		case 1:
+			widget.tDep->topLevelItem(i)->setText(2,"Not Started");
+			break;
+		case 2:
+			widget.tDep->topLevelItem(i)->setText(2,"In Progress");
+			break;
+		case 3:
+			widget.tDep->topLevelItem(i)->setText(2,"Completed");
+			break;
+		};
+		widget.tDep->topLevelItem(i)->setText(3,me.Parent_Task[i].date_due);
 	}
 	
 	getTaskAssignments();
@@ -164,7 +165,7 @@ void Task::addComment() {
 }
 
 void Task::editTask() {
-	EditTask *vET = new EditTask();
+	EditTask *vET = new EditTask(me.Project_ID);
 	vET->setID(me.Task_ID);
 	vET->exec();
 }
@@ -231,6 +232,8 @@ void Task::getTask()
             strcpy(me.Last_Updated, PP.Last_Updated);
             me.canedit = PP.canedit;
             me.Project_ID = PP.Project_ID;
+			strcpy(me.Date_Created, PP.Date_Created);
+			
             
             
         }while(PP.Name[0] != '*');
@@ -405,9 +408,11 @@ void Task::getTaskAssignments()
             
             strcpy(Ass.Name, TA.Name);
             Ass.User_ID = TA.User_ID;
+			strcpy(Ass.Role,TA.Role);
             
             me.Assigned.push_back(Ass);
             
         }while(TA.User_ID != -1);
     }
 }
+

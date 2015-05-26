@@ -13,6 +13,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QCheckBox>
 #include <QtGui/QDialog>
 #include <QtGui/QDialogButtonBox>
 #include <QtGui/QHBoxLayout>
@@ -22,6 +23,7 @@
 #include <QtGui/QListWidget>
 #include <QtGui/QPushButton>
 #include <QtGui/QVBoxLayout>
+#include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -30,10 +32,9 @@ class Ui_EditUser
 public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *lName;
+    QLineEdit *eName;
     QLabel *lDispID;
     QLabel *lID;
-    QHBoxLayout *horizontalLayout_4;
     QHBoxLayout *horizontalLayout;
     QLineEdit *eLocation;
     QLineEdit *eEmail;
@@ -41,6 +42,10 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *bAddExp;
     QPushButton *bDelExp;
+    QWidget *wNewUser;
+    QHBoxLayout *horizontalLayout_4;
+    QLineEdit *ePassword;
+    QCheckBox *cIsAdmin;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *EditUser)
@@ -52,16 +57,21 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        lName = new QLabel(EditUser);
-        lName->setObjectName(QString::fromUtf8("lName"));
+        eName = new QLineEdit(EditUser);
+        eName->setObjectName(QString::fromUtf8("eName"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(eName->sizePolicy().hasHeightForWidth());
+        eName->setSizePolicy(sizePolicy);
         QFont font;
         font.setPointSize(32);
         font.setBold(true);
         font.setUnderline(true);
         font.setWeight(75);
-        lName->setFont(font);
+        eName->setFont(font);
 
-        horizontalLayout_3->addWidget(lName);
+        horizontalLayout_3->addWidget(eName);
 
         lDispID = new QLabel(EditUser);
         lDispID->setObjectName(QString::fromUtf8("lDispID"));
@@ -71,21 +81,16 @@ public:
 
         lID = new QLabel(EditUser);
         lID->setObjectName(QString::fromUtf8("lID"));
-        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
-        lID->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
+        lID->setSizePolicy(sizePolicy1);
 
         horizontalLayout_3->addWidget(lID);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
-
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-
-        verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -103,10 +108,6 @@ public:
         verticalLayout->addLayout(horizontalLayout);
 
         listExpertise = new QListWidget(EditUser);
-        QListWidgetItem *__qlistwidgetitem = new QListWidgetItem(listExpertise);
-        __qlistwidgetitem->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsUserCheckable|Qt::ItemIsEnabled);
-        QListWidgetItem *__qlistwidgetitem1 = new QListWidgetItem(listExpertise);
-        __qlistwidgetitem1->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsUserCheckable|Qt::ItemIsEnabled);
         listExpertise->setObjectName(QString::fromUtf8("listExpertise"));
         listExpertise->setAlternatingRowColors(true);
 
@@ -127,6 +128,26 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
+        wNewUser = new QWidget(EditUser);
+        wNewUser->setObjectName(QString::fromUtf8("wNewUser"));
+        horizontalLayout_4 = new QHBoxLayout(wNewUser);
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        ePassword = new QLineEdit(wNewUser);
+        ePassword->setObjectName(QString::fromUtf8("ePassword"));
+        ePassword->setInputMask(QString::fromUtf8(""));
+        ePassword->setEchoMode(QLineEdit::Password);
+
+        horizontalLayout_4->addWidget(ePassword);
+
+        cIsAdmin = new QCheckBox(wNewUser);
+        cIsAdmin->setObjectName(QString::fromUtf8("cIsAdmin"));
+
+        horizontalLayout_4->addWidget(cIsAdmin);
+
+
+        verticalLayout->addWidget(wNewUser);
+
         buttonBox = new QDialogButtonBox(EditUser);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setOrientation(Qt::Horizontal);
@@ -145,22 +166,17 @@ public:
     void retranslateUi(QDialog *EditUser)
     {
         EditUser->setWindowTitle(QApplication::translate("EditUser", "EditUser", 0, QApplication::UnicodeUTF8));
-        lName->setText(QApplication::translate("EditUser", "TextLabel", 0, QApplication::UnicodeUTF8));
+        eName->setPlaceholderText(QApplication::translate("EditUser", "Name", 0, QApplication::UnicodeUTF8));
         lDispID->setText(QApplication::translate("EditUser", "ID Number:", 0, QApplication::UnicodeUTF8));
-        lID->setText(QApplication::translate("EditUser", "2412421", 0, QApplication::UnicodeUTF8));
-        eLocation->setText(QApplication::translate("EditUser", "Location", 0, QApplication::UnicodeUTF8));
-        eEmail->setText(QApplication::translate("EditUser", "Email", 0, QApplication::UnicodeUTF8));
-
-        const bool __sortingEnabled = listExpertise->isSortingEnabled();
-        listExpertise->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem = listExpertise->item(0);
-        ___qlistwidgetitem->setText(QApplication::translate("EditUser", "Expertise:", 0, QApplication::UnicodeUTF8));
-        QListWidgetItem *___qlistwidgetitem1 = listExpertise->item(1);
-        ___qlistwidgetitem1->setText(QApplication::translate("EditUser", "New Item", 0, QApplication::UnicodeUTF8));
-        listExpertise->setSortingEnabled(__sortingEnabled);
-
+        lID->setText(QApplication::translate("EditUser", "New User", 0, QApplication::UnicodeUTF8));
+        eLocation->setText(QString());
+        eLocation->setPlaceholderText(QApplication::translate("EditUser", "Location", 0, QApplication::UnicodeUTF8));
+        eEmail->setText(QString());
+        eEmail->setPlaceholderText(QApplication::translate("EditUser", "Email", 0, QApplication::UnicodeUTF8));
         bAddExp->setText(QApplication::translate("EditUser", "Add Expertise", 0, QApplication::UnicodeUTF8));
         bDelExp->setText(QApplication::translate("EditUser", "Delete Expertise", 0, QApplication::UnicodeUTF8));
+        ePassword->setPlaceholderText(QApplication::translate("EditUser", "Password", 0, QApplication::UnicodeUTF8));
+        cIsAdmin->setText(QApplication::translate("EditUser", "Is Admin", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

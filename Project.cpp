@@ -7,6 +7,8 @@
 
 #include "Project.h"
 #include "EditTask.h"
+#include "displayGraphics.h"
+#include "TeamMembers.h"
 using namespace std;
 
 extern int sockfd, UID;
@@ -21,6 +23,7 @@ Project::Project() {
 	connect(widget.bGantt,SIGNAL(clicked()),this,SLOT(clickbGantt()));
 	connect(widget.bPert,SIGNAL(clicked()),this,SLOT(clickbPert()));
 	connect(widget.bAddTask,SIGNAL(clicked()),this,SLOT(clickbAddTask()));
+	connect(widget.bTeamMembers,SIGNAL(clicked()),this,SLOT(clickbTeamMembers()));
 }
 
 Project::~Project() {
@@ -65,13 +68,14 @@ void Project::setID(int tmp) {
 	P.ID = tmp;
 	widget.lProjectID->setText("Project ID: " + QString::number(P.ID));
 	getProject();
-	getProjectTasks();
+	
 	getProjectComments();
 	
 	widget.lName->setText(P.Name);
 	widget.lManager->setText(P.Manager_Name);
 	widget.lProjDesc->setText(P.Description);
 	
+	getProjectTasks();
 	widget.tProjTaskList->model()->insertRows(0,P.Tasks.size());
 	for(unsigned int i=0;i<P.Tasks.size();i++) {
 		widget.tProjTaskList->topLevelItem(i)->setText(0,QString::number(P.Tasks[i].ID));
@@ -120,6 +124,10 @@ void Project::setID(int tmp) {
 		widget.tComments->topLevelItem(i)->setText(2,P.Project_Comments[i].Comment);
 	}
 	
+	widget.lC1->setText(QString::number(P.CCMO1));
+	widget.lC2->setText(QString::number(P.CCMO2));
+	widget.lFP->setText(QString::number(P.F_Points));
+	
 	if (!P.canedit) {
 		widget.wCanEdit->hide();
 	}
@@ -129,6 +137,7 @@ void Project::setID(int tmp) {
 
 void Project::clickbAPN() {
 	displayGraphics *a = new displayGraphics(0);
+	a->setPID(P.ID);
 	a->setType(0);
 	a->show();
 }
@@ -136,17 +145,73 @@ void Project::clickbAPN() {
 void Project::clickbGantt() {
 	displayGraphics *a = new displayGraphics(0);
 	a->setType(1);
+	a->setPID(P.ID);
 	a->show();
 }
 
 void Project::clickbPert() {
 	displayGraphics *a = new displayGraphics(0);
 	a->setType(2);
+	a->setPID(P.ID);
 	a->show();
 }
 
 void Project::clickbAddTask() {
-	//AddTask
+	EditTask *vEditTask = new EditTask(P.ID);
+	vEditTask->exec();
+	
+	widget.tProjTaskList->clear();
+	P.Tasks.clear();
+	getProjectTasks();
+	widget.tProjTaskList->model()->insertRows(0,P.Tasks.size());
+	for(unsigned int i=0;i<P.Tasks.size();i++) {
+		widget.tProjTaskList->topLevelItem(i)->setText(0,QString::number(P.Tasks[i].ID));
+		widget.tProjTaskList->topLevelItem(i)->setText(1,P.Tasks[i].name);
+		switch (P.Tasks[i].status) {
+			case 0:
+				widget.tProjTaskList->topLevelItem(i)->setText(2,"Pending");
+				break;
+			case 1:
+				widget.tProjTaskList->topLevelItem(i)->setText(2,"Not Started");
+				break;
+			case 2:
+				widget.tProjTaskList->topLevelItem(i)->setText(2,"In-Progress");
+				break;
+			case 3:
+				widget.tProjTaskList->topLevelItem(i)->setText(2,"Completed");
+				break;
+			default:
+				widget.tProjTaskList->topLevelItem(i)->setText(2,"Unknown");
+				break;
+		};
+		switch (P.Tasks[i].priority) {
+			case 0:
+				widget.tProjTaskList->topLevelItem(i)->setText(3,"Trivial");
+				break;
+			case 1:
+				widget.tProjTaskList->topLevelItem(i)->setText(3,"Low");
+				break;
+			case 2:
+				widget.tProjTaskList->topLevelItem(i)->setText(3,"High");
+				break;
+			case 3:
+				widget.tProjTaskList->topLevelItem(i)->setText(3,"Critical");
+				break;
+			default:
+				widget.tProjTaskList->topLevelItem(i)->setText(3,"Unknown");
+				break;
+		};
+		widget.tProjTaskList->topLevelItem(i)->setText(4,P.Tasks[i].date_due);
+	}
+	widget.lC1->setText(QString::number(P.CCMO1));
+	widget.lC2->setText(QString::number(P.CCMO2));
+	widget.lFP->setText(QString::number(P.F_Points));
+}
+
+void Project::clickbTeamMembers() {
+	TeamMembers *vTeamMembers = new TeamMembers;
+	vTeamMembers->setID(0,P.ID);
+	vTeamMembers->exec();
 }
 
 void Project::getProject()
@@ -198,6 +263,9 @@ void Project::getProject()
             P.active = PP.active;
             P.canedit = PP.canedit;
             strcpy(P.Manager_Name, PP.Manager_Name);
+            P.CCMO1 = PP.CCMO1;
+            P.CCMO2 = PP.CCMO2;
+            P.F_Points = PP.F_Points;
             
         }while(exit == false);
     }

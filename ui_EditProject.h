@@ -13,6 +13,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QDateEdit>
 #include <QtGui/QDialogButtonBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
@@ -31,7 +32,7 @@ public:
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
-    QLineEdit *leProjName;
+    QLineEdit *eProjName;
     QLabel *lManager;
     QPushButton *bChooseManager;
     QHBoxLayout *horizontalLayout_2;
@@ -41,7 +42,10 @@ public:
     QLabel *lC2;
     QPushButton *bFP;
     QLabel *lFP;
-    QPlainTextEdit *plainTextEdit;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *lDispDate;
+    QDateEdit *dBeg;
+    QPlainTextEdit *eDesc;
     QHBoxLayout *horizontalLayout_3;
     QLabel *lDispID;
     QLabel *lID;
@@ -59,13 +63,13 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        leProjName = new QLineEdit(EditProject);
-        leProjName->setObjectName(QString::fromUtf8("leProjName"));
+        eProjName = new QLineEdit(EditProject);
+        eProjName->setObjectName(QString::fromUtf8("eProjName"));
         QFont font;
         font.setPointSize(32);
-        leProjName->setFont(font);
+        eProjName->setFont(font);
 
-        horizontalLayout->addWidget(leProjName);
+        horizontalLayout->addWidget(eProjName);
 
         lManager = new QLabel(EditProject);
         lManager->setObjectName(QString::fromUtf8("lManager"));
@@ -115,10 +119,36 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        plainTextEdit = new QPlainTextEdit(EditProject);
-        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        lDispDate = new QLabel(EditProject);
+        lDispDate->setObjectName(QString::fromUtf8("lDispDate"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lDispDate->sizePolicy().hasHeightForWidth());
+        lDispDate->setSizePolicy(sizePolicy);
+        lDispDate->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        verticalLayout->addWidget(plainTextEdit);
+        horizontalLayout_5->addWidget(lDispDate);
+
+        dBeg = new QDateEdit(EditProject);
+        dBeg->setObjectName(QString::fromUtf8("dBeg"));
+        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(dBeg->sizePolicy().hasHeightForWidth());
+        dBeg->setSizePolicy(sizePolicy1);
+
+        horizontalLayout_5->addWidget(dBeg);
+
+
+        verticalLayout->addLayout(horizontalLayout_5);
+
+        eDesc = new QPlainTextEdit(EditProject);
+        eDesc->setObjectName(QString::fromUtf8("eDesc"));
+
+        verticalLayout->addWidget(eDesc);
 
 
         verticalLayout_2->addLayout(verticalLayout);
@@ -133,11 +163,11 @@ public:
 
         lID = new QLabel(EditProject);
         lID->setObjectName(QString::fromUtf8("lID"));
-        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
-        lID->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy2(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(lID->sizePolicy().hasHeightForWidth());
+        lID->setSizePolicy(sizePolicy2);
 
         horizontalLayout_3->addWidget(lID);
 
@@ -160,8 +190,8 @@ public:
     void retranslateUi(QWidget *EditProject)
     {
         EditProject->setWindowTitle(QApplication::translate("EditProject", "EditProject", 0, QApplication::UnicodeUTF8));
-        leProjName->setText(QString());
-        leProjName->setPlaceholderText(QApplication::translate("EditProject", "Project Name", 0, QApplication::UnicodeUTF8));
+        eProjName->setText(QString());
+        eProjName->setPlaceholderText(QApplication::translate("EditProject", "Project Name", 0, QApplication::UnicodeUTF8));
         lManager->setText(QApplication::translate("EditProject", "MANAGER:", 0, QApplication::UnicodeUTF8));
         bChooseManager->setText(QApplication::translate("EditProject", "Choose Manager", 0, QApplication::UnicodeUTF8));
         bC1->setText(QApplication::translate("EditProject", "COCOMO I", 0, QApplication::UnicodeUTF8));
@@ -170,7 +200,9 @@ public:
         lC2->setText(QApplication::translate("EditProject", "Not Completed", 0, QApplication::UnicodeUTF8));
         bFP->setText(QApplication::translate("EditProject", "Function Points", 0, QApplication::UnicodeUTF8));
         lFP->setText(QApplication::translate("EditProject", "Not Completed", 0, QApplication::UnicodeUTF8));
-        plainTextEdit->setPlainText(QApplication::translate("EditProject", "Description:\n"
+        lDispDate->setText(QApplication::translate("EditProject", "Start Date:", 0, QApplication::UnicodeUTF8));
+        dBeg->setDisplayFormat(QApplication::translate("EditProject", "d/MM/yyyy", 0, QApplication::UnicodeUTF8));
+        eDesc->setPlainText(QApplication::translate("EditProject", "Description:\n"
 "", 0, QApplication::UnicodeUTF8));
         lDispID->setText(QApplication::translate("EditProject", "ID Number:", 0, QApplication::UnicodeUTF8));
         lID->setText(QApplication::translate("EditProject", "New Project", 0, QApplication::UnicodeUTF8));

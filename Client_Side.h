@@ -34,15 +34,9 @@ struct Project_List{
     */
     int ID;
     char Name[50];
-   // int Manager_ID;//Get rid of??
-   // int Team_ID;//Get rid of??
-   // char Description[256];//Get rid of
     int Progress;
-   // char Start_Date[11];//Get rid of
     char End_Date[11];
-   // char Last_Updated[256];//Get rid of
     bool active;
-    
     char Manager_Name[50]; //Managers info
 
 };
@@ -120,13 +114,16 @@ struct UPS_Packet{
     char location[50];
     char email[50];
     bool canedit;
+    char password[21];
+    bool ADMIN;
 };
 
 
 //ADDED THIS
 struct Save_UPS_Packet{
     int ID;
-    char Name[50];
+    char password[21];
+    bool ADMIN;
     char location[50];
     char email[50];
     unsigned int Expertises_size;
@@ -259,6 +256,7 @@ struct Specific_Project{
     int CCMO1;
     int CCMO2;
     int F_Points;
+	char Beg_Date[11];
     
     
     std::vector<Task_List>Tasks;//change to task list
@@ -266,15 +264,15 @@ struct Specific_Project{
     std::vector<Team_Member>Team;//Get rid of
     
 };
-
-struct createProject_Packet{
+/*
+	struct createProject_Packet{
     char Name[50];
     int Manager_ID;
     char Description[256];
     char End_Date[11];
     char Last_Updated[256];
     char Beg_date[11];
-};
+};*/
 
 struct save_P_Team{
     int user_id;
@@ -294,6 +292,7 @@ struct Project_Packet{
     int CCMO1;
     int CCMO2;
     int F_Points;
+	char Beg_Date[11];
 };
 
 struct Task_List{
@@ -316,6 +315,7 @@ struct Task_Packet{
     int Length;
     char Last_Updated[11];
     int Project_ID;
+	char Date_Created[11];
 };
 
 struct Project_Task{
@@ -328,7 +328,7 @@ struct Project_Task{
     int Length;
     bool canedit;
     int Project_ID;
-    
+    char Date_Created[11];
     char Last_Updated[11];
     char Date_Due[11];
     
@@ -348,6 +348,7 @@ struct create_Task_Packet{
     int Length;
     int Project_ID;
     
+	char Date_Created[11];
     char Last_Updated[11];
     char Date_Due[11];
     
@@ -359,12 +360,16 @@ struct create_Task_Packet{
 struct Task_Assignment_Packet{
     char Name[50];
     int User_ID;
+    char Role[50];
+    int Role_ID;
     bool canedit;
 };
 
 struct Task_Assignment{
     char Name[50];
     int User_ID;
+		char Role[50];
+		int Role_ID;
 };
 
 struct Project_Comment{
@@ -384,19 +389,6 @@ struct Team_Member{
     char Name[50];
     char Role[50];
 };
-
-/*
- 
- COCOMO 1 & 2 ints
- FUNCTION POINTS ints
- 
- 
- CHANGE DATES TO WEEK DUE
- WEEK START
- 
- 
- 
- */
 
 
 #endif /* defined(__CSCI311_Project__Client_Side__) */

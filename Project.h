@@ -32,6 +32,7 @@ public slots:
 	void clickbPert();
 	void clickbGantt();
 	void clickbAddTask();
+	void clickbTeamMembers();
 	
 private:
     Ui::Project widget;
